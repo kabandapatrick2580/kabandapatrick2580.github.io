@@ -278,7 +278,6 @@ loadCaseStudies();
 
    // Original (problematic) code might look something like this conceptually:
    // window.addEventListener('unload', myUnloadHandler);
-
    // Suggested fix:
    window.addEventListener('pagehide', myPageHideHandler);
 

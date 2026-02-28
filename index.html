@@ -7,6 +7,8 @@
     <link rel="icon" type="image/x-icon" href="/assets/images/favicon.png">
     <!-- EmailJS SDK -->
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <!-- reCAPTCHA v3 -->
+    <script src="https://www.google.com/recaptcha/enterprise.js?render=6LfH7HosAAAAAEsz5cnB9hLBWaMqMwg8b3RVbhOk"></script>
     <!-- reCAPTCHA v2 -->
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <link rel="stylesheet" href="/assets/css/style.css">
@@ -164,9 +166,14 @@
   </div>
 
   <!-- reCAPTCHA v2 -->
-  <div class="g-recaptcha" data-sitekey="6LenkXksAAAAANLzdBg-cTB-guy2T7AbiR-9D_4_"></div>
-
-  <button type="submit" class="f-sub">Send Message →</button>
+    <button class="g-recaptcha f-sub"
+        data-sitekey="6LfH7HosAAAAAEsz5cnB9hLBWaMqMwg8b3RVbhOk"
+        data-callback='onSubmit'
+        data-action='submit'
+        type="submit"
+        >
+    Submit →
+    </button>
 
 </form>
 
@@ -174,7 +181,7 @@
     </div>
 </div>
 </section>
-<!-- FOOTER (unchanged) -->
+<!-- FOOTER -->
 <footer><div class="wrap"><div class="ft-inner"><div><div class="ft-brand">Patrick Kabanda</div><div class="ft-tagline">Building reliable systems that scale.</div></div><div class="ft-copy">
   © 
   <span id="year"></span>
