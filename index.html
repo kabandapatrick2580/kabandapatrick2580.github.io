@@ -6,7 +6,8 @@
     <title>Patrick Kabanda — portfolio + case study modals</title>
     <link rel="icon" type="image/x-icon" href="images/favicon.png">
     <!-- Google recaptcha !-->
-    <script src="https://www.google.com/recaptcha/enterprise.js?render=6LenkXksAAAAANLzdBg-cTB-guy2T7AbiR-9D_4_"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
   <style>
     /* -----------------------------------------------------
        RESET & DESIGN TOKENS (light/dark, fonts, animations)
@@ -610,9 +611,6 @@
   </div>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-<script>
-  emailjs.init("gmwrLP1CGr8WrlEwT");
-</script>
 <!-- main script (theme, mobile, reveal, modal) -->
 <script>
   (function() {
@@ -724,40 +722,40 @@
         });
     }
     </script>
-<script>
-emailjs.init("gmwrLP1CGr8WrlEwT");
+    <script>
+    emailjs.init("gmwrLP1CGr8WrlEwT");
 
-document.getElementById('cForm')?.addEventListener('submit', function(e) {
-  e.preventDefault();
+    document.getElementById('cForm')?.addEventListener('submit', function(e) {
+    e.preventDefault();
 
-  const btn = this.querySelector('.f-sub');
-  btn.textContent = 'Sending...';
-  btn.disabled = true;
+    const btn = this.querySelector('.f-sub');
+    btn.textContent = 'Sending...';
+    btn.disabled = true;
 
-  emailjs.sendForm(
-    'service_ua012yy',
-    'template_18pr9hb',
-    this
-  )
-  .then(() => {
-    btn.textContent = 'Message sent ✓';
-    btn.style.background = '#4ade80';
-    this.reset();
-  })
-  .catch((err) => {
-    btn.textContent = 'Failed — try again';
-    btn.style.background = '#f87171';
-    console.error(err);
-  })
-  .finally(() => {
-    setTimeout(() => {
-      btn.textContent = 'Send Message →';
-      btn.style.background = '';
-      btn.disabled = false;
-    }, 4000);
-  });
-});
-</script>
+    emailjs.sendForm(
+        'service_ua012yy',
+        'template_18pr9hb',
+        this
+    )
+    .then(() => {
+        btn.textContent = 'Message sent ✓';
+        btn.style.background = '#4ade80';
+        this.reset();
+    })
+    .catch((err) => {
+        btn.textContent = 'Failed — try again';
+        btn.style.background = '#f87171';
+        console.error(err);
+    })
+    .finally(() => {
+        setTimeout(() => {
+        btn.textContent = 'Send Message →';
+        btn.style.background = '';
+        btn.disabled = false;
+        }, 4000);
+    });
+    });
+    </script>
 
 
 <!-- make it a valid downloadable HTML file (self-contained) -->
