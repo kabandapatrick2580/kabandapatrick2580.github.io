@@ -276,9 +276,6 @@ function initProjectCards() {
 
 loadCaseStudies();
 
-
-});
-
    // Original (problematic) code might look something like this conceptually:
    // window.addEventListener('unload', myUnloadHandler);
 
@@ -290,3 +287,5 @@ loadCaseStudies();
      // This will not prevent the bfcache
    }
    
+
+});
