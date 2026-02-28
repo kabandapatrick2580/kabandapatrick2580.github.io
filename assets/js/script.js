@@ -8,9 +8,9 @@ document.addEventListener("DOMContentLoaded", function () {
      CONFIG (EDIT THESE)
      ========================================================== */
 
-  const EMAILJS_PUBLIC_KEY = "YOUR_PUBLIC_KEY";
-  const SERVICE_ID = "YOUR_SERVICE_ID";
-  const TEMPLATE_ID = "YOUR_TEMPLATE_ID";
+  const EMAILJS_PUBLIC_KEY = "gmwrLP1CGr8WrlEwT";
+  const SERVICE_ID = "service_ua012yy";
+  const TEMPLATE_ID = "template_18pr9hb";
 
   if (window.emailjs) {
     emailjs.init(EMAILJS_PUBLIC_KEY);
