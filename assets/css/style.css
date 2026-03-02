@@ -354,6 +354,14 @@
       font-weight: 400;
     }
 
+    .exp-dot img.exp-icon {
+      width: 24px;
+      height: 24px;
+      object-fit: contain;
+      display: inline-block;
+      color: var(--accent-h);
+    }
+
 
     /* experience, skills, contact, footer (unchanged, just copied) */
     .exp-tl { margin-top:54px; position:relative; }

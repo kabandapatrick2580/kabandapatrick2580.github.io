@@ -27,18 +27,24 @@ async function loadExperience() {
     // ===== Experience Items =====
     data.items.forEach(item => {
 
-      const achievementsHTML = item.achievements
+        const achievementsHTML = item.achievements
         .map(a => `<li>${a}</li>`)
         .join("");
+    const iconHTML = item.icon.endsWith(".svg") || item.icon.endsWith(".png") || item.icon.endsWith(".jpg")
+        ? `<img src="${item.icon}" alt="${item.title} icon" class="exp-icon" />`
+        : item.icon; // fallback to emoji if not an image
 
+        
       const itemHTML = `
         <div class="exp-item sr">
-          <div class="exp-dot">${item.icon}</div>
+            <div class="exp-dot">
+            ${iconHTML}
+            </div>
 
-          <div class="exp-body">
+            <div class="exp-body">
             <div class="exp-header">
-              <h3 class="exp-title">${item.title}</h3>
-              <span class="exp-period">${item.period}</span>
+                <h3 class="exp-title">${item.title}</h3>
+                <span class="exp-period">${item.period}</span>
             </div>
 
             <div class="exp-company">${item.company}</div>
@@ -46,11 +52,11 @@ async function loadExperience() {
             <p class="exp-desc">${item.description}</p>
 
             <ul class="exp-list">
-              ${achievementsHTML}
+                ${item.achievements.map(a => `<li>${a}</li>`).join("")}
             </ul>
-          </div>
+            </div>
         </div>
-      `;
+        `;
 
       timeline.insertAdjacentHTML("beforeend", itemHTML);
     });

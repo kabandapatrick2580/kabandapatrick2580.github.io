@@ -20,6 +20,21 @@
       ]
     },
     {
+        "icon": "/assets/images/display-code.svg",
+        "title": "Software Engineer",
+        "period": "2024 — 2025",
+        "company": "ACR-Online Accounting Services LTD",
+        "description": "Served as a software engineer for an accounting and training services firm, designing and delivering multiple business-critical systems to streamline operations, automate financial workflows, and support large-scale enrollment processes.",
+        "achievements": [
+            "Designed and developed a comprehensive Enrollment Management System (EMS) enabling administrators to create training programs, process applications, and manage the full enrollment lifecycle from submission to program commencement",
+            "Built robust integrations with QuickBooks Online to synchronize customers, invoices, payments, items, and chart of accounts with an external Management Information System (MIS)",
+            "Developed payment processing integrations with UrubutoPay to securely handle student transactions and persist payment records for downstream MIS consumption",
+            "Engineered RESTful APIs and backend services to support scalable data exchange between internal platforms and third-party systems",
+            "Collaborated with operations teams to translate business requirements into reliable software solutions aligned with financial compliance needs"
+        ]
+    },
+
+    {
       "icon": "🖥",
       "title": "IT Operations Officer",
       "period": "2022 — 2023",
