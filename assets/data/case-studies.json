@@ -77,24 +77,13 @@
         "link": "#"
     },
     {
-        "role": "Full‑Stack Developer",
-        "title": "Booking Management System",
-        "timeline": "2.5 months (2023)",
-        "client": "Local service business",
-        "challenge": "Manual booking via phone/email caused overbooking and inefficiency.",
-        "solution": "Built React/Python/MySQL system with real‑time availability, email/SMS confirmations, and admin dashboard.",
-        "outcome": "Online bookings increased 200%, no double‑bookings since launch.",
-        "tech": ["React", "Python", "MySQL", "Twilio API", "REST"],
-        "link": "#"
-    },
-    {
         "role": "Integration Engineer",
         "title": "IremboPay Integration",
         "timeline": "1.5 months (2023)",
-        "client": "Rwandan enterprise",
-        "challenge": "Integrate government payment gateway (IremboPay) into existing billing system, ensure audit trail and error recovery.",
-        "solution": "Developed adapter service to translate between IremboPay API and internal system; implemented idempotency and retry logic.",
-        "outcome": "Processed 5k+ government payments with zero reconciliation issues.",
+        "client": "EMS and Netpipo Ltd",
+        "challenge": "Integrate government payment gateway (IremboPay) into existing billing system (EMS for students to pay for courses, and Netpipo for subscription payments), ensure audit trail and error recovery.",
+        "solution": "Developed adapter service to translate between IremboPay API and internal system; implemented idempotency and retry logics.",
+        "outcome": "Completely removed payments with Cash which reduced the money loss or fraud and impoveded operational efficiency.",
         "tech": ["Python", "IremboPay API", "PostgreSQL", "Celery", "Webhooks"],
         "link": "#"
     },
