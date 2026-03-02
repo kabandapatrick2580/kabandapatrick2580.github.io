@@ -54,7 +54,7 @@ function sendEmail(token) {
   }
 
   // Send email via EmailJS
-  emailjs.send("service_ua012yy", "template_18pr9hb", params)
+  emailjs.send("service_uje6kr9", "template_18pr9hb", params)
     .then(function () {
       alert("Message sent successfully!");
       form.reset();
