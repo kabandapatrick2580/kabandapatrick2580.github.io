@@ -3,13 +3,24 @@
 [
     {
         "role": "Lead Engineer",
-        "title": "Payment & Accounting Integrations",
+        "title": "Quickbooks Online API Integrations",
         "timeline": "4 months (2024)",
-        "client": "Enterprise Finance / Accounting Firm",
-        "challenge": "Client needed to sync payments from UrubutoPay and QuickBooks automatically. Manual reconciliation was error‑prone and consumed 15+ hours weekly.",
-        "solution": "Designed event‑driven pipelines using webhooks and idempotent workers. Built a reconciliation engine that flags mismatches and retries failures. Used PostgreSQL for audit logs.",
+        "client": "A University (Client)",
+        "challenge": "Client needed to sync payments, invoices and items from their Student MIS to QuickBooks automatically. Manual reconciliation was error‑prone and consumed 15+ hours weekly.",
+        "solution": "Designed event‑driven pipelines using webhooks and idempotent workers. Built a reconciliation engine that flags mismatches and retries failures. Used MySQL for audit logs.",
         "outcome": "Cut reconciliation time by 95%, eliminated manual data entry errors, and processed over 50k transactions in the first quarter.",
-        "tech": ["Python", "FastAPI", "UrubutoPay API", "QuickBooks API", "PostgreSQL", "Redis"],
+        "tech": ["Python", "Flask", "QuickBooks API", "MySQL", "Redis", "Jinja"],
+        "link": "#"
+    },
+    {
+        "role": "Lead Engineer",
+        "title": "UrubutoPay Integration",
+        "timeline": "4 months (2024)",
+        "client": "A University (Client)",
+        "challenge": "The client required that all student payments be accurately reflected within their existing MIS according to the expected financial structure. They needed a seamless integration to ensure transactions initiated via web or USSD were securely processed, recorded, and synchronized without manual reconciliation, reducing errors and improving operational efficiency.",
+        "solution": "Developed UrubutoPay API integrations to streamline the student payment process, enabling payments via web and USSD, securely storing transaction data, and synchronizing it with the client’s MIS for seamless operational use.",
+        "outcome": "Successfully implemented a secure payment integration that enabled students to pay via web or USSD, with all transactions automatically recorded and reconciled in the client’s MIS. This eliminated manual reconciliation, reduced errors, improved reporting accuracy, and streamlined the overall enrollment payment process, providing the client with full operational visibility and efficiency.",
+        "tech": ["Python", "Flask", "QuickBooks API", "MySQL", "Redis", "Jinja"],
         "link": "#"
     },
     {
@@ -90,7 +101,7 @@
     {
         "role": "Hackathon Developer",
         "title": "Civic Engage — Hackathon App (USSD)",
-        "timeline": "48 hours (2023)",
+        "timeline": "48 hours (2024)",
         "client": "Civic tech hackathon",
         "challenge": "Create accessible service for citizens with only feature phones (no internet).",
         "solution": "USSD app using Africa’s Talking API, Python backend, MySQL for responses. Users could report issues and receive info.",
