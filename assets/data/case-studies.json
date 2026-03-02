@@ -30,7 +30,7 @@
         "client": "Netpipo Ltd (internal product)",
         "challenge": "Build a scalable platform from scratch with limited team; needed to balance feature delivery with long‑term maintainability.",
         "solution": "Chose Python/React with PostgreSQL, containerised with Docker, Nginx reverse proxy. Implemented CI/CD, automated testing, and modular architecture.",
-        "outcome": "Launched MVP in 5 months; currently serving 1k+ active users; system uptime 99.9%.",
+        "outcome": "Launched MVP in 5 months; currently processing for over 1k+ personnels; system uptime 99.9%.",
         "tech": ["Python", "React", "PostgreSQL", "Docker", "Nginx", "GitHub Actions"],
         "link": "#"
     },
@@ -50,7 +50,7 @@
         "title": "Learnpipe — Training Management System",
         "timeline": "3 months (2024)",
         "client": "Corporate training provider",
-        "challenge": "Needed a custom TMS with course creation, learner progress, and certifications, integrated with existing HR systems.",
+        "challenge": "Needed a custom TMS with course creation, learner progress, and certifications.",
         "solution": "Full‑stack Next.js with Python backend, PostgreSQL, role‑based access. Built REST APIs for enrolment and progress tracking.",
         "outcome": "Reduced administrative overhead by 70%, automated certificate generation.",
         "tech": ["Next.js", "TypeScript", "Python", "PostgreSQL", "Tailwind", "JWT"],
