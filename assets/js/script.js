@@ -135,53 +135,6 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   /* ==========================================================
-     CONTACT FORM (EmailJS + reCAPTCHA v2)
-     ========================================================== */
-
-  const form = document.getElementById("cForm");
-
-  if (form) {
-    form.addEventListener("submit", function (e) {
-      e.preventDefault();
-
-      const btn = this.querySelector(".f-sub");
-
-      if (typeof grecaptcha !== "undefined") {
-        const captchaResponse = grecaptcha.getResponse();
-        if (!captchaResponse) {
-          alert("Please verify that you're not a robot.");
-          return;
-        }
-      }
-
-      btn.textContent = "Sending...";
-      btn.disabled = true;
-
-      emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, this)
-        .then(() => {
-          btn.textContent = "Message sent ✓";
-          btn.style.background = "#4ade80";
-          this.reset();
-
-          if (typeof grecaptcha !== "undefined") {
-            grecaptcha.reset();
-          }
-        })
-        .catch(err => {
-          btn.textContent = "Failed — try again";
-          btn.style.background = "#f87171";
-          console.error("EmailJS error:", err);
-        })
-        .finally(() => {
-          setTimeout(() => {
-            btn.textContent = "Send Message →";
-            btn.style.background = "";
-            btn.disabled = false;
-          }, 4000);
-        });
-    });
-  }
-  /* ==========================================================
    CASE STUDIES — LOAD FROM JSON
    ========================================================== */
 
