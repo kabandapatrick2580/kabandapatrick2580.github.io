@@ -3,7 +3,7 @@
 // ===== EmailJS Initialization =====
 (function () {
   emailjs.init({
-    publicKey: "YOUR_PUBLIC_KEY"
+    publicKey: "gmwrLP1CGr8WrlEwT"
   });
 })();
 
@@ -40,7 +40,7 @@ function sendEmail() {
   }
 
   // Send email via EmailJS
-  emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", params)
+  emailjs.send("service_ua012yy", "template_18pr9hb", params)
     .then(function () {
       alert("Message sent successfully!");
       form.reset();
