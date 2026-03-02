@@ -1,0 +1,36 @@
+{
+  "section": {
+    "label": "Experience",
+    "title": "Where I've led & built.",
+    "subtitle": "Professional roles where I've delivered real impact — from engineering leadership to operational systems development."
+  },
+  "items": [
+    {
+      "icon": "⚡",
+      "title": "CTO & Software Engineer",
+      "period": "2024 — 2025",
+      "company": "Netpipo Ltd",
+      "description": "Led all technical decision-making as founding CTO. Responsible for product architecture, engineering team leadership, infrastructure, and delivery of the core platform.",
+      "achievements": [
+        "Architected and built the core Netpipo platform from inception to production deployment",
+        "Established engineering practices, code review processes, and deployment workflows",
+        "Designed and implemented payment integrations and third-party API connections",
+        "Managed infrastructure using Docker, Nginx, and Linux servers — achieving high availability",
+        "Contributed as a hands-on engineer while fulfilling strategic leadership responsibilities"
+      ]
+    },
+    {
+      "icon": "🖥",
+      "title": "IT Operations Officer",
+      "period": "2022 — 2023",
+      "company": "ACR-Online Accounting Services",
+      "description": "Managed and improved the IT infrastructure and digital systems of an accounting services firm, introducing automation and integration solutions that significantly improved efficiency.",
+      "achievements": [
+        "Integrated QuickBooks with internal workflows to reduce manual data entry and reconciliation time",
+        "Built custom automation tools for repetitive accounting and reporting processes",
+        "Maintained and optimised internal systems and databases for reliability and performance",
+        "Provided technical support and system administration across the organisation"
+      ]
+    }
+  ]
+}

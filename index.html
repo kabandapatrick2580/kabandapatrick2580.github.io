@@ -17,8 +17,6 @@
     <!-- Google reCAPTCHA v3 -->
      <script src="/assets/js/contact_v3.js" defer></script>
     <script src="https://www.google.com/recaptcha/api.js?render=6LfgH30sAAAAAPB4BwAyO4WL5gNoO5scfdj4t3QX"></script>
-
-
     <link rel="stylesheet" href="/assets/css/style.css">
     <!-- theme preservation -->
     <script>(function(){var t=localStorage.getItem('pk-theme')||(window.matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');document.documentElement.setAttribute('data-theme',t);})();</script>
@@ -136,7 +134,55 @@
 <hr class="hr">
 
 <!-- EXPERIENCE (unchanged) -->
-<section id="experience"><div class="wrap"><div class="sr"><div class="slabel">Experience</div><h2 class="stitle">Where I've <em style="font-style:italic">led & built.</em></h2><p class="ssub">Professional roles where I've delivered real impact — from engineering leadership to operational systems development.</p></div><div class="exp-tl"><div class="exp-item sr"><div class="exp-dot">⚡</div><div class="exp-body"><div class="exp-header"><h3 class="exp-title">CTO & Software Engineer</h3><span class="exp-period">2024 — 2025</span></div><div class="exp-company">Netpipo Ltd</div><p class="exp-desc">Led all technical decision-making as founding CTO. Responsible for product architecture, engineering team leadership, infrastructure, and delivery of the core platform.</p><ul class="exp-list"><li>Architected and built the core Netpipo platform from inception to production deployment</li><li>Established engineering practices, code review processes, and deployment workflows</li><li>Designed and implemented payment integrations and third-party API connections</li><li>Managed infrastructure using Docker, Nginx, and Linux servers — achieving high availability</li><li>Contributed as a hands-on engineer while fulfilling strategic leadership responsibilities</li></ul></div></div><div class="exp-item sr"><div class="exp-dot">🖥</div><div class="exp-body"><div class="exp-header"><h3 class="exp-title">IT Operations Officer</h3><span class="exp-period">2022 — 2023</span></div><div class="exp-company">ACR-Online Accounting Services</div><p class="exp-desc">Managed and improved the IT infrastructure and digital systems of an accounting services firm, introducing automation and integration solutions that significantly improved efficiency.</p><ul class="exp-list"><li>Integrated QuickBooks with internal workflows to reduce manual data entry and reconciliation time</li><li>Built custom automation tools for repetitive accounting and reporting processes</li><li>Maintained and optimised internal systems and databases for reliability and performance</li><li>Provided technical support and system administration across the organisation</li></ul></div></div></div></div>
+ <section id="experience">
+  <div class="wrap">
+    <div id="experience-root"></div>
+  </div>
+</section>
+<section id="experience">
+    <div class="wrap">
+        <div class="sr">
+            <div class="slabel">Experience</div>
+            <h2 class="stitle">Where I've <em style="font-style:italic">led & built.</em></h2>
+            <p class="ssub">Professional roles where I've delivered real impact — from engineering leadership to operational systems development.</p>
+        </div>
+    <div class="exp-tl">
+        <div class="exp-item sr">
+            <div class="exp-dot">⚡</div>
+            <div class="exp-body">
+                <div class="exp-header">
+                    <h3 class="exp-title">CTO & Software Engineer</h3>
+                    <span class="exp-period">2024 — 2025</span>
+                </div>
+                <div class="exp-company">Netpipo Ltd</div>
+                <p class="exp-desc">Led all technical decision-making as founding CTO. Responsible for product architecture, engineering team leadership, infrastructure, and delivery of the core platform.</p>
+                <ul class="exp-list">
+                    <li>Architected and built the core Netpipo platform from inception to production deployment</li>
+                    <li>Established engineering practices, code review processes, and deployment workflows</li>
+                    <li>Designed and implemented payment integrations and third-party API connections</li>
+                    <li>Managed infrastructure using Docker, Nginx, and Linux servers — achieving high availability</li>
+                    <li>Contributed as a hands-on engineer while fulfilling strategic leadership responsibilities</li>
+                </ul>
+            </div>
+        </div>
+        <div class="exp-item sr">
+            <div class="exp-dot">🖥</div>
+            <div class="exp-body">
+                <div class="exp-header">
+                    <h3 class="exp-title">IT Operations Officer</h3>
+                    <span class="exp-period">2022 — 2023</span>
+                </div><div class="exp-company">ACR-Online Accounting Services</div>
+                <p class="exp-desc">Managed and improved the IT infrastructure and digital systems of an accounting services firm, introducing automation and integration solutions that significantly improved efficiency.</p>
+                <ul class="exp-list">
+                    <li>Integrated QuickBooks with internal workflows to reduce manual data entry and reconciliation time</li>
+                    <li>Built custom automation tools for repetitive accounting and reporting processes</li>
+                    <li>Maintained and optimised internal systems and databases for reliability and performance</li>
+                    <li>Provided technical support and system administration across the organisation</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
 </section>
 <hr class="hr">
 
@@ -210,5 +256,7 @@
 </div>
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <script src="/assets/js/script.js"></script>
+<script src="/assets/js/experience.js"></script>
+
 </body>
 </html>
