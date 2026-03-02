@@ -8,16 +8,27 @@
 })();
 
 
-// ===== reCAPTCHA callback =====
-// This function name MUST match data-callback="onSubmit"
-function onSubmit(token) {
-  sendEmail();
-}
+// ===== Form Submit Handler (Checkbox CAPTCHA flow) =====
+const form = document.getElementById("cForm");
+
+form.addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  // Get CAPTCHA token
+  const token = grecaptcha.getResponse();
+
+  if (!token) {
+    alert("Please complete the CAPTCHA.");
+    return;
+  }
+
+  sendEmail(token);
+});
 
 
 // ===== Main Send Function =====
-function sendEmail() {
-  const form = document.getElementById("cForm");
+function sendEmail(token) {
+
   const button = form.querySelector("button");
 
   // Prevent double clicks
@@ -29,10 +40,13 @@ function sendEmail() {
     name: form.name.value.trim(),
     email: form.email.value.trim(),
     subject: form.subject.value.trim(),
-    message: form.message.value.trim()
+    message: form.message.value.trim(),
+
+    // 🔑 REQUIRED for EmailJS CAPTCHA verification
+    'g-recaptcha-response': token
   };
 
-  // Basic validation (extra safety)
+  // Basic validation
   if (!params.name || !params.email || !params.message) {
     alert("Please fill in all required fields.");
     resetButton(button);
@@ -44,7 +58,7 @@ function sendEmail() {
     .then(function () {
       alert("Message sent successfully!");
       form.reset();
-      grecaptcha.reset(); // Reset captcha
+      grecaptcha.reset(); // Reset checkbox
     })
     .catch(function (error) {
       console.error("EmailJS Error:", error);
