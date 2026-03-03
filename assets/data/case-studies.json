@@ -79,11 +79,11 @@
     {
         "role": "Integration Engineer",
         "title": "IremboPay Integration",
-        "timeline": "1.5 months (2023)",
+        "timeline": "1.5 months (2025)",
         "client": "EMS and Netpipo Ltd",
         "challenge": "Integrate government payment gateway (IremboPay) into existing billing system (EMS for students to pay for courses, and Netpipo for subscription payments), ensure audit trail and error recovery.",
         "solution": "Developed adapter service to translate between IremboPay API and internal system; implemented idempotency and retry logics.",
-        "outcome": "Completely removed payments with Cash which reduced the money loss or fraud and impoveded operational efficiency.",
+        "outcome": "Completely removed payments with Cash which reduced the money loss or fraud and improved operational efficiency.",
         "tech": ["Python", "IremboPay API", "PostgreSQL", "Celery", "Webhooks"],
         "link": "#"
     },
@@ -97,5 +97,17 @@
         "outcome": "Won “Most Impactful” award; prototype later piloted with local NGO.",
         "tech": ["USSD", "Python", "Africa’s Talking API", "MySQL", "Express"],
         "link": "#"
+    },
+    {
+        "role": "Founder,Architect & Developer",
+        "title": "Goalifai — Intelligent Goal Management Platform",
+        "timeline": "Ongoing (2025–Present)",
+        "client": "Self-initiated startup",
+        "challenge": "Design a scalable system that transforms abstract goals into structured execution plans with measurable progress tracking, accountability mechanisms, and intelligent recommendations.",
+        "solution": "Architected a full-stack platform, Designed and implemented modular services for goal structuring, milestone tracking, habit loops, and progress analytics. Optimized API performance with indexing strategies and clean separation of concerns. Deployed using Nginx + Gunicorn on VPS with production-grade environment configuration.",
+        "outcome": "Established a production-ready MVP with scalable backend architecture, clean API layer, and modular design prepared for AI-assisted goal recommendations and future microservices expansion.",
+        "tech": ["Next.js", "TypeScript", "Flask", "PostgreSQL", "JWT", "Nginx", "Gunicorn", "REST APIs"],
+        "link": "https://github.com/kabandapatrick2580/goalifai"
     }
+
 ]
