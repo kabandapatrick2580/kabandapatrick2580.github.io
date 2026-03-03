@@ -32,7 +32,7 @@
         "solution": "Chose Python/React with PostgreSQL, containerised with Docker, Nginx reverse proxy. Implemented CI/CD, automated testing, and modular architecture.",
         "outcome": "Launched MVP in 5 months; currently processing for over 1k+ personnels; system uptime 99.9%.",
         "tech": ["Python", "React", "PostgreSQL", "Docker", "Nginx", "GitHub Actions"],
-        "link": "#"
+        "link": "https://hr.netpipo.com"
     },
     {
         "role": "Solo Engineer",
@@ -54,7 +54,7 @@
         "solution": "Full‑stack Next.js with Python backend, PostgreSQL, role‑based access. Built REST APIs for enrolment and progress tracking.",
         "outcome": "Reduced administrative overhead by 70%, automated certificate generation.",
         "tech": ["Next.js", "TypeScript", "Python", "PostgreSQL", "Tailwind", "JWT"],
-        "link": "#"
+        "link": "https://education.accountants.co.rw"
     },
     {
         "role": "Infrastructure Engineer",
