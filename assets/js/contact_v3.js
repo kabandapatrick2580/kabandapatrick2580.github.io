@@ -57,7 +57,7 @@ function sendEmail(token) {
     subject: form.subject.value.trim(),
     message: form.message.value.trim(),
 
-    // 🔑 REQUIRED for EmailJS CAPTCHA verification
+    // REQUIRED for EmailJS CAPTCHA verification
     'g-recaptcha-response': token
   };
 

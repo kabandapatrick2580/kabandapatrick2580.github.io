@@ -180,6 +180,8 @@
     .pc-l { font-size:0.72rem; color:var(--ink3); }
     .pc-v { font-size:0.79rem; font-weight:500; color:var(--ink); }
     .pc-foot { display:flex; align-items:center; gap:6px; margin-top:12px; padding-top:12px; border-top:1px solid var(--border); font-size:0.72rem; color:var(--ink3); }
+    .pc-foot-icon { width:14px; height:14px; color:var(--accent); display:inline-flex; align-items:center; justify-content:center; }
+    .pc-foot-icon svg { width:14px; height:14px; display:block; }
 
     #about { background:var(--bg2); }
     .about-grid { display:grid; gap:72px; align-items:start; }
@@ -194,6 +196,7 @@
     .vals-block h3 { font-size:1.05rem; margin-bottom:14px; }
     .val-row { display:flex; gap:12px; align-items:flex-start; margin-bottom:14px; }
     .val-icon { flex-shrink:0; width:32px; height:32px; border-radius:8px; background:var(--accent-s); display:flex; align-items:center; justify-content:center; color:var(--accent); font-size:0.875rem; }
+    .val-icon svg { width:16px; height:16px; display:block; }
 
     .svc-grid { display:grid; gap:18px; grid-template-columns:repeat(auto-fill, minmax(256px,1fr)); margin-top:54px; }
     .svc-card { background:var(--card); border:1px solid var(--border); border-radius:14px; padding:28px; box-shadow:var(--sh-sm); transition:border-color 0.22s, box-shadow 0.22s, transform 0.22s; cursor:default; position:relative; overflow:hidden; }

@@ -26,13 +26,11 @@ async function loadExperience() {
 
     // ===== Experience Items =====
     data.items.forEach(item => {
-
-        const achievementsHTML = item.achievements
-        .map(a => `<li>${a}</li>`)
-        .join("");
-    const iconHTML = item.icon.endsWith(".svg") || item.icon.endsWith(".png") || item.icon.endsWith(".jpg")
-        ? `<img src="${item.icon}" alt="${item.title} icon" class="exp-icon" />`
-        : item.icon; // fallback to emoji if not an image
+      const iconValue = String(item.icon || "");
+      const hasImageIcon = /\.(svg|png|jpg|jpeg|webp)$/i.test(iconValue);
+      const iconHTML = hasImageIcon
+        ? `<img src="${iconValue}" alt="${item.title} icon" class="exp-icon" />`
+        : `<svg viewBox="0 0 24 24" fill="none" class="exp-icon" aria-hidden="true"><path d="M4 6h16v4H4V6Zm0 8h16v4H4v-4Zm3-6v2m0 4v2m10-6v2m0 4v2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
 
         
       const itemHTML = `
