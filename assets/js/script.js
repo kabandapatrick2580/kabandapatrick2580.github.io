@@ -54,6 +54,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const hamBtn = document.getElementById("hamBtn");
   const mobNav = document.getElementById("mobNav");
+  const mobNavLinks = Array.from(document.querySelectorAll("#mobNav a"));
 
   hamBtn?.addEventListener("click", () => {
     mobNav.classList.toggle("open");
@@ -61,9 +62,16 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   window.closeMob = function () {
+    if (!mobNav || !hamBtn) return;
     mobNav.classList.remove("open");
     hamBtn.setAttribute("aria-expanded", "false");
   };
+
+  mobNavLinks.forEach(link => {
+    link.addEventListener("click", () => {
+      closeMob();
+    });
+  });
 
   document.addEventListener("click", e => {
     if (

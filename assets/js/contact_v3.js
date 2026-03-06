@@ -11,6 +11,13 @@ const SITE_KEY = "6LfgH30sAAAAAPB4BwAyO4WL5gNoO5scfdj4t3QX";
 
 // ===== Form Submit Handler (v3 flow) =====
 const form = document.getElementById("cForm");
+const statusEl = document.getElementById("formStatus");
+
+function setStatus(message, isError = false) {
+  if (!statusEl) return;
+  statusEl.textContent = message;
+  statusEl.style.color = isError ? "#b42318" : "";
+}
 
 form.addEventListener("submit", function (e) {
   e.preventDefault();
@@ -25,11 +32,12 @@ form.addEventListener("submit", function (e) {
     // Generate token for this action
     grecaptcha.execute(SITE_KEY, { action: "submit" })
       .then(function (token) {
+        setStatus("Verification passed. Sending your message...");
         sendEmail(token);
       })
       .catch(function (err) {
         console.error("reCAPTCHA error:", err);
-        alert("Verification failed. Please try again.");
+        setStatus("Verification failed. Please try again.", true);
         resetButton(button);
       });
 
@@ -55,7 +63,7 @@ function sendEmail(token) {
 
   // Basic validation
   if (!params.name || !params.email || !params.message) {
-    alert("Please fill in all required fields.");
+    setStatus("Please fill in all required fields.", true);
     resetButton(button);
     return;
   }
@@ -63,12 +71,12 @@ function sendEmail(token) {
   // Send email via EmailJS
   emailjs.send("service_uje6kr9", "template_18pr9hb", params)
     .then(function () {
-      alert("Message sent successfully!");
+      setStatus("Message sent successfully.");
       form.reset();
     })
     .catch(function (error) {
       console.error("EmailJS Error:", error);
-      alert("Failed to send message. Please try again later.");
+      setStatus("Failed to send message. Please try again later.", true);
     })
     .finally(function () {
       resetButton(button);
@@ -79,5 +87,5 @@ function sendEmail(token) {
 // ===== Helper: Reset Button =====
 function resetButton(button) {
   button.disabled = false;
-  button.textContent = "Submit →";
+  button.textContent = "Send message →";
 }

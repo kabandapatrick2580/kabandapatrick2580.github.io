@@ -4,6 +4,15 @@
 
 let caseStudies = [];
 
+function escapeHTML(value) {
+  return String(value || "")
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
+
 /* ==========================================================
    LOAD + RENDER PROJECTS
    ========================================================== */
@@ -26,12 +35,13 @@ async function loadProjects() {
         (project.icon.endsWith(".svg") ||
          project.icon.endsWith(".png") ||
          project.icon.endsWith(".jpg"))
-          ? `<img src="${project.icon}" alt="${project.title} icon" class="proj-icon">`
-          : (project.icon || "📁");
+          ? `<img src="${escapeHTML(project.icon)}" alt="${escapeHTML(project.title)} icon" class="proj-icon">`
+          : escapeHTML(project.icon || "📁");
 
       // ===== Tech tags =====
       const tagsHTML = (project.tech || [])
-        .map(tag => `<span class="ptag">${tag}</span>`)
+        .slice(0, 5)
+        .map(tag => `<span class="ptag">${escapeHTML(tag)}</span>`)
         .join("");
 
       const cardHTML = `
@@ -42,12 +52,17 @@ async function loadProjects() {
             <span class="proj-link">↗</span>
           </div>
 
-          <span class="proj-role">${project.role || ""}</span>
+          <span class="proj-role">${escapeHTML(project.role || "")}</span>
 
-          <h3 class="proj-title">${project.title || ""}</h3>
+          <div class="proj-meta">
+            <span>${escapeHTML(project.timeline || "Timeline not listed")}</span>
+            <span>${escapeHTML(project.client || "Client undisclosed")}</span>
+          </div>
+
+          <h3 class="proj-title">${escapeHTML(project.title || "")}</h3>
 
           <p class="proj-desc">
-            ${project.solution || project.challenge || ""}
+            ${escapeHTML(project.solution || project.challenge || "")}
           </p>
 
           <div class="proj-tags">
