@@ -440,6 +440,12 @@
       display: inline-block;
       color: var(--accent-h);
     }
+    .exp-dot svg.exp-icon {
+      width: 24px;
+      height: 24px;
+      display: inline-block;
+      color: var(--accent-h);
+    }
 
 
     /* experience, skills, contact, footer (unchanged, just copied) */
