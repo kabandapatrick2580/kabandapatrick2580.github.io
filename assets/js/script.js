@@ -88,6 +88,35 @@ document.addEventListener("DOMContentLoaded", function () {
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
   /* ==========================================================
+     WHATSAPP QR
+     ========================================================== */
+
+  const waQrCanvas = document.getElementById("waQrCanvas");
+  const waQrLink = document.getElementById("waQrLink");
+
+  if (waQrCanvas) {
+    const waUrl = waQrCanvas.getAttribute("data-wa-url") || "https://wa.me/250780840983";
+
+    if (waQrLink) {
+      waQrLink.setAttribute("href", waUrl);
+    }
+
+    if (window.QRCode) {
+      waQrCanvas.innerHTML = "";
+      new QRCode(waQrCanvas, {
+        text: waUrl,
+        width: 148,
+        height: 148,
+        colorDark: "#0a6f66",
+        colorLight: "#ffffff",
+        correctLevel: QRCode.CorrectLevel.M
+      });
+    } else {
+      waQrCanvas.innerHTML = "<p>QR unavailable. Use the WhatsApp link below.</p>";
+    }
+  }
+
+  /* ==========================================================
      SCROLL REVEAL
      ========================================================== */
 
