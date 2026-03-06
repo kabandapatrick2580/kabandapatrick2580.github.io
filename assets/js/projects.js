@@ -75,7 +75,11 @@ async function loadProjects() {
           
           <div class="proj-top">
             <div class="proj-ico">${iconHTML}</div>
-            <span class="proj-link">↗</span>
+            <span class="proj-link" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M8 16 16 8M10 8h6v6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
           </div>
 
           <span class="proj-role">${escapeHTML(project.role || "")}</span>

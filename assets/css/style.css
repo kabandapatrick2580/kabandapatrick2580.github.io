@@ -270,6 +270,11 @@
       transition: color 0.2s, border-color 0.2s;
       pointer-events: none; /* only card click */
     }
+    .proj-link svg {
+      width: 14px;
+      height: 14px;
+      display: block;
+    }
     .proj-role {
       display: inline-block; padding: 3px 9px; border-radius: 4px;
       background: var(--accent-s); color: var(--accent);
@@ -446,12 +451,33 @@
     @media (min-width:768px){.exp-dot{width:65px; height:65px;}}
     .exp-body { background:var(--card); border:1px solid var(--border); border-radius:14px; padding:24px; flex:1; box-shadow:var(--sh-sm); }
     .exp-header { display:flex; flex-wrap:wrap; justify-content:space-between; gap:8px; margin-bottom:5px; }
+    .exp-meta-right { display:flex; flex-wrap:wrap; align-items:center; justify-content:flex-end; gap:8px; }
     .exp-title { font-size:1.075rem; }
     .exp-period { display:inline-flex; align-items:center; font-size:0.78rem; color:var(--accent); background:var(--accent-s); padding:3px 12px; border-radius:100px; }
+    .exp-type { display:inline-flex; align-items:center; font-size:0.74rem; color:var(--ink2); border:1px solid var(--border2); background:var(--bg2); padding:3px 10px; border-radius:100px; }
     .exp-company { font-size:0.9375rem; color:var(--ink2); font-weight:500; margin-bottom:12px; }
     .exp-list { list-style:none; margin-top:11px; }
     .exp-list li { font-size:0.875rem; color:var(--ink2); padding:3px 0 3px 18px; position:relative; }
     .exp-list li::before { content:'→'; position:absolute; left:0; top:5px; color:var(--accent); font-size:0.72rem; }
+    .exp-proof-btn {
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      margin-top:14px;
+      padding:8px 12px;
+      border:1px solid var(--border2);
+      border-radius:8px;
+      text-decoration:none;
+      color:var(--ink);
+      font-size:0.82rem;
+      font-weight:500;
+      transition:border-color 0.2s,color 0.2s,transform 0.2s;
+    }
+    .exp-proof-btn:hover {
+      border-color:var(--accent);
+      color:var(--accent);
+      transform:translateY(-1px);
+    }
 
     #skills { background:var(--bg2); }
     .sk-grid { display:grid; gap:15px; grid-template-columns:repeat(auto-fill, minmax(270px,1fr)); margin-top:54px; }

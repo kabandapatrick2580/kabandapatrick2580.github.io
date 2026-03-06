@@ -24,15 +24,30 @@ async function loadExperience() {
 
     const timeline = root.querySelector(".exp-tl");
 
+    const escapeHTML = (value) =>
+      String(value || "")
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#39;");
+
     // ===== Experience Items =====
     data.items.forEach(item => {
       const iconValue = String(item.icon || "");
       const hasImageIcon = /\.(svg|png|jpg|jpeg|webp)$/i.test(iconValue);
       const iconHTML = hasImageIcon
-        ? `<img src="${iconValue}" alt="${item.title} icon" class="exp-icon" />`
+        ? `<img src="${escapeHTML(iconValue)}" alt="${escapeHTML(item.title)} icon" class="exp-icon" />`
         : `<svg viewBox="0 0 24 24" fill="none" class="exp-icon" aria-hidden="true"><path d="M4 6h16v4H4V6Zm0 8h16v4H4v-4Zm3-6v2m0 4v2m10-6v2m0 4v2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
 
-        
+      const employmentTypeHTML = item.employment_type
+        ? `<span class="exp-type">${escapeHTML(item.employment_type)}</span>`
+        : "";
+
+      const proofButtonHTML = item.proof_url
+        ? `<a class="exp-proof-btn" href="${escapeHTML(item.proof_url)}" target="_blank" rel="noopener noreferrer">View Proof</a>`
+        : "";
+
       const itemHTML = `
         <div class="exp-item sr">
             <div class="exp-dot">
@@ -41,17 +56,21 @@ async function loadExperience() {
 
             <div class="exp-body">
             <div class="exp-header">
-                <h3 class="exp-title">${item.title}</h3>
-                <span class="exp-period">${item.period}</span>
+                <h3 class="exp-title">${escapeHTML(item.title)}</h3>
+                <div class="exp-meta-right">
+                  <span class="exp-period">${escapeHTML(item.period)}</span>
+                  ${employmentTypeHTML}
+                </div>
             </div>
 
-            <div class="exp-company">${item.company}</div>
+            <div class="exp-company">${escapeHTML(item.company)}</div>
 
-            <p class="exp-desc">${item.description}</p>
+            <p class="exp-desc">${escapeHTML(item.description)}</p>
 
             <ul class="exp-list">
-                ${item.achievements.map(a => `<li>${a}</li>`).join("")}
+                ${(item.achievements || []).map(a => `<li>${escapeHTML(a)}</li>`).join("")}
             </ul>
+            ${proofButtonHTML}
             </div>
         </div>
         `;
