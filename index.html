@@ -354,6 +354,39 @@
         </div>
     </section>
     <hr class="hr">
+    <!-- LEAD MAGNET -->
+    <section id="lead-magnet">
+        <div class="wrap">
+            <div class="lead-grid">
+                <div class="sr">
+                    <div class="slabel">Free Resources</div>
+                    <h2 class="stitle">Download Practical <em style="font-style:italic">Engineering Guides.</em></h2>
+                    <p class="lead-lede">
+                        Choose any guide below, submit your email once, and get instant access.
+                    </p>
+                    <div id="resourceList" class="resource-list" aria-live="polite"></div>
+                </div>
+                <div class="sr">
+                    <form id="leadForm" class="lead-form" novalidate>
+                        <input type="hidden" id="leadResourceId" name="RESOURCE_ID">
+                        <input type="hidden" id="leadResourceTitle" name="RESOURCE_TITLE">
+                        <p id="selectedResourceLabel" class="lead-selected">Selected resource: none</p>
+                        <div class="fg">
+                            <label for="leadEmail">Email</label>
+                            <input type="email" id="leadEmail" name="EMAIL" placeholder="you@company.com" required>
+                        </div>
+                        <label class="lead-consent">
+                            <input type="checkbox" id="leadConsent" required>
+                            I agree to receive occasional updates and can unsubscribe anytime.
+                        </label>
+                        <button class="f-sub" id="leadSubmitBtn" type="submit">Get selected resource →</button>
+                        <p id="leadStatus" role="status" aria-live="polite"></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <hr class="hr">
     <!-- CONTACT (unchanged) -->
     <section id="contact">
         <div class="wrap">

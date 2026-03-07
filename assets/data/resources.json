@@ -1,0 +1,26 @@
+[
+  {
+    "id": "backend-readiness-checklist",
+    "title": "Backend Readiness Checklist",
+    "description": "Professional PDF guide with 20 high-impact checks for reliability, security, observability, and delivery readiness.",
+    "format": "PDF GUIDE",
+    "file": "/assets/lead-magnets/backend-readiness-checklist.pdf",
+    "buttonLabel": "Get checklist"
+  },
+  {
+    "id": "api-integration-launch-sheet",
+    "title": "API Integration Launch Sheet",
+    "description": "Branded PDF worksheet to de-risk payment and accounting API go-lives.",
+    "format": "PDF WORKSHEET",
+    "file": "/assets/lead-magnets/api-integration-launch-sheet.pdf",
+    "buttonLabel": "Get launch sheet"
+  },
+  {
+    "id": "tips-and-tricks-how-to",
+    "title": "Tips and Tricks HOW TO",
+    "description": "Your original work with a branded cover page, delivered as a single polished PDF.",
+    "format": "PDF RESOURCE",
+    "file": "/assets/lead-magnets/tips-and-tricks-how-to-branded.pdf",
+    "buttonLabel": "Get tips and tricks"
+  }
+]

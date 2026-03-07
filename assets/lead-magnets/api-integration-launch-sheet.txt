@@ -1,0 +1,42 @@
+API Integration Launch Sheet
+Author: Patrick Kabanda
+
+Use this worksheet before enabling any third-party API in production.
+
+1) Business Outcomes
+- What exact workflow should this integration unlock?
+- Which metric improves if this succeeds?
+- What is the fallback if the API provider is down?
+
+2) Data Contract
+- Required request fields documented?
+- Response schema validated?
+- Idempotency strategy defined for retries?
+- Error codes mapped to user-safe messages?
+
+3) Security and Compliance
+- API keys stored in environment secrets only?
+- Signature verification enabled where supported?
+- Least-privilege scopes configured?
+- PII handling reviewed and approved?
+
+4) Reliability Controls
+- Timeouts and retry backoff configured?
+- Dead-letter or retry queue for failed webhooks?
+- Circuit breaker/fail-safe behavior documented?
+- Monitoring and alert thresholds configured?
+
+5) Operational Readiness
+- Sandbox and production credentials both tested?
+- Runbook created for support and engineering?
+- Rollback steps tested in staging?
+- Ownership assigned for incidents and maintenance?
+
+6) Launch Checklist
+- Smoke test passed in production?
+- Logging confirms expected request/response volume?
+- Alert channels active and acknowledged?
+- Stakeholders notified with support window?
+
+Contact:
+kabanda.patrick2580@gmail.com

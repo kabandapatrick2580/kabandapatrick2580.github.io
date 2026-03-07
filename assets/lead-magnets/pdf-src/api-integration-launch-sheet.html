@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>API Integration Launch Sheet</title>
+  <style>
+    :root { --brand:#0a6f66; --ink:#1f2937; --muted:#4b5563; --line:#d1d5db; }
+    * { box-sizing: border-box; }
+    body { margin:0; font-family: "DM Sans", "Segoe UI", Arial, sans-serif; color:var(--ink); }
+    .page { max-width: 820px; margin:0 auto; padding: 46px 56px 52px; }
+    .top { background: linear-gradient(135deg, #0a6f66, #155e75); color:white; border-radius:14px; padding:22px 24px; margin-bottom:24px; }
+    h1 { margin:0 0 8px; font-size:32px; line-height:1.12; }
+    .sub { margin:0; opacity:.93; font-size:14px; }
+    .grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+    .card { border:1px solid var(--line); border-radius:12px; padding:14px 14px 10px; }
+    h2 { margin:0 0 8px; font-size:16px; color:#065f46; }
+    ul { margin:0; padding-left:20px; }
+    li { margin:0 0 6px; font-size:13px; line-height:1.46; }
+    .foot { margin-top:16px; font-size:12px; color:var(--muted); border-top:1px solid var(--line); padding-top:10px; }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <section class="top">
+      <h1>API Integration Launch Sheet</h1>
+      <p class="sub">Use this worksheet to de-risk payment or accounting API go-lives.</p>
+    </section>
+
+    <section class="grid">
+      <article class="card">
+        <h2>1) Business Outcomes</h2>
+        <ul>
+          <li>Define the exact workflow this integration unlocks.</li>
+          <li>Set one primary metric to measure success.</li>
+          <li>Document fallback behavior if provider is down.</li>
+        </ul>
+      </article>
+      <article class="card">
+        <h2>2) Data Contract</h2>
+        <ul>
+          <li>Document required request fields.</li>
+          <li>Validate response schemas.</li>
+          <li>Define idempotency and retry semantics.</li>
+        </ul>
+      </article>
+      <article class="card">
+        <h2>3) Security</h2>
+        <ul>
+          <li>Store credentials in secrets manager or env vars.</li>
+          <li>Enable signature verification where possible.</li>
+          <li>Apply least-privilege scopes.</li>
+        </ul>
+      </article>
+      <article class="card">
+        <h2>4) Reliability Controls</h2>
+        <ul>
+          <li>Configure timeouts and exponential backoff.</li>
+          <li>Queue failed webhook events for replay.</li>
+          <li>Define breaker/fail-safe behavior.</li>
+        </ul>
+      </article>
+      <article class="card">
+        <h2>5) Operations</h2>
+        <ul>
+          <li>Test sandbox and production credentials.</li>
+          <li>Prepare runbook for support handoff.</li>
+          <li>Validate rollback in staging.</li>
+        </ul>
+      </article>
+      <article class="card">
+        <h2>6) Launch Readiness</h2>
+        <ul>
+          <li>Run production smoke checks.</li>
+          <li>Confirm alert thresholds and on-call routing.</li>
+          <li>Communicate support window to stakeholders.</li>
+        </ul>
+      </article>
+    </section>
+
+    <p class="foot">Prepared by Patrick Kabanda • kabanda.patrick2580@gmail.com</p>
+  </main>
+</body>
+</html>

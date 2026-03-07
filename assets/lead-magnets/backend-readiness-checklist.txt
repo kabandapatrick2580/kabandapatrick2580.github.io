@@ -1,0 +1,43 @@
+Backend Readiness Checklist
+Author: Patrick Kabanda
+
+Use this list before launching or scaling any backend system.
+
+Architecture
+- Core domain boundaries are documented.
+- Service responsibilities are clear and non-overlapping.
+- API contracts are versioned and reviewed.
+- Failure modes are identified for critical paths.
+
+Data
+- Data model supports current and expected load.
+- Backups are automated and tested.
+- Migration strategy exists for schema changes.
+- Sensitive fields are encrypted or protected.
+
+Reliability
+- Health checks and uptime monitoring are active.
+- Retry and timeout policies are defined per dependency.
+- Circuit-breaking or fallback paths exist for external APIs.
+- Alerting routes to the right owner with clear severity.
+
+Security
+- Secrets are not stored in source code.
+- AuthN/AuthZ is enforced consistently.
+- Input validation and output encoding are in place.
+- Audit logs are retained for critical operations.
+
+Operations
+- Logs are structured and searchable.
+- Staging mirrors production enough for safe validation.
+- Rollback procedure is documented and tested.
+- Incident response checklist exists and is shared.
+
+Delivery
+- CI validates tests, linting, and build integrity.
+- Deployment process is repeatable and automated.
+- Post-deploy smoke tests are defined.
+- Ownership for each service is clear.
+
+If you want a custom readiness review, contact:
+kabanda.patrick2580@gmail.com

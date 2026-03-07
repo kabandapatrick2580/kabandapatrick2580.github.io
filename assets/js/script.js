@@ -11,6 +11,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const EMAILJS_PUBLIC_KEY = "gmwrLP1CGr8WrlEwT";
   const SERVICE_ID = "service_ua012yy";
   const TEMPLATE_ID = "template_18pr9hb";
+  const BREVO_LEAD_FORM_URL = "https://33c75bbe.sibforms.com/serve/MUIFALR1jgynagnyxw8t14gS81Nt4h1U4mDbulaQI1wyvjxCWgDBDMDwF5XqH5plYzvcYgfO_En8t84WVmOM8qv9l-uRqJgJKJrXTr5XkNi0OVxtj0ype-mgx-eZpGfUM211bhWjvsnwwdwy556kY0jc5HUzYOyweqgNbOJFc4I_KjVkn88hrmlYueE_39wY0-699WUzHPjcdQOL2A==";
+  const LEAD_RESOURCES_URL = "assets/data/resources.json";
 
   if (window.emailjs) {
     emailjs.init(EMAILJS_PUBLIC_KEY);
@@ -86,6 +88,142 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const yearEl = document.getElementById("year");
   if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+  /* ==========================================================
+     LEAD MAGNET FORM
+     ========================================================== */
+
+  const leadForm = document.getElementById("leadForm");
+  const leadStatus = document.getElementById("leadStatus");
+  const leadSubmitBtn = document.getElementById("leadSubmitBtn");
+  const resourceList = document.getElementById("resourceList");
+  const leadResourceId = document.getElementById("leadResourceId");
+  const leadResourceTitle = document.getElementById("leadResourceTitle");
+  const selectedResourceLabel = document.getElementById("selectedResourceLabel");
+  let leadResources = [];
+  let selectedResource = null;
+
+  function setLeadStatus(message, isError = false) {
+    if (!leadStatus) return;
+    leadStatus.textContent = message;
+    leadStatus.style.color = isError ? "#b42318" : "";
+  }
+
+  function applySelectedResource(resourceId) {
+    selectedResource = leadResources.find(resource => resource.id === resourceId) || null;
+
+    if (!selectedResource) return;
+
+    if (leadResourceId) leadResourceId.value = selectedResource.id;
+    if (leadResourceTitle) leadResourceTitle.value = selectedResource.title;
+    if (selectedResourceLabel) {
+      selectedResourceLabel.textContent = `Selected resource: ${selectedResource.title}`;
+    }
+    if (leadSubmitBtn) {
+      leadSubmitBtn.textContent = `${selectedResource.buttonLabel || "Get resource"} →`;
+    }
+
+    resourceList?.querySelectorAll(".resource-card").forEach(card => {
+      card.classList.toggle("is-active", card.getAttribute("data-resource-id") === selectedResource.id);
+    });
+  }
+
+  function renderLeadResources(resources) {
+    if (!resourceList) return;
+
+    resourceList.innerHTML = "";
+
+    resources.forEach(resource => {
+      const card = document.createElement("button");
+      card.type = "button";
+      card.className = "resource-card";
+      card.setAttribute("data-resource-id", resource.id);
+      card.innerHTML = `
+        <div class="resource-title">${resource.title}</div>
+        <p class="resource-desc">${resource.description}</p>
+        <div class="resource-meta">${resource.format}</div>
+      `;
+
+      card.addEventListener("click", () => {
+        applySelectedResource(resource.id);
+        setLeadStatus("");
+      });
+
+      resourceList.appendChild(card);
+    });
+
+    applySelectedResource(resources[0].id);
+  }
+
+  async function initLeadResources() {
+    if (!resourceList) return;
+
+    try {
+      const response = await fetch(LEAD_RESOURCES_URL);
+      if (!response.ok) throw new Error("Failed to load resources.");
+
+      const data = await response.json();
+      leadResources = Array.isArray(data) ? data.filter(item => item?.id && item?.title && item?.file) : [];
+
+      if (!leadResources.length) throw new Error("No valid resources found.");
+
+      renderLeadResources(leadResources);
+    } catch (error) {
+      console.error("Lead resources load error:", error);
+      setLeadStatus("Unable to load resources right now. Please refresh and try again.", true);
+    }
+  }
+
+  initLeadResources();
+
+  if (leadForm) {
+    leadForm.addEventListener("submit", async (event) => {
+      event.preventDefault();
+
+      if (BREVO_LEAD_FORM_URL.includes("PASTE_YOUR_BREVO_FORM_ACTION_URL_HERE")) {
+        setLeadStatus("Set your Brevo form action URL in assets/js/script.js first.", true);
+        return;
+      }
+
+      if (!selectedResource) {
+        setLeadStatus("Please select a resource first.", true);
+        return;
+      }
+
+      const formData = new FormData(leadForm);
+
+      if (!formData.get("EMAIL")) {
+        setLeadStatus("Please enter your email.", true);
+        return;
+      }
+
+      if (leadSubmitBtn) {
+        leadSubmitBtn.disabled = true;
+        leadSubmitBtn.textContent = "Submitting...";
+      }
+
+      try {
+        await fetch(BREVO_LEAD_FORM_URL, {
+          method: "POST",
+          mode: "no-cors",
+          body: formData
+        });
+
+        setLeadStatus(`Thanks. Opening ${selectedResource.title}...`);
+        leadForm.reset();
+        applySelectedResource(selectedResource.id);
+        window.open(selectedResource.file, "_blank", "noopener,noreferrer");
+      } catch (error) {
+        console.error("Brevo lead form error:", error);
+        setLeadStatus("Signup failed. Please try again.", true);
+      } finally {
+        if (leadSubmitBtn) {
+          leadSubmitBtn.disabled = false;
+          leadSubmitBtn.textContent = `${selectedResource?.buttonLabel || "Get selected resource"} →`;
+        }
+      }
+    });
+  }
 
   /* ==========================================================
      WHATSAPP QR
