@@ -109,6 +109,26 @@ document.addEventListener("DOMContentLoaded", function () {
     leadStatus.style.color = isError ? "#b42318" : "";
   }
 
+  async function downloadSelectedResource(resource) {
+    const response = await fetch(resource.file);
+    if (!response.ok) {
+      throw new Error(`Failed to download resource: ${response.status}`);
+    }
+
+    const blob = await response.blob();
+    const blobUrl = URL.createObjectURL(blob);
+    const anchor = document.createElement("a");
+    const fileName = resource.file.split("/").pop() || `${resource.id}.pdf`;
+
+    anchor.href = blobUrl;
+    anchor.download = fileName;
+    document.body.appendChild(anchor);
+    anchor.click();
+    anchor.remove();
+
+    setTimeout(() => URL.revokeObjectURL(blobUrl), 1000);
+  }
+
   function applySelectedResource(resourceId) {
     selectedResource = leadResources.find(resource => resource.id === resourceId) || null;
 
@@ -209,13 +229,15 @@ document.addEventListener("DOMContentLoaded", function () {
           body: formData
         });
 
-        setLeadStatus(`Thanks. Opening ${selectedResource.title}...`);
+        setLeadStatus(`Thanks. Preparing ${selectedResource.title} for download...`);
         leadForm.reset();
         applySelectedResource(selectedResource.id);
-        window.open(selectedResource.file, "_blank", "noopener,noreferrer");
+        await downloadSelectedResource(selectedResource);
+        setLeadStatus("Download successful. Check your Downloads folder.");
+        window.alert("Download successful.");
       } catch (error) {
         console.error("Brevo lead form error:", error);
-        setLeadStatus("Signup failed. Please try again.", true);
+        setLeadStatus("Signup or download failed. Please try again.", true);
       } finally {
         if (leadSubmitBtn) {
           leadSubmitBtn.disabled = false;
