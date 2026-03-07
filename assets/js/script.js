@@ -268,15 +268,4 @@ function initProjectCards() {
 
 loadCaseStudies();
 
-   // Original (problematic) code might look something like this conceptually:
-   // window.addEventListener('unload', myUnloadHandler);
-   // Suggested fix:
-   window.addEventListener('pagehide', myPageHideHandler);
-
-   function myPageHideHandler(event) {
-     // Perform cleanup or state saving here
-     // This will not prevent the bfcache
-   }
-   
-
 });
