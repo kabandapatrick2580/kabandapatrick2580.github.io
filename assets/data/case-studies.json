@@ -37,7 +37,7 @@
     {
         "role": "Solo Engineer",
         "title": "On‑Premise Email Server API",
-        "timeline": "2 months (2023)",
+        "timeline": "2 months (2025)",
         "client": "Privacy‑conscious organisation",
         "challenge": "Organisation needed full control over email data, could not use cloud providers. Required programmatic email creation and management.",
         "solution": "Set up Postfix + Dovecot on Linux, built Python REST API to manage mailboxes, aliases, and send emails via SMTP. Secured with TLS and API keys.",
