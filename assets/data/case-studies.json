@@ -53,7 +53,7 @@
         "challenge": "Needed a custom TMS with course creation, learner progress, and certifications.",
         "solution": "Full‑stack Next.js with Python backend, PostgreSQL, role‑based access. Built REST APIs for enrolment and progress tracking.",
         "outcome": "Reduced administrative overhead by 70%, automated certificate generation.",
-        "tech": ["Next.js", "TypeScript", "Python", "PostgreSQL", "Tailwind", "JWT"],
+        "tech": ["Flask", "BootStrap", "Python", "MySQL", "CSS", "JWT"],
         "link": "https://education.accountants.co.rw"
     },
     {

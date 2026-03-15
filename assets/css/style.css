@@ -485,7 +485,7 @@
       transform:translateY(-1px);
     }
 
-    #skills { background:var(--bg2); }
+    #skills, #contact { background:var(--bg2); }
     .sk-grid { display:grid; gap:15px; grid-template-columns:repeat(auto-fill, minmax(270px,1fr)); margin-top:54px; }
     .sk-cat { background:var(--card); border:1px solid var(--border); border-radius:14px; padding:24px; box-shadow:var(--sh-sm); }
     .sk-cat-lbl { font-size:0.72rem; font-weight:500; letter-spacing:0.08em; text-transform:uppercase; color:var(--ink3); margin-bottom:4px; }
