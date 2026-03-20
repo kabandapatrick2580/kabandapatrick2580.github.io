@@ -1,0 +1,56 @@
+{
+  "section": {
+    "label": "Experience",
+    "title_html": "Les roles ou j'ai <em style='font-style:italic'>dirige & construit.</em>",
+    "subtitle": "Des roles professionnels ou j'ai livre un impact concret, du leadership technique au developpement de systemes operationnels."
+  },
+  "items": [
+    {
+      "icon": "/assets/images/display-code.svg",
+      "title": "CTO & Ingenieur logiciel",
+      "period": "2024 - 2025",
+      "employment_type": "Temps plein",
+      "company": "Netpipo Ltd",
+      "proof_url": "https://drive.google.com/file/d/1-ObLKq2Rg98KdjN18NDtTz-tmVaj8nlJ/view?usp=sharing",
+      "description": "J'ai dirige toutes les decisions techniques en tant que CTO fondateur. Responsable de l'architecture produit, du leadership engineering, de l'infrastructure et de la livraison de la plateforme principale.",
+      "achievements": [
+        "Architecture et construction de la plateforme centrale Netpipo depuis l'idee jusqu'au deploiement en production",
+        "Mise en place des pratiques d'ingenierie, du code review et des workflows de deploiement",
+        "Conception et implementation d'integrations de paiement et de connexions API tierces",
+        "Gestion de l'infrastructure avec Docker, Nginx et des serveurs Linux, avec une haute disponibilite",
+        "Contribution comme ingenieur hands-on tout en assumant des responsabilites de leadership strategique"
+      ]
+    },
+    {
+      "icon": "/assets/images/display-code.svg",
+      "title": "Ingenieur logiciel",
+      "period": "2024 - 2025",
+      "employment_type": "Temps partiel",
+      "company": "ACR-Online Accounting Services LTD",
+      "proof_url": "https://drive.google.com/file/d/1F7O-bVyjAIjhZVHc2B_U400xoFeJwqNb/view?usp=sharing",
+      "description": "J'ai travaille comme ingenieur logiciel pour un cabinet de comptabilite et de formation, en concevant et livrant plusieurs systemes critiques pour fluidifier les operations, automatiser les flux financiers et soutenir des processus d'inscription a grande echelle.",
+      "achievements": [
+        "Conception et developpement d'un systeme complet de gestion des inscriptions permettant aux administrateurs de creer des programmes, traiter les candidatures et gerer tout le cycle d'inscription",
+        "Construction d'integrations robustes avec QuickBooks Online pour synchroniser clients, factures, paiements, articles et plan comptable avec un MIS externe",
+        "Developpement d'integrations de paiement avec UrubutoPay pour traiter en securite les transactions des etudiants et persister les donnees pour le MIS",
+        "Construction d'API REST et de services backend pour soutenir des echanges de donnees evolutifs entre plateformes internes et systemes tiers",
+        "Collaboration avec les equipes operations pour transformer les besoins metier en solutions logicielles fiables alignees sur les exigences de conformite financiere"
+      ]
+    },
+    {
+      "icon": "/assets/images/display-code.svg",
+      "title": "Responsable des operations IT",
+      "period": "2022 - 2023",
+      "employment_type": "Temps plein",
+      "company": "ACR-Online Accounting Services",
+      "proof_url": "https://drive.google.com/file/d/1F7O-bVyjAIjhZVHc2B_U400xoFeJwqNb/view?usp=sharing",
+      "description": "J'ai gere et ameliore l'infrastructure IT et les systemes numeriques d'un cabinet de comptabilite, en introduisant des solutions d'automatisation et d'integration qui ont nettement ameliore l'efficacite.",
+      "achievements": [
+        "Supervision des operations IT quotidiennes et garantie du bon fonctionnement des systemes",
+        "Collaboration avec des equipes pluridisciplinaires pour identifier et resoudre des problemes techniques",
+        "Mise en oeuvre de projets et d'initiatives IT pour renforcer l'efficacite organisationnelle",
+        "Support technique et administration systeme pour l'ensemble de l'organisation"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,313 @@
+{
+  "meta": {
+    "title": "Patrick Kabanda - portfolio + case study modals"
+  },
+  "nav": {
+    "links": ["Home", "About", "Services", "Projects", "Experience", "Contact"],
+    "cta": "Hire Me",
+    "themeToggleAria": "Toggle theme",
+    "mobileToggleAria": "Toggle mobile menu",
+    "languageAria": "Select language",
+    "languageLabel": "Lang"
+  },
+  "hero": {
+    "availability": "Available for new opportunities",
+    "nameHtml": "Patrick<br><em style=\"font-style:italic; color:var(--accent)\">Kabanda</em>",
+    "rolesHtml": "Software Engineer<span class=\"dot\">•</span>Systems Builder<span class=\"dot\">•</span>Solutions Architect",
+    "summary": "I help fintech, SaaS, and operations-heavy businesses build reliable backend systems that integrate payments, accounting, and internal workflows so they can reduce manual work, avoid costly errors, and scale with confidence.",
+    "tags": [
+      "Backend-focused systems engineering",
+      "API integrations & automation",
+      "Production-ready full-stack apps",
+      "Remote collaboration ready"
+    ],
+    "proof": [
+      "<strong>9+</strong> Production Systems",
+      "<strong>99.9%</strong> Uptime Delivered",
+      "<strong>50k+</strong> Transactions Processed"
+    ],
+    "primaryCta": "View Projects",
+    "secondaryCta": "Contact Me",
+    "portraitAlt": "Portrait of Patrick Kabanda"
+  },
+  "profile": {
+    "availabilityBadge": "Available",
+    "name": "Patrick Kabanda",
+    "role": "Software Engineer & Systems Builder",
+    "rows": [
+      { "label": "Experience", "value": "3+ Years" },
+      { "label": "Leadership", "value": "CTO, Netpipo Ltd" },
+      { "label": "Projects Delivered", "value": "9+ Production Systems" },
+      { "label": "Specialisation", "value": "Systems & Integration" },
+      { "label": "Availability", "value": "Open to Remote" }
+    ],
+    "location": "Kigali, Rwanda - Global Remote"
+  },
+  "about": {
+    "label": "About Me",
+    "titleHtml": "Engineering systems<br><em style=\"font-style:italic\">that endure.</em>",
+    "body": [
+      "I'm a software engineer with a systems-level mindset, someone who thinks carefully about architecture before writing a single line of code. My work sits at the intersection of backend engineering, infrastructure, and business operations.",
+      "Having served as CTO at Netpipo Ltd, I understand what it means to make high-stakes technical decisions that affect real users. I've built production systems end-to-end, from database schema to deployment pipelines, and I take pride in shipping software that is reliable, maintainable, and secure.",
+      "My experience spans backend development, API integrations with financial systems (UrubutoPay, QuickBooks, IremboPay), process automation, and DevOps. Whether working independently or with distributed teams, I bring rigour and clarity to every engagement.",
+      "Based in Kigali, Rwanda, I'm fully equipped for remote collaboration and actively seeking impactful global projects and long-term remote roles."
+    ],
+    "stats": [
+      "Years of professional engineering",
+      "Production systems delivered",
+      "Industries - tech & accounting",
+      "CTO role leading product & engineering"
+    ],
+    "principlesTitle": "Core Principles",
+    "principles": [
+      {
+        "title": "Reliability over speed",
+        "text": "Architecture-first thinking - systems that don't break at 2am."
+      },
+      {
+        "title": "Integration fluency",
+        "text": "Payment gateways, accounting APIs, and third-party services are home territory."
+      },
+      {
+        "title": "Global mindset",
+        "text": "Cross-timezone collaboration with clear, async-first communication."
+      }
+    ]
+  },
+  "services": {
+    "label": "Services",
+    "titleHtml": "Backend systems that keep<br><em style=\"font-style:italic\">operations moving.</em>",
+    "subtitle": "I build and improve the backend systems that keep payments, operations, and internal workflows running reliably.",
+    "intro": "I work with fintech, edtech, SaaS, and operations-heavy businesses that need more than just attractive interfaces. My services are designed for teams that need reliable systems, cleaner integrations, reduced manual work, and stronger operational foundations.",
+    "cards": [
+      {
+        "title": "Payments & Accounting Integrations",
+        "description": "Integrate payment gateways, invoicing systems, and accounting platforms into reliable financial workflows that reduce manual reconciliation, prevent duplication, and improve accuracy.",
+        "bullets": [
+          "Payment gateway integration",
+          "QuickBooks or accounting system integration",
+          "Invoice and payment workflow implementation",
+          "Webhook handling",
+          "Reconciliation support",
+          "Duplicate prevention and sync reliability"
+        ]
+      },
+      {
+        "title": "Workflow Automation & Internal Tools",
+        "description": "Turn repetitive, error-prone operations into streamlined workflows through custom dashboards, internal tools, and automation logic.",
+        "bullets": [
+          "Admin dashboards",
+          "Internal business tools",
+          "Approval/process workflows",
+          "Cross-system automation",
+          "Task and data flow automation",
+          "Manual work reduction"
+        ]
+      },
+      {
+        "title": "Backend Systems Development",
+        "description": "Build secure, scalable backend systems that power core business processes, internal operations, and data-driven platforms.",
+        "bullets": [
+          "Custom backend applications",
+          "Secure APIs",
+          "Role-based systems",
+          "Business logic implementation",
+          "Database-backed platforms",
+          "Operational system design"
+        ]
+      },
+      {
+        "title": "API Integrations & Systems Connectivity",
+        "description": "Connect third-party services and internal platforms through dependable integrations that improve data flow, synchronization, and operational efficiency.",
+        "bullets": [
+          "Third-party API integrations",
+          "REST API development",
+          "Platform-to-platform syncing",
+          "External service connectivity",
+          "Data exchange pipelines",
+          "Integration troubleshooting"
+        ]
+      },
+      {
+        "title": "Infrastructure & Production Hardening",
+        "description": "Help systems move beyond development into stable, production-ready environments with better deployment, configuration, and reliability.",
+        "bullets": [
+          "Dockerization",
+          "Nginx/server configuration",
+          "Linux-based deployment setup",
+          "Staging and production environments",
+          "Stability and performance improvements",
+          "Production-readiness support"
+        ]
+      },
+      {
+        "title": "System Improvement & Stabilization",
+        "description": "Improve fragile or outdated systems by fixing bugs, cleaning up architecture, strengthening reliability, and preparing them for growth.",
+        "bullets": [
+          "Backend bug fixing",
+          "Legacy system improvements",
+          "Workflow stabilization",
+          "Integration troubleshooting",
+          "Performance improvements",
+          "Maintainability enhancements"
+        ]
+      }
+    ],
+    "cta": {
+      "text": "The best-fit projects for me are usually not just about building features, they are about making critical systems more dependable, more efficient, and better prepared for growth.",
+      "button": "Need a backend system that works reliably in production? Let's talk."
+    }
+  },
+  "idealClients": {
+    "label": "Ideal Clients",
+    "titleHtml": "Dependable backend systems,<br><em style=\"font-style:italic\">for the teams that need them.</em>",
+    "subtitle": "I work best with businesses that need dependable backend systems, not just attractive frontends.",
+    "intro": "My ideal clients are fintech, edtech, SaaS, and operations-heavy businesses with complex workflows, especially those dealing with payments, accounting, internal systems, reconciliation, or manual processes that need automation and reliability.",
+    "cards": [
+      {
+        "title": "Fintech Startups",
+        "description": "Best for products and businesses where money movement, transaction accuracy, and system reliability are critical.",
+        "bullets": [
+          "Payment gateway integrations",
+          "Webhook handling and event processing",
+          "Reconciliation workflows",
+          "Duplicate prevention and data consistency",
+          "Secure backend operations"
+        ]
+      },
+      {
+        "title": "Edtech Platforms",
+        "description": "A strong fit for education businesses and platforms that manage student, payment, and administrative workflows.",
+        "bullets": [
+          "Enrollment and admissions systems",
+          "Student fee payment workflows",
+          "Certificate and document generation",
+          "Internal admin dashboards",
+          "Reporting and workflow automation"
+        ]
+      },
+      {
+        "title": "SaaS Companies",
+        "description": "Ideal for SaaS products that need backend depth, integrations, and stable operational systems beyond surface-level UI.",
+        "bullets": [
+          "API integrations",
+          "Admin dashboards",
+          "Workflow automation",
+          "Production-ready backend architecture",
+          "Infrastructure and deployment reliability"
+        ]
+      },
+      {
+        "title": "Operations-Heavy Businesses",
+        "description": "Great for growing businesses with repetitive manual processes, disconnected systems, and back-office inefficiencies.",
+        "bullets": [
+          "Accounting and finance workflow integration",
+          "Internal tools and dashboards",
+          "Process automation",
+          "Cross-system syncing",
+          "Reduction of manual errors"
+        ]
+      }
+    ],
+    "cta": {
+      "text": "The best-fit clients for me are usually not just at the idea stage. They already have a working process or product, but need stronger systems, better automation, and more reliable operations to scale confidently.",
+      "button": "Need systems that can actually hold up in production? Let's talk."
+    }
+  },
+  "projects": {
+    "label": "Projects",
+    "titleHtml": "Work that <em style=\"font-style:italic\">ships.</em>",
+    "subtitle": "Click any project to view full case study - architecture, challenges, and outcomes.",
+    "cardAriaPrefix": "Open case study:",
+    "timelineFallback": "Timeline not listed",
+    "clientFallback": "Client undisclosed"
+  },
+  "experience": {
+    "proofButton": "View Proof"
+  },
+  "skills": {
+    "label": "Tech Stack",
+    "titleHtml": "Tools of <em style=\"font-style:italic\">the craft.</em>",
+    "subtitle": "A pragmatic, production-tested toolkit - selected for reliability and depth over breadth.",
+    "categories": [
+      { "label": "Languages", "name": "Core Programming" },
+      { "label": "Frontend", "name": "UI & Interfaces" },
+      { "label": "Backend", "name": "Server & APIs" },
+      { "label": "Databases", "name": "Data Storage" },
+      { "label": "DevOps & Infrastructure", "name": "Deployment & Ops" },
+      { "label": "Integrations", "name": "Third-Party & APIs" }
+    ]
+  },
+  "lead": {
+    "label": "Free Resources",
+    "titleHtml": "Download Practical <em style=\"font-style:italic\">Engineering Guides.</em>",
+    "lede": "Choose any guide below, submit your email once, and get instant access.",
+    "emailLabel": "Email",
+    "emailPlaceholder": "you@company.com",
+    "consent": "I agree to receive occasional updates and can unsubscribe anytime.",
+    "selectedResourceNone": "Selected resource: none",
+    "selectedResourcePrefix": "Selected resource:",
+    "defaultButton": "Get selected resource",
+    "messages": {
+      "loadFailed": "Unable to load resources right now. Please refresh and try again.",
+      "configureBrevo": "Set your Brevo form action URL in assets/js/script.js first.",
+      "selectResource": "Please select a resource first.",
+      "emailRequired": "Please enter your email.",
+      "submitting": "Submitting...",
+      "preparingPrefix": "Thanks. Preparing",
+      "downloadSuccess": "Download successful. Check your Downloads folder.",
+      "alertSuccess": "Download successful.",
+      "submitFailed": "Signup or download failed. Please try again."
+    }
+  },
+  "contact": {
+    "label": "Contact",
+    "titleHtml": "Let's build <em style=\"font-style:italic\">something great.</em>",
+    "lede": "Open to remote opportunities and impactful projects worldwide. Whether you're looking to hire or collaborate, I'd love to hear from you.",
+    "rows": [
+      { "label": "Location", "value": "Kigali, Rwanda - Global Remote" },
+      { "label": "Email" },
+      { "label": "Phone / WhatsApp" },
+      { "label": "GitHub" },
+      { "label": "LinkedIn" }
+    ],
+    "whatsappQr": {
+      "label": "WhatsApp QR",
+      "subtitle": "Scan to start a chat instantly",
+      "button": "Open WhatsApp Chat",
+      "unavailable": "QR unavailable. Use the WhatsApp link below."
+    },
+    "form": {
+      "nameLabel": "Full Name",
+      "namePlaceholder": "Your name",
+      "emailLabel": "Email",
+      "emailPlaceholder": "your@email.com",
+      "subjectLabel": "Subject",
+      "subjectPlaceholder": "What's this about?",
+      "messageLabel": "Message",
+      "messagePlaceholder": "Tell me about your project or opportunity...",
+      "submit": "Send message ->",
+      "verifying": "Verifying...",
+      "sending": "Sending...",
+      "messages": {
+        "required": "Please fill in all required fields.",
+        "success": "Message sent successfully.",
+        "failed": "Failed to send message. Please try again later.",
+        "verificationPassed": "Verification passed. Sending your message...",
+        "verificationFailed": "Verification failed. Please try again.",
+        "loadFailed": "Verification failed to load. Please try again."
+      }
+    }
+  },
+  "footer": {
+    "brand": "Patrick Kabanda",
+    "tagline": "Building reliable systems that scale.",
+    "copyPrefix": "©",
+    "copySuffix": "Patrick Kabanda. All rights reserved."
+  },
+  "modal": {
+    "metaLabels": ["Timeline", "Client/Context"],
+    "sectionTitles": ["Challenge", "Solution & Architecture", "Outcome & Impact", "Technologies used"],
+    "linkLabel": "View live / repository ->"
+  }
+}

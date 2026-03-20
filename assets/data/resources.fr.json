@@ -1,0 +1,26 @@
+[
+  {
+    "id": "backend-readiness-checklist",
+    "title": "Checklist de preparation backend",
+    "description": "Guide PDF professionnel avec 20 verifications a fort impact pour la fiabilite, la securite, l'observabilite et la readiness de livraison.",
+    "format": "GUIDE PDF",
+    "file": "/assets/lead-magnets/backend-readiness-checklist.pdf",
+    "buttonLabel": "Obtenir la checklist"
+  },
+  {
+    "id": "api-integration-launch-sheet",
+    "title": "Fiche de lancement d'integration API",
+    "description": "Feuille de travail PDF brandee pour reduire les risques des mises en production d'API de paiement et de comptabilite.",
+    "format": "FICHE PDF",
+    "file": "/assets/lead-magnets/api-integration-launch-sheet.pdf",
+    "buttonLabel": "Obtenir la fiche"
+  },
+  {
+    "id": "tips-and-tricks-how-to",
+    "title": "Guide astuces & bonnes pratiques",
+    "description": "Votre travail original avec une page de couverture brandee, livre comme un PDF unique et soigne.",
+    "format": "RESSOURCE PDF",
+    "file": "/assets/lead-magnets/tips-and-tricks-how-to-branded.pdf",
+    "buttonLabel": "Obtenir le guide"
+  }
+]

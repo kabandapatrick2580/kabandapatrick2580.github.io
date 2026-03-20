@@ -3,38 +3,382 @@
    ========================================================== */
 
 document.addEventListener("DOMContentLoaded", function () {
-
-  /* ==========================================================
-     CONFIG (EDIT THESE)
-     ========================================================== */
-
   const EMAILJS_PUBLIC_KEY = "gmwrLP1CGr8WrlEwT";
-  const SERVICE_ID = "service_ua012yy";
-  const TEMPLATE_ID = "template_18pr9hb";
   const BREVO_LEAD_FORM_URL = "https://33c75bbe.sibforms.com/serve/MUIFALR1jgynagnyxw8t14gS81Nt4h1U4mDbulaQI1wyvjxCWgDBDMDwF5XqH5plYzvcYgfO_En8t84WVmOM8qv9l-uRqJgJKJrXTr5XkNi0OVxtj0ype-mgx-eZpGfUM211bhWjvsnwwdwy556kY0jc5HUzYOyweqgNbOJFc4I_KjVkn88hrmlYueE_39wY0-699WUzHPjcdQOL2A==";
-  const LEAD_RESOURCES_URL = "assets/data/resources.json";
+  const I18N_BASE_URL = "/assets/data/i18n";
+  const LOCALE_STORAGE_KEY = "pk-lang";
+  const DEFAULT_LANGUAGE = "en";
+  const SUPPORTED_LANGUAGES = ["en", "fr"];
 
   if (window.emailjs) {
     emailjs.init(EMAILJS_PUBLIC_KEY);
   }
 
-  /* ==========================================================
-     THEME SYSTEM
-     ========================================================== */
-
   const H = document.documentElement;
   const tBtn = document.getElementById("themeBtn");
   const iSun = document.getElementById("iSun");
   const iMoon = document.getElementById("iMoon");
+  const hamBtn = document.getElementById("hamBtn");
+  const mobNav = document.getElementById("mobNav");
+  const mobNavLinks = Array.from(document.querySelectorAll("#mobNav a"));
+  const langSelect = document.getElementById("langSelect");
+  const yearEl = document.getElementById("year");
 
-  function setTheme(t) {
-    H.setAttribute("data-theme", t);
-    localStorage.setItem("pk-theme", t);
+  const leadForm = document.getElementById("leadForm");
+  const leadStatus = document.getElementById("leadStatus");
+  const leadSubmitBtn = document.getElementById("leadSubmitBtn");
+  const resourceList = document.getElementById("resourceList");
+  const leadResourceId = document.getElementById("leadResourceId");
+  const leadResourceTitle = document.getElementById("leadResourceTitle");
+  const selectedResourceLabel = document.getElementById("selectedResourceLabel");
+  const waQrCanvas = document.getElementById("waQrCanvas");
+  const waQrLink = document.getElementById("waQrLink");
+
+  let localeData = {};
+  let currentLanguage = DEFAULT_LANGUAGE;
+  let leadResources = [];
+  let selectedResource = null;
+
+  function getNestedValue(source, path, fallback) {
+    const value = String(path || "")
+      .split(".")
+      .filter(Boolean)
+      .reduce((acc, part) => {
+        if (acc && Object.prototype.hasOwnProperty.call(acc, part)) {
+          return acc[part];
+        }
+        return undefined;
+      }, source);
+
+    return value === undefined ? fallback : value;
+  }
+
+  function t(path, fallback = "") {
+    return getNestedValue(localeData, path, fallback);
+  }
+
+  window.pkI18n = {
+    getLanguage: () => currentLanguage,
+    get: (path, fallback = "") => getNestedValue(localeData, path, fallback),
+    t,
+    setLanguage
+  };
+
+  function normalizeLanguage(language) {
+    return SUPPORTED_LANGUAGES.includes(language) ? language : DEFAULT_LANGUAGE;
+  }
+
+  function setTheme(theme) {
+    H.setAttribute("data-theme", theme);
+    localStorage.setItem("pk-theme", theme);
 
     if (iSun && iMoon) {
-      iSun.style.display = t === "dark" ? "block" : "none";
-      iMoon.style.display = t === "dark" ? "none" : "block";
+      iSun.style.display = theme === "dark" ? "block" : "none";
+      iMoon.style.display = theme === "dark" ? "none" : "block";
     }
+  }
+
+  function setText(selector, value, root = document) {
+    const el = root.querySelector(selector);
+    if (el && value !== undefined) {
+      el.textContent = value;
+    }
+  }
+
+  function setHTML(selector, value, root = document) {
+    const el = root.querySelector(selector);
+    if (el && value !== undefined) {
+      el.innerHTML = value;
+    }
+  }
+
+  function setPlaceholder(selector, value, root = document) {
+    const el = root.querySelector(selector);
+    if (el && value !== undefined) {
+      el.setAttribute("placeholder", value);
+    }
+  }
+
+  function setAttribute(selector, attribute, value, root = document) {
+    const el = root.querySelector(selector);
+    if (el && value !== undefined) {
+      el.setAttribute(attribute, value);
+    }
+  }
+
+  async function fetchLocale(language) {
+    const response = await fetch(`${I18N_BASE_URL}/${language}.json`);
+
+    if (!response.ok) {
+      throw new Error(`Failed to load locale ${language}`);
+    }
+
+    return response.json();
+  }
+
+  function applyNavTranslations() {
+    const navLinks = t("nav.links", []);
+    const desktopLinks = document.querySelectorAll(".nav-links a");
+    const mobileLinks = document.querySelectorAll("#mobNav a");
+
+    navLinks.forEach((label, index) => {
+      if (desktopLinks[index]) desktopLinks[index].textContent = label;
+      if (mobileLinks[index]) mobileLinks[index].textContent = label;
+    });
+
+    setText(".nav-right .btn-p", t("nav.cta"));
+    setAttribute("#themeBtn", "aria-label", t("nav.themeToggleAria"));
+    setAttribute("#hamBtn", "aria-label", t("nav.mobileToggleAria"));
+    setAttribute("#langSelect", "aria-label", t("nav.languageAria"));
+    setText(".lang-switch-label", t("nav.languageLabel"));
+  }
+
+  function applyHeroTranslations() {
+    setText(".avail-pill-text", t("hero.availability"));
+    setHTML(".hero-name", t("hero.nameHtml"));
+    setHTML(".hero-sub1", t("hero.rolesHtml"));
+    setText(".hero-sub2", t("hero.summary"));
+
+    const heroTags = document.querySelectorAll(".hero-tag");
+    t("hero.tags", []).forEach((label, index) => {
+      if (heroTags[index]) heroTags[index].textContent = label;
+    });
+
+    const heroProof = document.querySelectorAll(".hero-proof .proof-item");
+    t("hero.proof", []).forEach((label, index) => {
+      if (heroProof[index]) heroProof[index].innerHTML = label;
+    });
+
+    setText(".hero-projects-label", t("hero.primaryCta"));
+    setText(".hero-ctas .btn-s", t("hero.secondaryCta"));
+
+    setAttribute(".pc-photo-inner img", "alt", t("hero.portraitAlt"));
+    setText(".pc-avail-badge-text", t("profile.availabilityBadge"));
+    setText(".pc-name", t("profile.name"));
+    setText(".pc-role", t("profile.role"));
+
+    const profileRows = document.querySelectorAll(".pc-row");
+    const profileData = t("profile.rows", []);
+    profileRows.forEach((row, index) => {
+      const item = profileData[index];
+      if (!item) return;
+      setText(".pc-l", item.label, row);
+      setText(".pc-v", item.value, row);
+    });
+
+    setText(".pc-foot-text", t("profile.location"));
+  }
+
+  function applyAboutTranslations() {
+    setText("#about .slabel", t("about.label"));
+    setHTML("#about .stitle", t("about.titleHtml"));
+
+    const aboutParagraphs = document.querySelectorAll("#about .about-body p");
+    t("about.body", []).forEach((copy, index) => {
+      if (aboutParagraphs[index]) aboutParagraphs[index].textContent = copy;
+    });
+
+    const stats = document.querySelectorAll("#about .stat-card");
+    t("about.stats", []).forEach((item, index) => {
+      if (stats[index]) setText(".stat-d", item, stats[index]);
+    });
+
+    setText("#about .vals-block h3", t("about.principlesTitle"));
+    const principleRows = document.querySelectorAll("#about .val-row");
+    t("about.principles", []).forEach((item, index) => {
+      if (!principleRows[index]) return;
+      const textRoot = principleRows[index].querySelector(".val-text");
+      if (!textRoot) return;
+      setText("strong", item.title, textRoot);
+      setText("span", item.text, textRoot);
+    });
+  }
+
+  function applyServicesTranslations() {
+    setText("#services .slabel", t("services.label"));
+    setHTML("#services .stitle", t("services.titleHtml"));
+    setText("#services .ssub", t("services.subtitle"));
+    setText("#services .svc-intro", t("services.intro"));
+
+    const cards = document.querySelectorAll("#services .svc-card");
+    t("services.cards", []).forEach((item, index) => {
+      const card = cards[index];
+      if (!card) return;
+      setText(".svc-title", item.title, card);
+      setText(".svc-desc", item.description, card);
+      const bullets = card.querySelectorAll(".svc-list li");
+      (item.bullets || []).forEach((bullet, bulletIndex) => {
+        if (bullets[bulletIndex]) bullets[bulletIndex].textContent = bullet;
+      });
+    });
+
+    setText("#services .svc-close", t("services.cta.text"));
+    setText("#services .svc-cta .btn-p", t("services.cta.button"));
+  }
+
+  function applyIdealClientTranslations() {
+    setText("#ideal-clients .slabel", t("idealClients.label"));
+    setHTML("#ideal-clients .stitle", t("idealClients.titleHtml"));
+    setText("#ideal-clients .ssub", t("idealClients.subtitle"));
+    setText("#ideal-clients .ideal-intro", t("idealClients.intro"));
+
+    const cards = document.querySelectorAll("#ideal-clients .ideal-card");
+    t("idealClients.cards", []).forEach((item, index) => {
+      const card = cards[index];
+      if (!card) return;
+      setText(".ideal-title", item.title, card);
+      setText(".ideal-desc", item.description, card);
+      const bullets = card.querySelectorAll(".ideal-list li");
+      (item.bullets || []).forEach((bullet, bulletIndex) => {
+        if (bullets[bulletIndex]) bullets[bulletIndex].textContent = bullet;
+      });
+    });
+
+    setText("#ideal-clients .ideal-close", t("idealClients.cta.text"));
+    setText("#ideal-clients .ideal-cta .btn-p", t("idealClients.cta.button"));
+  }
+
+  function applyProjectSectionTranslations() {
+    setText("#projects .slabel", t("projects.label"));
+    setHTML("#projects .stitle", t("projects.titleHtml"));
+    setText("#projects .ssub", t("projects.subtitle"));
+  }
+
+  function applySkillsTranslations() {
+    setText("#skills .slabel", t("skills.label"));
+    setHTML("#skills .stitle", t("skills.titleHtml"));
+    setText("#skills .ssub", t("skills.subtitle"));
+
+    const categories = document.querySelectorAll("#skills .sk-cat");
+    t("skills.categories", []).forEach((item, index) => {
+      const category = categories[index];
+      if (!category) return;
+      setText(".sk-cat-lbl", item.label, category);
+      setText(".sk-cat-name", item.name, category);
+    });
+  }
+
+  function applyLeadMagnetTranslations() {
+    setText("#lead-magnet .slabel", t("lead.label"));
+    setHTML("#lead-magnet .stitle", t("lead.titleHtml"));
+    setText("#lead-magnet .lead-lede", t("lead.lede"));
+    setText('label[for="leadEmail"]', t("lead.emailLabel"));
+    setPlaceholder("#leadEmail", t("lead.emailPlaceholder"));
+    setText(".lead-consent-text", t("lead.consent"));
+    setText("#selectedResourceLabel", t("lead.selectedResourceNone"));
+    if (leadSubmitBtn && !leadSubmitBtn.disabled) {
+      leadSubmitBtn.textContent = `${t("lead.defaultButton")} ->`;
+    }
+  }
+
+  function applyContactTranslations() {
+    setText("#contact .slabel", t("contact.label"));
+    setHTML("#contact .stitle", t("contact.titleHtml"));
+    setText("#contact .ct-lede", t("contact.lede"));
+
+    const contactRows = document.querySelectorAll("#contact .ct-row");
+    const rows = t("contact.rows", []);
+    contactRows.forEach((row, index) => {
+      const item = rows[index];
+      if (!item) return;
+      setText("small", item.label, row);
+      if (row.querySelector("span")) setText("span", item.value, row);
+    });
+
+    setText("#contact .wa-qr-head small", t("contact.whatsappQr.label"));
+    setText("#contact .wa-qr-head span", t("contact.whatsappQr.subtitle"));
+    setText("#waQrLink", t("contact.whatsappQr.button"));
+
+    setText('label[for="fn"]', t("contact.form.nameLabel"));
+    setPlaceholder("#fn", t("contact.form.namePlaceholder"));
+    setText('label[for="fe"]', t("contact.form.emailLabel"));
+    setPlaceholder("#fe", t("contact.form.emailPlaceholder"));
+    setText('label[for="fs"]', t("contact.form.subjectLabel"));
+    setPlaceholder("#fs", t("contact.form.subjectPlaceholder"));
+    setText('label[for="fm"]', t("contact.form.messageLabel"));
+    setPlaceholder("#fm", t("contact.form.messagePlaceholder"));
+  }
+
+  function applyFooterTranslations() {
+    setText(".ft-brand", t("footer.brand"));
+    setText(".ft-tagline", t("footer.tagline"));
+
+    const year = new Date().getFullYear();
+    const footerCopy = document.querySelector(".ft-copy");
+    if (footerCopy) {
+      footerCopy.innerHTML = `${t("footer.copyPrefix")} <span id="year">${year}</span> ${t("footer.copySuffix")}`;
+    }
+  }
+
+  function applyModalTranslations() {
+    const metaLabels = document.querySelectorAll(".modal-meta .meta-label");
+    const metaLabelText = t("modal.metaLabels", []);
+    metaLabels.forEach((label, index) => {
+      if (metaLabelText[index]) label.textContent = metaLabelText[index];
+    });
+
+    const sectionTitles = document.querySelectorAll(".modal-section h4");
+    t("modal.sectionTitles", []).forEach((label, index) => {
+      if (sectionTitles[index]) sectionTitles[index].textContent = label;
+    });
+
+    setText("#modalLink", t("modal.linkLabel"));
+  }
+
+  function applyDocumentTranslations() {
+    document.title = t("meta.title", document.title);
+    H.setAttribute("lang", currentLanguage);
+
+    applyNavTranslations();
+    applyHeroTranslations();
+    applyAboutTranslations();
+    applyServicesTranslations();
+    applyIdealClientTranslations();
+    applyProjectSectionTranslations();
+    applySkillsTranslations();
+    applyLeadMagnetTranslations();
+    applyContactTranslations();
+    applyFooterTranslations();
+    applyModalTranslations();
+  }
+
+  function syncLanguageControl() {
+    if (langSelect) {
+      langSelect.value = currentLanguage;
+    }
+  }
+
+  async function setLanguage(language, options = {}) {
+    const normalizedLanguage = normalizeLanguage(language);
+    const shouldPersist = options.persist !== false;
+
+    localeData = await fetchLocale(normalizedLanguage);
+    currentLanguage = normalizedLanguage;
+
+    if (shouldPersist) {
+      localStorage.setItem(LOCALE_STORAGE_KEY, currentLanguage);
+    }
+
+    syncLanguageControl();
+    applyDocumentTranslations();
+    await initLeadResources();
+
+    document.dispatchEvent(new CustomEvent("pk:languagechange", {
+      detail: {
+        language: currentLanguage,
+        translations: localeData
+      }
+    }));
+  }
+
+  function getInitialLanguage() {
+    const storedLanguage = localStorage.getItem(LOCALE_STORAGE_KEY);
+    if (SUPPORTED_LANGUAGES.includes(storedLanguage)) {
+      return storedLanguage;
+    }
+
+    const browserLanguage = normalizeLanguage((navigator.language || DEFAULT_LANGUAGE).slice(0, 2));
+    return browserLanguage || DEFAULT_LANGUAGE;
   }
 
   setTheme(localStorage.getItem("pk-theme") || "light");
@@ -44,19 +388,11 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   window.matchMedia("(prefers-color-scheme:dark)")
-    .addEventListener("change", e => {
+    .addEventListener("change", event => {
       if (!localStorage.getItem("pk-theme")) {
-        setTheme(e.matches ? "dark" : "light");
+        setTheme(event.matches ? "dark" : "light");
       }
     });
-
-  /* ==========================================================
-     MOBILE NAV
-     ========================================================== */
-
-  const hamBtn = document.getElementById("hamBtn");
-  const mobNav = document.getElementById("mobNav");
-  const mobNavLinks = Array.from(document.querySelectorAll("#mobNav a"));
 
   hamBtn?.addEventListener("click", () => {
     mobNav.classList.toggle("open");
@@ -75,33 +411,17 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  document.addEventListener("click", e => {
-    if (
-      hamBtn &&
-      mobNav &&
-      !hamBtn.contains(e.target) &&
-      !mobNav.contains(e.target)
-    ) {
+  document.addEventListener("click", event => {
+    if (hamBtn && mobNav && !hamBtn.contains(event.target) && !mobNav.contains(event.target)) {
       closeMob();
     }
   });
 
-  const yearEl = document.getElementById("year");
-  if (yearEl) yearEl.textContent = new Date().getFullYear();
-
-  /* ==========================================================
-     LEAD MAGNET FORM
-     ========================================================== */
-
-  const leadForm = document.getElementById("leadForm");
-  const leadStatus = document.getElementById("leadStatus");
-  const leadSubmitBtn = document.getElementById("leadSubmitBtn");
-  const resourceList = document.getElementById("resourceList");
-  const leadResourceId = document.getElementById("leadResourceId");
-  const leadResourceTitle = document.getElementById("leadResourceTitle");
-  const selectedResourceLabel = document.getElementById("selectedResourceLabel");
-  let leadResources = [];
-  let selectedResource = null;
+  langSelect?.addEventListener("change", event => {
+    setLanguage(event.target.value).catch(error => {
+      console.error("Language switch failed:", error);
+    });
+  });
 
   function setLeadStatus(message, isError = false) {
     if (!leadStatus) return;
@@ -129,6 +449,14 @@ document.addEventListener("DOMContentLoaded", function () {
     setTimeout(() => URL.revokeObjectURL(blobUrl), 1000);
   }
 
+  function updateLeadButtonLabel() {
+    if (!leadSubmitBtn) return;
+    if (leadSubmitBtn.disabled) return;
+
+    const label = selectedResource?.buttonLabel || t("lead.defaultButton", "Get selected resource ->");
+    leadSubmitBtn.textContent = `${label} ->`;
+  }
+
   function applySelectedResource(resourceId) {
     selectedResource = leadResources.find(resource => resource.id === resourceId) || null;
 
@@ -137,11 +465,10 @@ document.addEventListener("DOMContentLoaded", function () {
     if (leadResourceId) leadResourceId.value = selectedResource.id;
     if (leadResourceTitle) leadResourceTitle.value = selectedResource.title;
     if (selectedResourceLabel) {
-      selectedResourceLabel.textContent = `Selected resource: ${selectedResource.title}`;
+      selectedResourceLabel.textContent = `${t("lead.selectedResourcePrefix", "Selected resource:")} ${selectedResource.title}`;
     }
-    if (leadSubmitBtn) {
-      leadSubmitBtn.textContent = `${selectedResource.buttonLabel || "Get resource"} →`;
-    }
+
+    updateLeadButtonLabel();
 
     resourceList?.querySelectorAll(".resource-card").forEach(card => {
       card.classList.toggle("is-active", card.getAttribute("data-resource-id") === selectedResource.id);
@@ -172,54 +499,57 @@ document.addEventListener("DOMContentLoaded", function () {
       resourceList.appendChild(card);
     });
 
-    applySelectedResource(resources[0].id);
+    if (resources[0]) {
+      applySelectedResource(resources[0].id);
+    }
   }
 
   async function initLeadResources() {
     if (!resourceList) return;
 
     try {
-      const response = await fetch(LEAD_RESOURCES_URL);
+      const response = await fetch(`/assets/data/resources.${currentLanguage}.json`);
       if (!response.ok) throw new Error("Failed to load resources.");
 
       const data = await response.json();
-      leadResources = Array.isArray(data) ? data.filter(item => item?.id && item?.title && item?.file) : [];
+      leadResources = Array.isArray(data)
+        ? data.filter(item => item && item.id && item.title && item.file)
+        : [];
 
       if (!leadResources.length) throw new Error("No valid resources found.");
 
       renderLeadResources(leadResources);
+      setLeadStatus("");
     } catch (error) {
       console.error("Lead resources load error:", error);
-      setLeadStatus("Unable to load resources right now. Please refresh and try again.", true);
+      setLeadStatus(t("lead.messages.loadFailed"), true);
     }
   }
 
-  initLeadResources();
-
   if (leadForm) {
-    leadForm.addEventListener("submit", async (event) => {
+    leadForm.addEventListener("submit", async event => {
       event.preventDefault();
 
       if (BREVO_LEAD_FORM_URL.includes("PASTE_YOUR_BREVO_FORM_ACTION_URL_HERE")) {
-        setLeadStatus("Set your Brevo form action URL in assets/js/script.js first.", true);
+        setLeadStatus(t("lead.messages.configureBrevo"), true);
         return;
       }
 
       if (!selectedResource) {
-        setLeadStatus("Please select a resource first.", true);
+        setLeadStatus(t("lead.messages.selectResource"), true);
         return;
       }
 
       const formData = new FormData(leadForm);
 
       if (!formData.get("EMAIL")) {
-        setLeadStatus("Please enter your email.", true);
+        setLeadStatus(t("lead.messages.emailRequired"), true);
         return;
       }
 
       if (leadSubmitBtn) {
         leadSubmitBtn.disabled = true;
-        leadSubmitBtn.textContent = "Submitting...";
+        leadSubmitBtn.textContent = t("lead.messages.submitting");
       }
 
       try {
@@ -229,30 +559,23 @@ document.addEventListener("DOMContentLoaded", function () {
           body: formData
         });
 
-        setLeadStatus(`Thanks. Preparing ${selectedResource.title} for download...`);
+        setLeadStatus(`${t("lead.messages.preparingPrefix")} ${selectedResource.title}...`);
         leadForm.reset();
         applySelectedResource(selectedResource.id);
         await downloadSelectedResource(selectedResource);
-        setLeadStatus("Download successful. Check your Downloads folder.");
-        window.alert("Download successful.");
+        setLeadStatus(t("lead.messages.downloadSuccess"));
+        window.alert(t("lead.messages.alertSuccess"));
       } catch (error) {
         console.error("Brevo lead form error:", error);
-        setLeadStatus("Signup or download failed. Please try again.", true);
+        setLeadStatus(t("lead.messages.submitFailed"), true);
       } finally {
         if (leadSubmitBtn) {
           leadSubmitBtn.disabled = false;
-          leadSubmitBtn.textContent = `${selectedResource?.buttonLabel || "Get selected resource"} →`;
+          updateLeadButtonLabel();
         }
       }
     });
   }
-
-  /* ==========================================================
-     WHATSAPP QR
-     ========================================================== */
-
-  const waQrCanvas = document.getElementById("waQrCanvas");
-  const waQrLink = document.getElementById("waQrLink");
 
   if (waQrCanvas) {
     const waUrl = waQrCanvas.getAttribute("data-wa-url") || "https://wa.me/250780840983";
@@ -272,29 +595,24 @@ document.addEventListener("DOMContentLoaded", function () {
         correctLevel: QRCode.CorrectLevel.M
       });
     } else {
-      waQrCanvas.innerHTML = "<p>QR unavailable. Use the WhatsApp link below.</p>";
+      waQrCanvas.innerHTML = `<p>${t("contact.whatsappQr.unavailable")}</p>`;
     }
   }
-
-  /* ==========================================================
-     SCROLL REVEAL
-     ========================================================== */
 
   const srEls = Array.from(document.querySelectorAll(".sr"));
 
   if ("IntersectionObserver" in window && srEls.length) {
-
     const parentMap = new Map();
     srEls.forEach(el => {
-      let p = el.parentElement;
-      if (!parentMap.has(p)) parentMap.set(p, []);
-      parentMap.get(p).push(el);
+      const parent = el.parentElement;
+      if (!parentMap.has(parent)) parentMap.set(parent, []);
+      parentMap.get(parent).push(el);
     });
 
     srEls.forEach(el => {
-      let siblings = parentMap.get(el.parentElement);
-      let idx = siblings.indexOf(el);
-      el.style.animationDelay = idx * 0.08 + "s";
+      const siblings = parentMap.get(el.parentElement) || [];
+      const idx = siblings.indexOf(el);
+      el.style.animationDelay = `${idx * 0.08}s`;
     });
 
     const observer = new IntersectionObserver(entries => {
@@ -309,123 +627,29 @@ document.addEventListener("DOMContentLoaded", function () {
     srEls.forEach(el => observer.observe(el));
   }
 
-  /* ==========================================================
-     ACTIVE NAV
-     ========================================================== */
-
   const navAs = Array.from(document.querySelectorAll(".nav-links a"));
   const sections = Array.from(document.querySelectorAll("section[id]"));
 
   if ("IntersectionObserver" in window && sections.length) {
-    const obs = new IntersectionObserver(entries => {
+    const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          let id = entry.target.id;
-          navAs.forEach(a => {
-            a.classList.toggle("act", a.getAttribute("href") === "#" + id);
+          const id = entry.target.id;
+          navAs.forEach(anchor => {
+            anchor.classList.toggle("act", anchor.getAttribute("href") === `#${id}`);
           });
         }
       });
     }, { threshold: 0.35 });
 
-    sections.forEach(s => obs.observe(s));
+    sections.forEach(section => observer.observe(section));
   }
 
-  /* ==========================================================
-   CASE STUDIES — LOAD FROM JSON
-   ========================================================== */
-
-let caseStudies = [];
-
-async function loadCaseStudies() {
-  try {
-    const response = await fetch("assets/data/case-studies.json");
-
-    if (!response.ok) {
-      throw new Error("Failed to load case studies");
-    }
-
-    caseStudies = await response.json();
-
-    initProjectCards();
-
-  } catch (err) {
-    console.error("Case studies load error:", err);
-  }
-}
-
-
-   
-/* ==========================================================
-   MODAL SYSTEM
-   ========================================================== */
-
-const modalOverlay = document.getElementById("projectModal");
-const closeBtn = document.getElementById("closeModalBtn");
-
-function openModal(index) {
-  const cs = caseStudies[index];
-  if (!cs) return;
-
-  document.getElementById("modalRole").textContent = cs.role;
-  document.getElementById("modalTitle").textContent = cs.title;
-  document.getElementById("modalTimeline").textContent = cs.timeline;
-  document.getElementById("modalClient").textContent = cs.client;
-  document.getElementById("modalChallenge").textContent = cs.challenge;
-  document.getElementById("modalSolution").textContent = cs.solution;
-  document.getElementById("modalOutcome").textContent = cs.outcome;
-
-  const techContainer = document.getElementById("modalTech");
-  techContainer.innerHTML = "";
-
-  cs.tech.forEach(t => {
-    const span = document.createElement("span");
-    span.textContent = t;
-    techContainer.appendChild(span);
+  setLanguage(getInitialLanguage(), { persist: false }).catch(error => {
+    console.error("Initial language load failed:", error);
   });
 
-  document.getElementById("modalLink").href = cs.link;
-
-  modalOverlay.classList.add("show");
-  document.body.style.overflow = "hidden";
-}
-
-function closeModal() {
-  modalOverlay.classList.remove("show");
-  document.body.style.overflow = "";
-}
-
-closeBtn?.addEventListener("click", closeModal);
-
-modalOverlay?.addEventListener("click", (e) => {
-  if (e.target === modalOverlay) closeModal();
-});
-
-document.addEventListener("keydown", (e) => {
-  if (e.key === "Escape" && modalOverlay?.classList.contains("show")) {
-    closeModal();
+  if (yearEl) {
+    yearEl.textContent = new Date().getFullYear();
   }
-});
-
-/* ==========================================================
-   PROJECT CARD LISTENERS
-   ========================================================== */
-
-function initProjectCards() {
-  const projectCards = document.querySelectorAll(".proj-card[data-project]");
-
-  projectCards.forEach(card => {
-    card.addEventListener("click", () => {
-      const idx = card.getAttribute("data-project");
-      if (idx !== null) openModal(Number(idx));
-    });
-  });
-}
-
-/* ==========================================================
-   START LOADING DATA
-   ========================================================== */
-
-loadCaseStudies();
-
 });

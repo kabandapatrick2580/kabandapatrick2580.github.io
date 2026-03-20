@@ -1,0 +1,313 @@
+{
+  "meta": {
+    "title": "Patrick Kabanda - portfolio + etudes de cas"
+  },
+  "nav": {
+    "links": ["Accueil", "A propos", "Services", "Projets", "Experience", "Contact"],
+    "cta": "Me recruter",
+    "themeToggleAria": "Changer le theme",
+    "mobileToggleAria": "Ouvrir le menu mobile",
+    "languageAria": "Choisir la langue",
+    "languageLabel": "Langue"
+  },
+  "hero": {
+    "availability": "Disponible pour de nouvelles opportunites",
+    "nameHtml": "Patrick<br><em style=\"font-style:italic; color:var(--accent)\">Kabanda</em>",
+    "rolesHtml": "Ingenieur logiciel<span class=\"dot\">•</span>Concepteur de systemes<span class=\"dot\">•</span>Architecte de solutions",
+    "summary": "J'aide les entreprises fintech, SaaS et a forte intensite operationnelle a construire des systemes backend fiables qui integrent les paiements, la comptabilite et les flux internes afin de reduire le travail manuel, eviter les erreurs couteuses et monter en charge avec confiance.",
+    "tags": [
+      "Ingenierie de systemes orientee backend",
+      "Integrations d'API et automatisation",
+      "Applications full-stack pretes pour la production",
+      "Pret pour la collaboration a distance"
+    ],
+    "proof": [
+      "<strong>9+</strong> Systemes en production",
+      "<strong>99.9%</strong> de disponibilite livree",
+      "<strong>50k+</strong> transactions traitees"
+    ],
+    "primaryCta": "Voir les projets",
+    "secondaryCta": "Me contacter",
+    "portraitAlt": "Portrait de Patrick Kabanda"
+  },
+  "profile": {
+    "availabilityBadge": "Disponible",
+    "name": "Patrick Kabanda",
+    "role": "Ingenieur logiciel & concepteur de systemes",
+    "rows": [
+      { "label": "Experience", "value": "3+ ans" },
+      { "label": "Leadership", "value": "CTO, Netpipo Ltd" },
+      { "label": "Projets livres", "value": "9+ systemes en production" },
+      { "label": "Specialisation", "value": "Systemes & integration" },
+      { "label": "Disponibilite", "value": "Ouvert au travail a distance" }
+    ],
+    "location": "Kigali, Rwanda - Remote mondial"
+  },
+  "about": {
+    "label": "A propos",
+    "titleHtml": "Concevoir des systemes<br><em style=\"font-style:italic\">faits pour durer.</em>",
+    "body": [
+      "Je suis un ingenieur logiciel avec une vision systemique, quelqu'un qui reflechit soigneusement a l'architecture avant d'ecrire une seule ligne de code. Mon travail se situe a l'intersection du backend, de l'infrastructure et des operations metier.",
+      "Ayant servi comme CTO chez Netpipo Ltd, je comprends ce que signifie prendre des decisions techniques a fort enjeu qui impactent de vrais utilisateurs. J'ai construit des systemes de production de bout en bout, du schema de base de donnees aux pipelines de deploiement, et je tiens a livrer des logiciels fiables, maintenables et securises.",
+      "Mon experience couvre le developpement backend, les integrations d'API avec des systemes financiers (UrubutoPay, QuickBooks, IremboPay), l'automatisation des processus et le DevOps. Que je travaille seul ou avec des equipes distribuees, j'apporte rigueur et clarte a chaque mission.",
+      "Base a Kigali au Rwanda, je suis entierement equipe pour la collaboration a distance et je recherche activement des projets globaux a fort impact ainsi que des roles remote de long terme."
+    ],
+    "stats": [
+      "Annees d'ingenierie professionnelle",
+      "Systemes de production livres",
+      "Secteurs - tech & comptabilite",
+      "Role de CTO pilotant produit & ingenierie"
+    ],
+    "principlesTitle": "Principes cles",
+    "principles": [
+      {
+        "title": "La fiabilite avant la vitesse",
+        "text": "Une pensee architecture-first - des systemes qui ne cassent pas a 2h du matin."
+      },
+      {
+        "title": "Maitrise des integrations",
+        "text": "Les passerelles de paiement, API comptables et services tiers sont un terrain familier."
+      },
+      {
+        "title": "Vision globale",
+        "text": "Collaboration sur plusieurs fuseaux horaires avec une communication claire et orientee asynchrone."
+      }
+    ]
+  },
+  "services": {
+    "label": "Services",
+    "titleHtml": "Des systemes backend qui gardent<br><em style=\"font-style:italic\">les operations en mouvement.</em>",
+    "subtitle": "Je construis et j'ameliore les systemes backend qui font tourner les paiements, les operations et les flux internes de maniere fiable.",
+    "intro": "Je travaille avec des entreprises fintech, edtech, SaaS et a forte intensite operationnelle qui ont besoin de plus que de belles interfaces. Mes services sont concus pour les equipes qui ont besoin de systemes fiables, d'integrations plus propres, de moins de travail manuel et de bases operationnelles plus solides.",
+    "cards": [
+      {
+        "title": "Integrations paiements & comptabilite",
+        "description": "Integrez des passerelles de paiement, des systemes de facturation et des plateformes comptables dans des flux financiers fiables qui reduisent le rapprochement manuel, evitent les doublons et ameliorent la precision.",
+        "bullets": [
+          "Integration de passerelles de paiement",
+          "Integration QuickBooks ou systeme comptable",
+          "Mise en place des flux facture/paiement",
+          "Gestion des webhooks",
+          "Support au rapprochement",
+          "Prevention des doublons et fiabilite de synchronisation"
+        ]
+      },
+      {
+        "title": "Automatisation des flux & outils internes",
+        "description": "Transformez des operations repetitives et sujettes aux erreurs en workflows fluides grace a des tableaux de bord, des outils internes et des logiques d'automatisation sur mesure.",
+        "bullets": [
+          "Tableaux de bord admin",
+          "Outils metier internes",
+          "Workflows d'approbation/processus",
+          "Automatisation inter-systemes",
+          "Automatisation des taches et des flux de donnees",
+          "Reduction du travail manuel"
+        ]
+      },
+      {
+        "title": "Developpement de systemes backend",
+        "description": "Construisez des systemes backend securises et evolutifs qui soutiennent les processus metier, les operations internes et les plateformes pilotees par la donnee.",
+        "bullets": [
+          "Applications backend sur mesure",
+          "API securisees",
+          "Systemes a gestion de roles",
+          "Implementation de logique metier",
+          "Plateformes adossees a une base de donnees",
+          "Conception de systemes operationnels"
+        ]
+      },
+      {
+        "title": "Integrations d'API & connectivite systeme",
+        "description": "Connectez des services tiers et des plateformes internes via des integrations fiables qui ameliorent le flux de donnees, la synchronisation et l'efficacite operationnelle.",
+        "bullets": [
+          "Integrations d'API tierces",
+          "Developpement d'API REST",
+          "Synchronisation plateforme a plateforme",
+          "Connexion a des services externes",
+          "Pipelines d'echange de donnees",
+          "Resolution des problemes d'integration"
+        ]
+      },
+      {
+        "title": "Infrastructure & durcissement production",
+        "description": "Aidez vos systemes a passer du developpement a des environnements stables, prets pour la production, avec un meilleur deploiement, une meilleure configuration et plus de fiabilite.",
+        "bullets": [
+          "Dockerisation",
+          "Configuration Nginx/serveur",
+          "Mise en place de deploiement Linux",
+          "Environnements de recette et de production",
+          "Ameliorations de stabilite et de performance",
+          "Support de preparation a la production"
+        ]
+      },
+      {
+        "title": "Amelioration & stabilisation de systemes",
+        "description": "Renforcez des systemes fragiles ou vieillissants en corrigeant les bugs, en nettoyant l'architecture, en augmentant la fiabilite et en les preparant a la croissance.",
+        "bullets": [
+          "Correction de bugs backend",
+          "Ameliorations de systemes legacy",
+          "Stabilisation des workflows",
+          "Resolution des problemes d'integration",
+          "Ameliorations de performance",
+          "Ameliorations de maintenabilite"
+        ]
+      }
+    ],
+    "cta": {
+      "text": "Les projets les plus adaptes a mon profil ne consistent pas seulement a ajouter des fonctionnalites, mais a rendre des systemes critiques plus fiables, plus efficaces et mieux prepares a grandir.",
+      "button": "Besoin d'un systeme backend fiable en production ? Parlons-en."
+    }
+  },
+  "idealClients": {
+    "label": "Clients ideaux",
+    "titleHtml": "Des systemes backend fiables,<br><em style=\"font-style:italic\">pour les equipes qui en ont besoin.</em>",
+    "subtitle": "Je travaille le mieux avec des entreprises qui ont besoin de systemes backend fiables, pas seulement de belles interfaces.",
+    "intro": "Mes clients ideaux sont des entreprises fintech, edtech, SaaS et a forte intensite operationnelle avec des workflows complexes, surtout celles qui gerent des paiements, de la comptabilite, des systemes internes, du rapprochement ou des processus manuels qui doivent etre automatises de maniere fiable.",
+    "cards": [
+      {
+        "title": "Startups fintech",
+        "description": "Ideal pour les produits et entreprises ou les mouvements d'argent, la precision transactionnelle et la fiabilite systeme sont critiques.",
+        "bullets": [
+          "Integrations de passerelles de paiement",
+          "Gestion des webhooks et traitement d'evenements",
+          "Workflows de rapprochement",
+          "Prevention des doublons et coherence des donnees",
+          "Operations backend securisees"
+        ]
+      },
+      {
+        "title": "Plateformes edtech",
+        "description": "Un excellent choix pour les entreprises et plateformes educatives qui gerent les parcours etudiants, les paiements et les workflows administratifs.",
+        "bullets": [
+          "Systemes d'inscription et d'admission",
+          "Flux de paiement des frais etudiants",
+          "Generation de certificats et documents",
+          "Tableaux de bord admin internes",
+          "Reporting et automatisation des workflows"
+        ]
+      },
+      {
+        "title": "Entreprises SaaS",
+        "description": "Ideal pour les produits SaaS qui ont besoin de profondeur backend, d'integrations et de systemes operationnels stables au-dela de la simple interface.",
+        "bullets": [
+          "Integrations d'API",
+          "Tableaux de bord admin",
+          "Automatisation des workflows",
+          "Architecture backend prete pour la production",
+          "Fiabilite infrastructure et deploiement"
+        ]
+      },
+      {
+        "title": "Entreprises a operations intensives",
+        "description": "Parfait pour les entreprises en croissance avec des processus manuels repetitifs, des systemes deconnectes et des inefficacites de back-office.",
+        "bullets": [
+          "Integration des workflows finance/comptabilite",
+          "Outils internes et tableaux de bord",
+          "Automatisation des processus",
+          "Synchronisation inter-systemes",
+          "Reduction des erreurs manuelles"
+        ]
+      }
+    ],
+    "cta": {
+      "text": "Les clients qui me correspondent le mieux ne sont generalement pas seulement au stade de l'idee. Ils ont deja un processus ou un produit fonctionnel, mais ont besoin de systemes plus solides, d'une meilleure automatisation et d'operations plus fiables pour monter en charge sereinement.",
+      "button": "Besoin de systemes qui tiennent vraiment en production ? Parlons-en."
+    }
+  },
+  "projects": {
+    "label": "Projets",
+    "titleHtml": "Du travail qui <em style=\"font-style:italic\">est livre.</em>",
+    "subtitle": "Cliquez sur un projet pour voir l'etude de cas complete - architecture, defis et resultats.",
+    "cardAriaPrefix": "Ouvrir l'etude de cas :",
+    "timelineFallback": "Calendrier non renseigne",
+    "clientFallback": "Client non divulgue"
+  },
+  "experience": {
+    "proofButton": "Voir la preuve"
+  },
+  "skills": {
+    "label": "Stack technique",
+    "titleHtml": "Les outils <em style=\"font-style:italic\">du metier.</em>",
+    "subtitle": "Une boite a outils pragmatique, eprouvee en production - choisie pour sa fiabilite et sa profondeur plutot que pour sa largeur.",
+    "categories": [
+      { "label": "Langages", "name": "Programmation coeur" },
+      { "label": "Frontend", "name": "UI & interfaces" },
+      { "label": "Backend", "name": "Serveur & API" },
+      { "label": "Bases de donnees", "name": "Stockage" },
+      { "label": "DevOps & infrastructure", "name": "Deploiement & operations" },
+      { "label": "Integrations", "name": "Tiers & API" }
+    ]
+  },
+  "lead": {
+    "label": "Ressources gratuites",
+    "titleHtml": "Telechargez des <em style=\"font-style:italic\">guides d'ingenierie pratiques.</em>",
+    "lede": "Choisissez un guide ci-dessous, soumettez votre email une seule fois et obtenez un acces instantane.",
+    "emailLabel": "Email",
+    "emailPlaceholder": "vous@entreprise.com",
+    "consent": "J'accepte de recevoir des mises a jour occasionnelles et je peux me desabonner a tout moment.",
+    "selectedResourceNone": "Ressource selectionnee : aucune",
+    "selectedResourcePrefix": "Ressource selectionnee :",
+    "defaultButton": "Obtenir la ressource selectionnee",
+    "messages": {
+      "loadFailed": "Impossible de charger les ressources pour le moment. Actualisez la page et reessayez.",
+      "configureBrevo": "Configurez d'abord l'URL d'action Brevo dans assets/js/script.js.",
+      "selectResource": "Veuillez d'abord selectionner une ressource.",
+      "emailRequired": "Veuillez saisir votre email.",
+      "submitting": "Envoi en cours...",
+      "preparingPrefix": "Merci. Preparation de",
+      "downloadSuccess": "Telechargement reussi. Verifiez votre dossier Telechargements.",
+      "alertSuccess": "Telechargement reussi.",
+      "submitFailed": "L'inscription ou le telechargement a echoue. Veuillez reessayer."
+    }
+  },
+  "contact": {
+    "label": "Contact",
+    "titleHtml": "Construisons <em style=\"font-style:italic\">quelque chose de grand.</em>",
+    "lede": "Ouvert aux opportunites remote et aux projets a fort impact dans le monde entier. Que vous cherchiez a recruter ou a collaborer, je serais ravi d'echanger avec vous.",
+    "rows": [
+      { "label": "Localisation", "value": "Kigali, Rwanda - Remote mondial" },
+      { "label": "Email" },
+      { "label": "Telephone / WhatsApp" },
+      { "label": "GitHub" },
+      { "label": "LinkedIn" }
+    ],
+    "whatsappQr": {
+      "label": "QR WhatsApp",
+      "subtitle": "Scannez pour commencer une discussion instantanement",
+      "button": "Ouvrir la discussion WhatsApp",
+      "unavailable": "QR indisponible. Utilisez le lien WhatsApp ci-dessous."
+    },
+    "form": {
+      "nameLabel": "Nom complet",
+      "namePlaceholder": "Votre nom",
+      "emailLabel": "Email",
+      "emailPlaceholder": "votre@email.com",
+      "subjectLabel": "Sujet",
+      "subjectPlaceholder": "De quoi s'agit-il ?",
+      "messageLabel": "Message",
+      "messagePlaceholder": "Parlez-moi de votre projet ou de votre opportunite...",
+      "submit": "Envoyer le message ->",
+      "verifying": "Verification...",
+      "sending": "Envoi...",
+      "messages": {
+        "required": "Veuillez remplir tous les champs obligatoires.",
+        "success": "Message envoye avec succes.",
+        "failed": "Echec de l'envoi du message. Veuillez reessayer plus tard.",
+        "verificationPassed": "Verification reussie. Envoi de votre message...",
+        "verificationFailed": "La verification a echoue. Veuillez reessayer.",
+        "loadFailed": "Le chargement de la verification a echoue. Veuillez reessayer."
+      }
+    }
+  },
+  "footer": {
+    "brand": "Patrick Kabanda",
+    "tagline": "Construire des systemes fiables qui montent en charge.",
+    "copyPrefix": "©",
+    "copySuffix": "Patrick Kabanda. Tous droits reserves."
+  },
+  "modal": {
+    "metaLabels": ["Calendrier", "Client/Contexte"],
+    "sectionTitles": ["Defi", "Solution & architecture", "Resultat & impact", "Technologies utilisees"],
+    "linkLabel": "Voir la version live / le depot ->"
+  }
+}

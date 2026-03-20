@@ -1,0 +1,101 @@
+[
+  {
+    "role": "Lead Engineer",
+    "title": "Integrations API QuickBooks Online",
+    "timeline": "4 mois (2024)",
+    "client": "Organisation soucieuse de la confidentialite",
+    "challenge": "Le client devait synchroniser automatiquement les paiements, factures et articles de son MIS etudiant avec QuickBooks. Le rapprochement manuel etait source d'erreurs et consommait plus de 15 heures par semaine.",
+    "solution": "Conception de pipelines orientes evenements avec webhooks et workers idempotents. Construction d'un moteur de rapprochement qui signale les ecarts et relance les echecs. MySQL utilise pour les journaux d'audit.",
+    "outcome": "Reduction de 95% du temps de rapprochement, suppression des erreurs de saisie manuelle et traitement de plus de 50k transactions au premier trimestre.",
+    "tech": ["Python", "Flask", "QuickBooks API", "MySQL", "Redis", "Jinja"],
+    "link": "#"
+  },
+  {
+    "role": "Lead Engineer",
+    "title": "Integration UrubutoPay",
+    "timeline": "4 mois (2024)",
+    "client": "Organisation soucieuse de la confidentialite",
+    "challenge": "Le client avait besoin que tous les paiements etudiants soient correctement refleches dans son MIS existant selon la structure financiere attendue. Il lui fallait une integration fluide pour garantir que les transactions lancees via le web ou l'USSD soient traitees, enregistrees et synchronisees en securite sans rapprochement manuel.",
+    "solution": "Developpement des integrations API UrubutoPay pour fluidifier le paiement des etudiants via le web et l'USSD, stocker les transactions en securite et les synchroniser avec le MIS du client pour un usage operationnel fluide.",
+    "outcome": "Mise en oeuvre reussie d'une integration de paiement securisee permettant aux etudiants de payer via web ou USSD, avec toutes les transactions automatiquement enregistrees et rapprochees dans le MIS. Cela a supprime le rapprochement manuel, reduit les erreurs, ameliore la precision du reporting et fluidifie le paiement des inscriptions.",
+    "tech": ["Python", "Flask", "QuickBooks API", "MySQL", "Redis", "Jinja"],
+    "link": "#"
+  },
+  {
+    "role": "Chef de projet & developpeur",
+    "title": "Application Netpipo",
+    "timeline": "12 mois (2024-2025)",
+    "client": "Netpipo Ltd (produit interne)",
+    "challenge": "Construire une plateforme evolutive from scratch avec une equipe reduite, tout en equilibrant la livraison fonctionnelle et la maintenabilite a long terme.",
+    "solution": "Choix d'une stack Python/React avec PostgreSQL, conteneurisee avec Docker et placee derriere un reverse proxy Nginx. Mise en place du CI/CD, des tests automatises et d'une architecture modulaire.",
+    "outcome": "Lancement du MVP en 5 mois ; la plateforme sert aujourd'hui plus de 1k+ collaborateurs avec une disponibilite de 99,9%.",
+    "tech": ["Python", "React", "PostgreSQL", "Docker", "Nginx", "GitHub Actions"],
+    "link": "https://hr.netpipo.com"
+  },
+  {
+    "role": "Ingenieur solo",
+    "title": "API de serveur email on-premise",
+    "timeline": "2 mois (2025)",
+    "client": "Organisation soucieuse de la confidentialite",
+    "challenge": "L'organisation avait besoin d'un controle complet sur ses donnees email et ne pouvait pas utiliser de fournisseurs cloud. Il fallait aussi une gestion programmatique de la creation et de l'administration des boites mail.",
+    "solution": "Mise en place de Postfix + Dovecot sous Linux, puis construction d'une API REST Python pour gerer les boites, alias et envois via SMTP. La plateforme a ete securisee avec TLS et des cles API.",
+    "outcome": "Deploiement reussi sur site, plus de 10k emails/mois geres et souverainete totale sur les donnees obtenue.",
+    "tech": ["Linux", "Postfix", "Dovecot", "Python", "Flask", "SMTP"],
+    "link": "#"
+  },
+  {
+    "role": "Ingenieur solo",
+    "title": "Learnpipe - Systeme de gestion de formation",
+    "timeline": "3 mois (2024)",
+    "client": "Organisme de formation en entreprise",
+    "challenge": "Besoin d'un TMS sur mesure avec creation de cours, suivi de progression et gestion des certifications.",
+    "solution": "Application full-stack avec Next.js, backend Python, PostgreSQL et acces base sur les roles. Construction d'API REST pour l'inscription et le suivi de progression.",
+    "outcome": "Reduction de 70% de la charge administrative et automatisation de la generation des certificats.",
+    "tech": ["Flask", "BootStrap", "Python", "MySQL", "CSS", "JWT"],
+    "link": "https://education.accountants.co.rw"
+  },
+  {
+    "role": "Ingenieur infrastructure",
+    "title": "Serveur public on-premise - infrastructure autohebergee",
+    "timeline": "2-4 semaines (2025)",
+    "client": "Interne / initiative personnelle",
+    "challenge": "Il fallait un environnement d'hebergement securise et economique pour executer des applications web et des services email de maniere independante, sans dependre de fournisseurs cloud tiers.",
+    "solution": "Deploiement et durcissement d'un serveur Linux on-premise avec IP publique. Configuration du routage DNS, d'un reverse proxy Nginx, du chiffrement SSL/TLS, des regles firewall et des services mail (SMTP/IMAP). Mise en place de l'isolation des services, du monitoring et d'une administration distante securisee.",
+    "outcome": "Acces externe fiable aux applications et services email heberges, reduction des couts d'infrastructure et controle complet sur les donnees, les politiques de securite et la disponibilite.",
+    "tech": ["Linux Server", "Nginx", "Gunicorn", "SMTP / IMAP", "DNS", "SSL/TLS", "Firewall", "Public IP Networking"],
+    "link": "#"
+  },
+  {
+    "role": "Ingenieur integration",
+    "title": "Integration IremboPay",
+    "timeline": "1,5 mois (2025)",
+    "client": "EMS et Netpipo Ltd",
+    "challenge": "Integrer la passerelle de paiement gouvernementale IremboPay dans le systeme de facturation existant, assurer la tracabilite et la reprise sur erreur.",
+    "solution": "Developpement d'un service adaptateur pour traduire entre l'API IremboPay et les systemes internes ; mise en place de mecanismes d'idempotence et de retry.",
+    "outcome": "Suppression complete des paiements en especes, reduction des pertes ou risques de fraude et amelioration nette de l'efficacite operationnelle.",
+    "tech": ["Python", "IremboPay API", "PostgreSQL", "Celery", "Webhooks"],
+    "link": "#"
+  },
+  {
+    "role": "Developpeur hackathon",
+    "title": "Civic Engage - application hackathon (USSD)",
+    "timeline": "48 heures (2024)",
+    "client": "Hackathon civic tech",
+    "challenge": "Creer un service accessible aux citoyens ne disposant que de telephones basiques, sans internet.",
+    "solution": "Application USSD avec l'API Africa's Talking, backend Python et MySQL pour les reponses. Les utilisateurs pouvaient signaler des problemes et recevoir des informations.",
+    "outcome": "Prix de l'initiative la plus impactante ; le prototype a ensuite ete pilote avec une ONG locale.",
+    "tech": ["USSD", "Python", "Africa's Talking API", "MySQL", "Express"],
+    "link": "#"
+  },
+  {
+    "role": "Fondateur, architecte & developpeur",
+    "title": "Goalifai - plateforme intelligente de gestion d'objectifs",
+    "timeline": "En cours (2025-Present)",
+    "client": "Startup lancee a titre personnel",
+    "challenge": "Concevoir un systeme evolutif capable de transformer des objectifs abstraits en plans d'execution structures, avec suivi mesurable, mecanismes de responsabilisation et recommandations intelligentes.",
+    "solution": "Architecture d'une plateforme full-stack avec services modulaires pour la structuration des objectifs, le suivi des jalons, les boucles d'habitudes et l'analyse de progression. Optimisation des performances API avec indexation et separation claire des responsabilites. Deploiement via Nginx + Gunicorn avec une configuration de production propre.",
+    "outcome": "MVP pret pour la production avec une architecture backend evolutive, une couche API propre et un design modulaire prepare pour des recommandations assistees par IA et une future extension en microservices.",
+    "tech": ["Next.js", "TypeScript", "Flask", "PostgreSQL", "JWT", "Nginx", "Gunicorn", "REST APIs"],
+    "link": "https://github.com/kabandapatrick2580/goalifai"
+  }
+]

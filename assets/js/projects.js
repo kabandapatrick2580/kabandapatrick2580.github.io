@@ -1,5 +1,5 @@
 /* ==========================================================
-   GLOBAL STATE
+   PROJECTS + CASE STUDIES
    ========================================================== */
 
 let caseStudies = [];
@@ -9,7 +9,7 @@ function escapeHTML(value) {
     .replace(/&/g, "&amp;")
     .replace(/</g, "&lt;")
     .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;")
+    .replace(/\"/g, "&quot;")
     .replace(/'/g, "&#39;");
 }
 
@@ -45,13 +45,22 @@ function getProjectIconHTML(project) {
   return PROJECT_ICONS.default;
 }
 
-/* ==========================================================
-   LOAD + RENDER PROJECTS
-   ========================================================== */
+function i18nValue(path, fallback) {
+  if (window.pkI18n && typeof window.pkI18n.get === "function") {
+    return window.pkI18n.get(path, fallback);
+  }
+
+  return fallback;
+}
 
 async function loadProjects() {
   try {
-    const response = await fetch("/assets/data/case-studies.json");
+    const language = window.pkI18n?.getLanguage?.() || "en";
+    const response = await fetch(`/assets/data/case-studies.${language}.json`);
+    if (!response.ok) {
+      throw new Error("Failed to load projects.");
+    }
+
     caseStudies = await response.json();
 
     const grid = document.getElementById("projectGrid");
@@ -60,19 +69,14 @@ async function loadProjects() {
     grid.innerHTML = "";
 
     caseStudies.forEach((project, index) => {
-
-      // ===== Icon logic =====
       const iconHTML = getProjectIconHTML(project);
-
-      // ===== Tech tags =====
       const tagsHTML = (project.tech || [])
         .slice(0, 5)
         .map(tag => `<span class="ptag">${escapeHTML(tag)}</span>`)
         .join("");
 
       const cardHTML = `
-        <article class="proj-card sr" data-project="${index}" role="button" tabindex="0" aria-label="Open case study: ${escapeHTML(project.title || "Project")}">
-          
+        <article class="proj-card sr" data-project="${index}" role="button" tabindex="0" aria-label="${escapeHTML(i18nValue("projects.cardAriaPrefix", "Open case study:"))} ${escapeHTML(project.title || "Project")}">
           <div class="proj-top">
             <div class="proj-ico">${iconHTML}</div>
             <span class="proj-link" aria-hidden="true">
@@ -85,8 +89,8 @@ async function loadProjects() {
           <span class="proj-role">${escapeHTML(project.role || "")}</span>
 
           <div class="proj-meta">
-            <span>${escapeHTML(project.timeline || "Timeline not listed")}</span>
-            <span>${escapeHTML(project.client || "Client undisclosed")}</span>
+            <span>${escapeHTML(project.timeline || i18nValue("projects.timelineFallback", "Timeline not listed"))}</span>
+            <span>${escapeHTML(project.client || i18nValue("projects.clientFallback", "Client undisclosed"))}</span>
           </div>
 
           <h3 class="proj-title">${escapeHTML(project.title || "")}</h3>
@@ -98,51 +102,45 @@ async function loadProjects() {
           <div class="proj-tags">
             ${tagsHTML}
           </div>
-
         </article>
       `;
 
       grid.insertAdjacentHTML("beforeend", cardHTML);
     });
 
-    initProjectCards(); // attach modal listeners
-
+    initProjectCards();
   } catch (error) {
     console.error("Failed to load projects:", error);
   }
 }
 
-/* ==========================================================
-   MODAL SYSTEM
-   ========================================================== */
-
 const modalOverlay = document.getElementById("projectModal");
 const closeBtn = document.getElementById("closeModalBtn");
 
 function openModal(index) {
-  const cs = caseStudies[index];
-  if (!cs) return;
+  const caseStudy = caseStudies[index];
+  if (!caseStudy) return;
 
-  document.getElementById("modalRole").textContent = cs.role || "";
-  document.getElementById("modalTitle").textContent = cs.title || "";
-  document.getElementById("modalTimeline").textContent = cs.timeline || "";
-  document.getElementById("modalClient").textContent = cs.client || "";
-  document.getElementById("modalChallenge").textContent = cs.challenge || "";
-  document.getElementById("modalSolution").textContent = cs.solution || "";
-  document.getElementById("modalOutcome").textContent = cs.outcome || "";
+  document.getElementById("modalRole").textContent = caseStudy.role || "";
+  document.getElementById("modalTitle").textContent = caseStudy.title || "";
+  document.getElementById("modalTimeline").textContent = caseStudy.timeline || "";
+  document.getElementById("modalClient").textContent = caseStudy.client || "";
+  document.getElementById("modalChallenge").textContent = caseStudy.challenge || "";
+  document.getElementById("modalSolution").textContent = caseStudy.solution || "";
+  document.getElementById("modalOutcome").textContent = caseStudy.outcome || "";
 
   const techContainer = document.getElementById("modalTech");
   techContainer.innerHTML = "";
 
-  (cs.tech || []).forEach(t => {
+  (caseStudy.tech || []).forEach(technology => {
     const span = document.createElement("span");
-    span.textContent = t;
+    span.textContent = technology;
     techContainer.appendChild(span);
   });
 
   const modalLink = document.getElementById("modalLink");
-  if (modalLink && cs.link) {
-    modalLink.href = cs.link;
+  if (modalLink && caseStudy.link) {
+    modalLink.href = caseStudy.link;
     modalLink.style.display = "inline-block";
   } else if (modalLink) {
     modalLink.style.display = "none";
@@ -159,19 +157,15 @@ function closeModal() {
 
 closeBtn?.addEventListener("click", closeModal);
 
-modalOverlay?.addEventListener("click", (e) => {
-  if (e.target === modalOverlay) closeModal();
+modalOverlay?.addEventListener("click", event => {
+  if (event.target === modalOverlay) closeModal();
 });
 
-document.addEventListener("keydown", (e) => {
-  if (e.key === "Escape" && modalOverlay?.classList.contains("show")) {
+document.addEventListener("keydown", event => {
+  if (event.key === "Escape" && modalOverlay?.classList.contains("show")) {
     closeModal();
   }
 });
-
-/* ==========================================================
-   PROJECT CARD LISTENERS
-   ========================================================== */
 
 function initProjectCards() {
   const projectCards = document.querySelectorAll(".proj-card[data-project]");
@@ -182,7 +176,7 @@ function initProjectCards() {
       if (idx !== null) openModal(Number(idx));
     });
 
-    card.addEventListener("keydown", (event) => {
+    card.addEventListener("keydown", event => {
       if (event.key === "Enter" || event.key === " ") {
         event.preventDefault();
         const idx = card.getAttribute("data-project");
@@ -192,8 +186,5 @@ function initProjectCards() {
   });
 }
 
-/* ==========================================================
-   INIT
-   ========================================================== */
-
 document.addEventListener("DOMContentLoaded", loadProjects);
+document.addEventListener("pk:languagechange", loadProjects);

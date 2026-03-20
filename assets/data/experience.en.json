@@ -1,0 +1,57 @@
+{
+  "section": {
+    "label": "Experience",
+    "title": "Where I've led & built.",
+    "subtitle": "Professional roles where I've delivered real impact — from engineering leadership to operational systems development."
+  },
+  "items": [
+    {
+      "icon": "/assets/images/display-code.svg",
+      "title": "CTO & Software Engineer",
+      "period": "2024 — 2025",
+      "employment_type": "Full-time",
+      "company": "Netpipo Ltd",
+      "proof_url": "https://drive.google.com/file/d/1-ObLKq2Rg98KdjN18NDtTz-tmVaj8nlJ/view?usp=sharing",
+      "description": "Led all technical decision-making as founding CTO. Responsible for product architecture, engineering team leadership, infrastructure, and delivery of the core platform.",
+      "achievements": [
+        "Architected and built the core Netpipo platform from inception to production deployment",
+        "Established engineering practices, code review processes, and deployment workflows",
+        "Designed and implemented payment integrations and third-party API connections",
+        "Managed infrastructure using Docker, Nginx, and Linux servers — achieving high availability",
+        "Contributed as a hands-on engineer while fulfilling strategic leadership responsibilities"
+      ]
+    },
+    {
+        "icon": "/assets/images/display-code.svg",
+        "title": "Software Engineer",
+        "period": "2024 — 2025",
+        "employment_type": "Part-time",
+        "company": "ACR-Online Accounting Services LTD",
+        "proof_url": "https://drive.google.com/file/d/1F7O-bVyjAIjhZVHc2B_U400xoFeJwqNb/view?usp=sharing",
+        "description": "Served as a software engineer for an accounting and training services firm, designing and delivering multiple business-critical systems to streamline operations, automate financial workflows, and support large-scale enrollment processes.",
+        "achievements": [
+            "Designed and developed a comprehensive Enrollment Management System (EMS) enabling administrators to create training programs, process applications, and manage the full enrollment lifecycle from submission to program commencement",
+            "Built robust integrations with QuickBooks Online to synchronize customers, invoices, payments, items, and chart of accounts with an external Management Information System (MIS)",
+            "Developed payment processing integrations with UrubutoPay to securely handle student transactions and persist payment records for downstream MIS consumption",
+            "Engineered RESTful APIs and backend services to support scalable data exchange between internal platforms and third-party systems",
+            "Collaborated with operations teams to translate business requirements into reliable software solutions aligned with financial compliance needs"
+        ]
+    },
+
+    {
+      "icon": "/assets/images/display-code.svg",
+      "title": "IT Operations Officer",
+      "period": "2022 — 2023",
+      "employment_type": "Full-time",
+      "company": "ACR-Online Accounting Services",
+      "proof_url": "https://drive.google.com/file/d/1F7O-bVyjAIjhZVHc2B_U400xoFeJwqNb/view?usp=sharing",
+      "description": "Managed and improved the IT infrastructure and digital systems of an accounting services firm, introducing automation and integration solutions that significantly improved efficiency.",
+      "achievements": [
+        "Overseeing day-to-day IT operations and ensuring smooth system functioning.",
+        "Collaborating with cross-functional teams to identify and resolve technical issues.",
+        "Implementing IT projects and initiatives to enhance organizational efficiency.",
+        "Provided technical support and system administration across the organisation"
+      ]
+    }
+  ]
+}

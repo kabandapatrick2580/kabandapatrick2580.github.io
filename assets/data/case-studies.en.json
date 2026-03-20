@@ -1,0 +1,113 @@
+
+
+[
+    {
+        "role": "Lead Engineer",
+        "title": "Quickbooks Online API Integrations",
+        "timeline": "4 months (2024)",
+        "client": "Privacy‑conscious organisation",
+        "challenge": "Client needed to sync payments, invoices and items from their Student MIS to QuickBooks automatically. Manual reconciliation was error‑prone and consumed 15+ hours weekly.",
+        "solution": "Designed event‑driven pipelines using webhooks and idempotent workers. Built a reconciliation engine that flags mismatches and retries failures. Used MySQL for audit logs.",
+        "outcome": "Cut reconciliation time by 95%, eliminated manual data entry errors, and processed over 50k transactions in the first quarter.",
+        "tech": ["Python", "Flask", "QuickBooks API", "MySQL", "Redis", "Jinja"],
+        "link": "#"
+    },
+    {
+        "role": "Lead Engineer",
+        "title": "UrubutoPay Integration",
+        "timeline": "4 months (2024)",
+        "client": "Privacy‑conscious organisation",
+        "challenge": "The client required that all student payments be accurately reflected within their existing MIS according to the expected financial structure. They needed a seamless integration to ensure transactions initiated via web or USSD were securely processed, recorded, and synchronized without manual reconciliation, reducing errors and improving operational efficiency.",
+        "solution": "Developed UrubutoPay API integrations to streamline the student payment process, enabling payments via web and USSD, securely storing transaction data, and synchronizing it with the client’s MIS for seamless operational use.",
+        "outcome": "Successfully implemented a secure payment integration that enabled students to pay via web or USSD, with all transactions automatically recorded and reconciled in the client’s MIS. This eliminated manual reconciliation, reduced errors, improved reporting accuracy, and streamlined the overall enrollment payment process, providing the client with full operational visibility and efficiency.",
+        "tech": ["Python", "Flask", "QuickBooks API", "MySQL", "Redis", "Jinja"],
+        "link": "#"
+    },
+    {
+        "role": "Project Lead & Developer",
+        "title": "Netpipo Application",
+        "timeline": "12 months (2024–2025)",
+        "client": "Netpipo Ltd (internal product)",
+        "challenge": "Build a scalable platform from scratch with limited team; needed to balance feature delivery with long‑term maintainability.",
+        "solution": "Chose Python/React with PostgreSQL, containerised with Docker, Nginx reverse proxy. Implemented CI/CD, automated testing, and modular architecture.",
+        "outcome": "Launched MVP in 5 months; currently processing for over 1k+ personnels; system uptime 99.9%.",
+        "tech": ["Python", "React", "PostgreSQL", "Docker", "Nginx", "GitHub Actions"],
+        "link": "https://hr.netpipo.com"
+    },
+    {
+        "role": "Solo Engineer",
+        "title": "On‑Premise Email Server API",
+        "timeline": "2 months (2025)",
+        "client": "Privacy‑conscious organisation",
+        "challenge": "Organisation needed full control over email data, could not use cloud providers. Required programmatic email creation and management.",
+        "solution": "Set up Postfix + Dovecot on Linux, built Python REST API to manage mailboxes, aliases, and send emails via SMTP. Secured with TLS and API keys.",
+        "outcome": "Successfully deployed on‑prem, handles 10k+ emails/month, full data sovereignty achieved.",
+        "tech": ["Linux", "Postfix", "Dovecot", "Python", "Flask", "SMTP"],
+        "link": "#"
+    },
+    {
+        "role": "Solo Engineer",
+        "title": "Learnpipe — Training Management System",
+        "timeline": "3 months (2024)",
+        "client": "Corporate training provider",
+        "challenge": "Needed a custom TMS with course creation, learner progress, and certifications.",
+        "solution": "Full‑stack Next.js with Python backend, PostgreSQL, role‑based access. Built REST APIs for enrolment and progress tracking.",
+        "outcome": "Reduced administrative overhead by 70%, automated certificate generation.",
+        "tech": ["Flask", "BootStrap", "Python", "MySQL", "CSS", "JWT"],
+        "link": "https://education.accountants.co.rw"
+    },
+    {
+        "role": "Infrastructure Engineer",
+        "title": "On-Premise Public Server — Self-Hosted Infrastructure",
+        "timeline": "2–4 weeks (2025)",
+        "client": "Internal / Self-Initiated",
+        "challenge": "Required a secure, cost-efficient hosting environment to run web applications and email services independently, without relying on third-party cloud providers.",
+        "solution": "Deployed and hardened a Linux on-premise server with a public IP. Configured DNS routing, reverse proxy (Nginx), SSL/TLS encryption, firewall rules, and mail services (SMTP/IMAP). Implemented service isolation, monitoring, and secure remote administration.",
+        "outcome": "Enabled reliable external access to hosted applications and email services, reduced infrastructure costs, and achieved full control over data, security policies, and uptime.",
+        "tech": [
+            "Linux Server",
+            "Nginx",
+            "Gunicorn",
+            "SMTP / IMAP",
+            "DNS",
+            "SSL/TLS",
+            "Firewall",
+            "Public IP Networking"
+        ],
+        "link": "#"
+    },
+    {
+        "role": "Integration Engineer",
+        "title": "IremboPay Integration",
+        "timeline": "1.5 months (2025)",
+        "client": "EMS and Netpipo Ltd",
+        "challenge": "Integrate government payment gateway (IremboPay) into existing billing system (EMS for students to pay for courses, and Netpipo for subscription payments), ensure audit trail and error recovery.",
+        "solution": "Developed adapter service to translate between IremboPay API and internal system; implemented idempotency and retry logics.",
+        "outcome": "Completely removed payments with Cash which reduced the money loss or fraud and improved operational efficiency.",
+        "tech": ["Python", "IremboPay API", "PostgreSQL", "Celery", "Webhooks"],
+        "link": "#"
+    },
+    {
+        "role": "Hackathon Developer",
+        "title": "Civic Engage — Hackathon App (USSD)",
+        "timeline": "48 hours (2024)",
+        "client": "Civic tech hackathon",
+        "challenge": "Create accessible service for citizens with only feature phones (no internet).",
+        "solution": "USSD app using Africa’s Talking API, Python backend, MySQL for responses. Users could report issues and receive info.",
+        "outcome": "Won “Most Impactful” award; prototype later piloted with local NGO.",
+        "tech": ["USSD", "Python", "Africa’s Talking API", "MySQL", "Express"],
+        "link": "#"
+    },
+    {
+        "role": "Founder,Architect & Developer",
+        "title": "Goalifai — Intelligent Goal Management Platform",
+        "timeline": "Ongoing (2025–Present)",
+        "client": "Self-initiated startup",
+        "challenge": "Design a scalable system that transforms abstract goals into structured execution plans with measurable progress tracking, accountability mechanisms, and intelligent recommendations.",
+        "solution": "Architected a full-stack platform, Designed and implemented modular services for goal structuring, milestone tracking, habit loops, and progress analytics. Optimized API performance with indexing strategies and clean separation of concerns. Deployed using Nginx + Gunicorn on VPS with production-grade environment configuration.",
+        "outcome": "Established a production-ready MVP with scalable backend architecture, clean API layer, and modular design prepared for AI-assisted goal recommendations and future microservices expansion.",
+        "tech": ["Next.js", "TypeScript", "Flask", "PostgreSQL", "JWT", "Nginx", "Gunicorn", "REST APIs"],
+        "link": "https://github.com/kabandapatrick2580/goalifai"
+    }
+
+]

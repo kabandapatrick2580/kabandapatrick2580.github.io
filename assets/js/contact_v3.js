@@ -3,7 +3,6 @@ const form = document.getElementById("cForm");
 const statusEl = document.getElementById("formStatus");
 let recaptchaLoaderPromise = null;
 
-// ===== EmailJS Initialization =====
 (function () {
   if (window.emailjs) {
     emailjs.init({
@@ -11,6 +10,14 @@ let recaptchaLoaderPromise = null;
     });
   }
 })();
+
+function i18n(path, fallback) {
+  if (window.pkI18n && typeof window.pkI18n.get === "function") {
+    return window.pkI18n.get(path, fallback);
+  }
+
+  return fallback;
+}
 
 function setStatus(message, isError = false) {
   if (!statusEl) return;
@@ -44,12 +51,16 @@ function loadRecaptchaV3() {
   return recaptchaLoaderPromise;
 }
 
-// ===== Main Send Function =====
+function resetButton(button) {
+  button.disabled = false;
+  button.textContent = i18n("contact.form.submit", "Send message ->");
+}
+
 function sendEmail(token) {
   if (!form) return;
 
   const button = form.querySelector("button");
-  button.textContent = "Sending...";
+  button.textContent = i18n("contact.form.sending", "Sending...");
 
   const params = {
     name: form.name.value.trim(),
@@ -60,66 +71,69 @@ function sendEmail(token) {
   };
 
   if (!params.name || !params.email || !params.message) {
-    setStatus("Please fill in all required fields.", true);
+    setStatus(i18n("contact.form.messages.required", "Please fill in all required fields."), true);
     resetButton(button);
     return;
   }
 
   emailjs.send("service_uje6kr9", "template_18pr9hb", params)
     .then(function () {
-      setStatus("Message sent successfully.");
+      setStatus(i18n("contact.form.messages.success", "Message sent successfully."));
       form.reset();
     })
     .catch(function (error) {
       console.error("EmailJS Error:", error);
-      setStatus("Failed to send message. Please try again later.", true);
+      setStatus(i18n("contact.form.messages.failed", "Failed to send message. Please try again later."), true);
     })
     .finally(function () {
       resetButton(button);
     });
 }
 
-// ===== Helper: Reset Button =====
-function resetButton(button) {
-  button.disabled = false;
-  button.textContent = "Send message →";
-}
-
 if (form) {
-  // Preload reCAPTCHA after first interaction with the form.
   ["focusin", "pointerenter", "touchstart"].forEach(eventName => {
     form.addEventListener(eventName, () => {
       loadRecaptchaV3().catch(() => {});
     }, { once: true });
   });
 
-  // ===== Form Submit Handler (v3 flow) =====
-  form.addEventListener("submit", function (e) {
-    e.preventDefault();
+  form.addEventListener("submit", function (event) {
+    event.preventDefault();
 
     const button = form.querySelector("button");
     button.disabled = true;
-    button.textContent = "Verifying...";
+    button.textContent = i18n("contact.form.verifying", "Verifying...");
 
     loadRecaptchaV3()
       .then(grecaptcha => {
         grecaptcha.ready(function () {
           grecaptcha.execute(SITE_KEY, { action: "submit" })
             .then(function (token) {
-              setStatus("Verification passed. Sending your message...");
+              setStatus(i18n("contact.form.messages.verificationPassed", "Verification passed. Sending your message..."));
               sendEmail(token);
             })
-            .catch(function (err) {
-              console.error("reCAPTCHA error:", err);
-              setStatus("Verification failed. Please try again.", true);
+            .catch(function (error) {
+              console.error("reCAPTCHA error:", error);
+              setStatus(i18n("contact.form.messages.verificationFailed", "Verification failed. Please try again."), true);
               resetButton(button);
             });
         });
       })
-      .catch(function (err) {
-        console.error("reCAPTCHA load error:", err);
-        setStatus("Verification failed to load. Please try again.", true);
+      .catch(function (error) {
+        console.error("reCAPTCHA load error:", error);
+        setStatus(i18n("contact.form.messages.loadFailed", "Verification failed to load. Please try again."), true);
         resetButton(button);
       });
   });
 }
+
+document.addEventListener("pk:languagechange", () => {
+  if (!form) return;
+  const button = form.querySelector("button");
+  if (button && !button.disabled) {
+    button.textContent = i18n("contact.form.submit", "Send message ->");
+  }
+  if (statusEl && !statusEl.textContent.trim()) {
+    statusEl.textContent = "";
+  }
+});
