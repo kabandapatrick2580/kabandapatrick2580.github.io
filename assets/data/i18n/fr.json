@@ -5,7 +5,6 @@
   "nav": {
     "links": ["Accueil", "A propos", "Services", "Projets", "Experience", "Formation", "Contact"],
     "cta": "Me recruter",
-    "cv": "Voir le CV",
     "themeToggleAria": "Changer le theme",
     "mobileToggleAria": "Ouvrir le menu mobile",
     "languageAria": "Choisir la langue",
@@ -29,6 +28,7 @@
     ],
     "primaryCta": "Voir les projets",
     "secondaryCta": "Me contacter",
+    "cvCta": "Voir le CV",
     "portraitAlt": "Portrait de Patrick Kabanda"
   },
   "profile": {

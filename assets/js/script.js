@@ -127,8 +127,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     setText(".nav-contact-btn", t("nav.cta"));
-    setText(".nav-cv-btn", t("nav.cv"));
-    setText(".mob-nav-cv", t("nav.cv"));
     setAttribute("#themeBtn", "aria-label", t("nav.themeToggleAria"));
     setAttribute("#hamBtn", "aria-label", t("nav.mobileToggleAria"));
     setAttribute("#langSelect", "aria-label", t("nav.languageAria"));
@@ -152,7 +150,8 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     setText(".hero-projects-label", t("hero.primaryCta"));
-    setText(".hero-ctas .btn-s", t("hero.secondaryCta"));
+    setText(".hero-contact-btn", t("hero.secondaryCta"));
+    setText(".hero-cv-btn", t("hero.cvCta"));
 
     setAttribute(".pc-photo-inner img", "alt", t("hero.portraitAlt"));
     setText(".pc-avail-badge-text", t("profile.availabilityBadge"));

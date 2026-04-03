@@ -129,7 +129,6 @@
     .nav-links a { display:block; padding:6px 12px; font-size:0.875rem; color:var(--ink2); text-decoration:none; border-radius:6px; transition:color 0.2s,background 0.2s; }
     .nav-links a:hover, .nav-links a.act { color:var(--ink); background:var(--bg2); }
     .nav-right { display:flex; align-items:center; gap:10px; }
-    .nav-cv-btn,
     .nav-contact-btn {
       white-space:nowrap;
     }
@@ -168,9 +167,7 @@
     .mob-nav.open { display:block; }
     .mob-nav a { display:block; padding:11px 0; font-size:1rem; color:var(--ink2); text-decoration:none; border-bottom:1px solid var(--border); transition:color 0.2s; }
     .mob-nav a:hover { color:var(--ink); }
-    .mob-nav-cv { font-weight:600; color:var(--accent); }
     @media (max-width:960px){
-      .nav-cv-btn,
       .nav-contact-btn { display:none; }
     }
 
