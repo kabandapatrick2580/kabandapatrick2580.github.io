@@ -126,7 +126,9 @@ document.addEventListener("DOMContentLoaded", function () {
       if (mobileLinks[index]) mobileLinks[index].textContent = label;
     });
 
-    setText(".nav-right .btn-p", t("nav.cta"));
+    setText(".nav-contact-btn", t("nav.cta"));
+    setText(".nav-cv-btn", t("nav.cv"));
+    setText(".mob-nav-cv", t("nav.cv"));
     setAttribute("#themeBtn", "aria-label", t("nav.themeToggleAria"));
     setAttribute("#hamBtn", "aria-label", t("nav.mobileToggleAria"));
     setAttribute("#langSelect", "aria-label", t("nav.languageAria"));
@@ -244,6 +246,23 @@ document.addEventListener("DOMContentLoaded", function () {
     setText("#projects .ssub", t("projects.subtitle"));
   }
 
+  function applyEducationTranslations() {
+    setText("#education .slabel", t("education.label"));
+    setHTML("#education .stitle", t("education.titleHtml"));
+    setText("#education .ssub", t("education.subtitle"));
+
+    const cards = document.querySelectorAll("#education .edu-card");
+    t("education.items", []).forEach((item, index) => {
+      const card = cards[index];
+      if (!card) return;
+      setText(".edu-badge", item.award, card);
+      setText(".edu-period", item.period, card);
+      setText(".edu-title", item.title, card);
+      setText(".edu-school", item.institution, card);
+      setText(".edu-desc", item.description, card);
+    });
+  }
+
   function applySkillsTranslations() {
     setText("#skills .slabel", t("skills.label"));
     setHTML("#skills .stitle", t("skills.titleHtml"));
@@ -335,6 +354,7 @@ document.addEventListener("DOMContentLoaded", function () {
     applyServicesTranslations();
     applyIdealClientTranslations();
     applyProjectSectionTranslations();
+    applyEducationTranslations();
     applySkillsTranslations();
     applyLeadMagnetTranslations();
     applyContactTranslations();

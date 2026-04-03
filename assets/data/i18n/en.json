@@ -3,8 +3,9 @@
     "title": "Patrick Kabanda - portfolio + case study modals"
   },
   "nav": {
-    "links": ["Home", "About", "Services", "Projects", "Experience", "Contact"],
+    "links": ["Home", "About", "Services", "Projects", "Experience", "Education", "Contact"],
     "cta": "Hire Me",
+    "cv": "View CV",
     "themeToggleAria": "Toggle theme",
     "mobileToggleAria": "Toggle mobile menu",
     "languageAria": "Select language",
@@ -224,6 +225,34 @@
   },
   "experience": {
     "proofButton": "View Proof"
+  },
+  "education": {
+    "label": "Education",
+    "titleHtml": "Learning that<br><em style=\"font-style:italic\">supports the build.</em>",
+    "subtitle": "Formal study and focused programs that shaped my backend, frontend, and systems thinking.",
+    "items": [
+      {
+        "award": "Certificate",
+        "period": "January 2025 - April 2025",
+        "title": "ProDev Frontend",
+        "institution": "ALX",
+        "description": "Focused frontend training covering modern interface development, component thinking, and user-centered product execution."
+      },
+      {
+        "award": "Certificate",
+        "period": "January 2023 - January 2024",
+        "title": "Software Engineering, Backend",
+        "institution": "ALX",
+        "description": "Backend-focused software engineering program centered on problem solving, application architecture, systems design, and production-ready development practices."
+      },
+      {
+        "award": "Certificate",
+        "period": "January 2019 - July 2022",
+        "title": "Bachelor's Degree",
+        "institution": "Mount Kenya University",
+        "description": "University education that strengthened core technical foundations, structured problem solving, and professional discipline for software engineering work."
+      }
+    ]
   },
   "skills": {
     "label": "Tech Stack",

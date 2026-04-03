@@ -3,8 +3,9 @@
     "title": "Patrick Kabanda - portfolio + etudes de cas"
   },
   "nav": {
-    "links": ["Accueil", "A propos", "Services", "Projets", "Experience", "Contact"],
+    "links": ["Accueil", "A propos", "Services", "Projets", "Experience", "Formation", "Contact"],
     "cta": "Me recruter",
+    "cv": "Voir le CV",
     "themeToggleAria": "Changer le theme",
     "mobileToggleAria": "Ouvrir le menu mobile",
     "languageAria": "Choisir la langue",
@@ -224,6 +225,34 @@
   },
   "experience": {
     "proofButton": "Voir la preuve"
+  },
+  "education": {
+    "label": "Formation",
+    "titleHtml": "Un parcours d'apprentissage<br><em style=\"font-style:italic\">au service de la construction.</em>",
+    "subtitle": "Des etudes et programmes cibles qui ont renforce ma vision du backend, du frontend et des systemes.",
+    "items": [
+      {
+        "award": "Certificat",
+        "period": "Janvier 2025 - Avril 2025",
+        "title": "ProDev Frontend",
+        "institution": "ALX",
+        "description": "Formation frontend axee sur le developpement d'interfaces modernes, la logique composant et l'execution de produits centres sur l'utilisateur."
+      },
+      {
+        "award": "Certificat",
+        "period": "Janvier 2023 - Janvier 2024",
+        "title": "Genie logiciel, Backend",
+        "institution": "ALX",
+        "description": "Programme d'ingenierie logicielle oriente backend centre sur la resolution de problemes, l'architecture applicative, la conception de systemes et les pratiques de developpement pretes pour la production."
+      },
+      {
+        "award": "Certificat",
+        "period": "Janvier 2019 - Juillet 2022",
+        "title": "Licence",
+        "institution": "Mount Kenya University",
+        "description": "Parcours universitaire ayant renforce les bases techniques, la resolution structuree de problemes et la discipline professionnelle appliquees au travail d'ingenierie logicielle."
+      }
+    ]
   },
   "skills": {
     "label": "Stack technique",

@@ -129,6 +129,10 @@
     .nav-links a { display:block; padding:6px 12px; font-size:0.875rem; color:var(--ink2); text-decoration:none; border-radius:6px; transition:color 0.2s,background 0.2s; }
     .nav-links a:hover, .nav-links a.act { color:var(--ink); background:var(--bg2); }
     .nav-right { display:flex; align-items:center; gap:10px; }
+    .nav-cv-btn,
+    .nav-contact-btn {
+      white-space:nowrap;
+    }
     .lang-switch {
       display:flex;
       align-items:center;
@@ -164,6 +168,11 @@
     .mob-nav.open { display:block; }
     .mob-nav a { display:block; padding:11px 0; font-size:1rem; color:var(--ink2); text-decoration:none; border-bottom:1px solid var(--border); transition:color 0.2s; }
     .mob-nav a:hover { color:var(--ink); }
+    .mob-nav-cv { font-weight:600; color:var(--accent); }
+    @media (max-width:960px){
+      .nav-cv-btn,
+      .nav-contact-btn { display:none; }
+    }
 
     /* hero */
     #home { min-height:100vh; display:flex; align-items:center; padding-top:64px; position:relative; overflow:hidden; }
@@ -716,6 +725,111 @@
       border-color:var(--accent);
       color:var(--accent);
       transform:translateY(-1px);
+    }
+
+    #education {
+      position:relative;
+      overflow:hidden;
+    }
+    #education::before {
+      content:"";
+      position:absolute;
+      inset:0;
+      pointer-events:none;
+      background:
+        radial-gradient(ellipse 32% 26% at 10% 16%, rgba(8, 107, 99, 0.06) 0%, transparent 70%),
+        radial-gradient(ellipse 24% 20% at 88% 18%, rgba(8, 107, 99, 0.05) 0%, transparent 70%);
+    }
+    [data-theme="dark"] #education::before {
+      background:
+        radial-gradient(ellipse 32% 26% at 10% 16%, rgba(103, 211, 202, 0.10) 0%, transparent 70%),
+        radial-gradient(ellipse 24% 20% at 88% 18%, rgba(103, 211, 202, 0.08) 0%, transparent 70%);
+    }
+    #education .wrap {
+      position:relative;
+      z-index:1;
+    }
+    .edu-grid {
+      display:grid;
+      gap:18px;
+      grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
+      margin-top:54px;
+    }
+    .edu-card {
+      min-height:100%;
+      padding:28px;
+      border-radius:16px;
+      border:1px solid var(--border);
+      background:linear-gradient(180deg, var(--card), rgba(255,255,255,0.9));
+      box-shadow:var(--sh-sm);
+      position:relative;
+      overflow:hidden;
+      transition:border-color 0.22s, box-shadow 0.22s, transform 0.22s;
+    }
+    [data-theme="dark"] .edu-card {
+      background:linear-gradient(180deg, var(--card), rgba(30,29,27,0.94));
+    }
+    .edu-card::before {
+      content:"";
+      position:absolute;
+      top:0;
+      left:0;
+      right:0;
+      height:3px;
+      background:linear-gradient(90deg, var(--accent), transparent);
+      opacity:0;
+      transition:opacity 0.2s;
+    }
+    .edu-card:hover,
+    .edu-card:focus-within {
+      border-color:var(--accent);
+      box-shadow:var(--sh-lg);
+      transform:translateY(-3px);
+    }
+    .edu-card:hover::before,
+    .edu-card:focus-within::before {
+      opacity:1;
+    }
+    .edu-top {
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+      margin-bottom:18px;
+      flex-wrap:wrap;
+    }
+    .edu-badge {
+      display:inline-flex;
+      align-items:center;
+      padding:5px 10px;
+      border-radius:999px;
+      background:var(--accent-s);
+      color:var(--accent);
+      font-size:0.72rem;
+      font-weight:600;
+      letter-spacing:0.04em;
+      text-transform:uppercase;
+    }
+    .edu-period {
+      font-size:0.82rem;
+      color:var(--ink3);
+    }
+    .edu-title {
+      font-size:1.2rem;
+      margin-bottom:6px;
+    }
+    .edu-school {
+      color:var(--accent);
+      font-weight:600;
+      margin-bottom:12px;
+    }
+    .edu-desc {
+      color:var(--ink2);
+      font-size:0.95rem;
+      line-height:1.75;
+    }
+    @media (max-width:767px) {
+      .edu-card { padding:24px; }
     }
 
     #skills, #contact { background:var(--bg2); }
