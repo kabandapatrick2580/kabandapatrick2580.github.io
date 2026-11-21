@@ -68,6 +68,9 @@ async function loadExperience() {
       const proofButtonHTML = item.proof_url
         ? `<a class="exp-proof-btn" href="${escapeHTML(item.proof_url)}" target="_blank" rel="noopener noreferrer">${escapeHTML(experienceLabel("experience.proofButton", "View Proof"))}</a>`
         : "";
+      const linksHTML = (item.links || [])
+        .map(link => `<a class="exp-proof-btn" href="${escapeHTML(link.url)}" target="_blank" rel="noopener noreferrer">${escapeHTML(link.label)}</a>`)
+        .join("");
 
       const itemHTML = `
         <div class="exp-item sr">
@@ -86,7 +89,7 @@ async function loadExperience() {
             <ul class="exp-list">
               ${(item.achievements || []).map(achievement => `<li>${escapeHTML(achievement)}</li>`).join("")}
             </ul>
-            ${proofButtonHTML}
+            ${proofButtonHTML}${linksHTML}
           </div>
         </div>
       `;

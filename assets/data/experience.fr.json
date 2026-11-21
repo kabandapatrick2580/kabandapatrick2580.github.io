@@ -1,10 +1,35 @@
 {
   "section": {
     "label": "Experience",
-    "title_html": "Les roles ou j'ai <em style='font-style:italic'>dirige & construit.</em>",
-    "subtitle": "Des roles professionnels ou j'ai livre un impact concret, du leadership technique au developpement de systemes operationnels."
+    "title_html": "Les rôles où j'ai <em>dirigé & construit.</em>",
+    "subtitle": "Ingénieur logiciel et consultant indépendant, via Tech & us Ltd. Auparavant : CTO chez Netpipo, ingénieur chez ACR-Online."
   },
   "items": [
+    {
+      "icon": "/assets/images/display-code.svg",
+      "title": "Consultant indépendant & Ingénieur logiciel",
+      "period": "Janv. 2026 — Présent",
+      "employment_type": "Indépendant",
+      "company": "Tech & us Ltd",
+      "description": "Création de produits SaaS et réalisation de projets backend, d'intégration et web pour des clients, via Tech & us Ltd.",
+      "achievements": [
+        "Conception de deux produits SaaS, Goalifai et E-Mali, actuellement en phase pilote",
+        "Audit et refonte de sites web clients pour améliorer le SEO et la visibilité, avec des scores Lighthouse de 99 en Performance, 99 en Accessibilité, 100 en Bonnes pratiques et 92 en SEO sur un projet récent",
+        "Récupération de données financières pour plus de 5 clients, leur évitant des amendes et pénalités des autorités fiscales",
+        "Installation et configuration de QuickBooks Desktop et QuickBooks Online pour plusieurs clients",
+        "Conseil technique ayant amélioré les opérations des entreprises clientes"
+      ],
+      "links": [
+        {
+          "label": "Goalifai",
+          "url": "https://run.goalifai.app/"
+        },
+        {
+          "label": "E-Mali",
+          "url": "https://e-mali.app"
+        }
+      ]
+    },
     {
       "icon": "/assets/images/display-code.svg",
       "title": "CTO & Ingenieur logiciel",

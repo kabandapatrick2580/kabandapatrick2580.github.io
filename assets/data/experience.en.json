@@ -2,9 +2,34 @@
   "section": {
     "label": "Experience",
     "title": "Where I've led & built.",
-    "subtitle": "Professional roles where I've delivered real impact — from engineering leadership to operational systems development."
+    "subtitle": "Independent software engineer and consultant, working through Tech & us Ltd. Earlier: CTO at Netpipo, engineer at ACR-Online."
   },
   "items": [
+    {
+      "icon": "/assets/images/display-code.svg",
+      "title": "Independent Consultant & Software Engineer",
+      "period": "Jan 2026 — Present",
+      "employment_type": "Independent",
+      "company": "Tech & us Ltd",
+      "description": "Building SaaS products and delivering backend, integration, and web projects for clients through Tech & us Ltd.",
+      "achievements": [
+        "Built two SaaS products, Goalifai and E-Mali, both currently in pilot phase",
+        "Audited and redeveloped client websites to improve SEO and visibility, reaching Lighthouse scores of 99 Performance, 99 Accessibility, 100 Best Practices and 92 SEO on a recent project",
+        "Completed financial data recovery for 5+ clients, helping them avoid fines and penalties from tax authorities",
+        "Set up and configured QuickBooks Desktop and QuickBooks Online for multiple clients",
+        "Provided technical consultancy that improved clients' business operations"
+      ],
+      "links": [
+        {
+          "label": "Goalifai",
+          "url": "https://run.goalifai.app/"
+        },
+        {
+          "label": "E-Mali",
+          "url": "https://e-mali.app"
+        }
+      ]
+    },
     {
       "icon": "/assets/images/display-code.svg",
       "title": "CTO & Software Engineer",
@@ -22,22 +47,21 @@
       ]
     },
     {
-        "icon": "/assets/images/display-code.svg",
-        "title": "Software Engineer",
-        "period": "2024 — 2025",
-        "employment_type": "Part-time",
-        "company": "ACR-Online Accounting Services LTD",
-        "proof_url": "https://drive.google.com/file/d/1F7O-bVyjAIjhZVHc2B_U400xoFeJwqNb/view?usp=sharing",
-        "description": "Served as a software engineer for an accounting and training services firm, designing and delivering multiple business-critical systems to streamline operations, automate financial workflows, and support large-scale enrollment processes.",
-        "achievements": [
-            "Designed and developed a comprehensive Enrollment Management System (EMS) enabling administrators to create training programs, process applications, and manage the full enrollment lifecycle from submission to program commencement",
-            "Built robust integrations with QuickBooks Online to synchronize customers, invoices, payments, items, and chart of accounts with an external Management Information System (MIS)",
-            "Developed payment processing integrations with UrubutoPay to securely handle student transactions and persist payment records for downstream MIS consumption",
-            "Engineered RESTful APIs and backend services to support scalable data exchange between internal platforms and third-party systems",
-            "Collaborated with operations teams to translate business requirements into reliable software solutions aligned with financial compliance needs"
-        ]
+      "icon": "/assets/images/display-code.svg",
+      "title": "Software Engineer",
+      "period": "2024 — 2025",
+      "employment_type": "Part-time",
+      "company": "ACR-Online Accounting Services LTD",
+      "proof_url": "https://drive.google.com/file/d/1F7O-bVyjAIjhZVHc2B_U400xoFeJwqNb/view?usp=sharing",
+      "description": "Served as a software engineer for an accounting and training services firm, designing and delivering multiple business-critical systems to streamline operations, automate financial workflows, and support large-scale enrollment processes.",
+      "achievements": [
+        "Designed and developed a comprehensive Enrollment Management System (EMS) enabling administrators to create training programs, process applications, and manage the full enrollment lifecycle from submission to program commencement",
+        "Built robust integrations with QuickBooks Online to synchronize customers, invoices, payments, items, and chart of accounts with an external Management Information System (MIS)",
+        "Developed payment processing integrations with UrubutoPay to securely handle student transactions and persist payment records for downstream MIS consumption",
+        "Engineered RESTful APIs and backend services to support scalable data exchange between internal platforms and third-party systems",
+        "Collaborated with operations teams to translate business requirements into reliable software solutions aligned with financial compliance needs"
+      ]
     },
-
     {
       "icon": "/assets/images/display-code.svg",
       "title": "IT Operations Officer",
