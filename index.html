@@ -16,16 +16,19 @@
     <script src="/assets/js/contact_v3.js" defer></script>
     <link rel="stylesheet" href="/assets/css/style.css">
     <!-- theme preservation -->
-    <script>(function () { var t = localStorage.getItem('pk-theme') || (window.matchMedia('(prefers-color-scheme:dark)').matches ? 'dark' : 'light'); document.documentElement.setAttribute('data-theme', t); })();</script>
+    <script>(function () { var t = localStorage.getItem('pk-theme') || 'dark'; document.documentElement.setAttribute('data-theme', t); try { if (sessionStorage.getItem('pk-pre') === '1') document.documentElement.classList.add('no-preloader'); } catch (e) {} })();</script>
     <!-- fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 </head>
 
 <body>
+
+    <div class="preloader" aria-hidden="true">
+        <div class="preloader-mark">PK.</div>
+        <div class="preloader-count"><span data-count>0</span><small>%</small></div>
+    </div>
 
     <!-- navigation -->
     <nav>
@@ -39,6 +42,7 @@
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#education">Education</a></li>
                 <li><a href="#contact">Contact</a></li>
+                <li class="nav-ind" aria-hidden="true"></li>
             </ul>
             <div class="nav-right">
                 <label class="lang-switch" for="langSelect">
@@ -66,6 +70,7 @@
                     </svg></button>
             </div>
         </div>
+        <span class="nav-progress" aria-hidden="true"></span>
     </nav>
     <div class="mob-nav" id="mobNav">
         <a href="#home">Home</a>
@@ -78,12 +83,13 @@
     </div>
 
     <!-- HERO -->
-    <section id="home">
+    <section id="home" data-label="Home">
+        <div class="hero-hud" aria-hidden="true"></div>
+        <div class="hero-photo"><div class="pc-photo-inner"><img fetchpriority="high" decoding="async" src="/assets/images/patrick_kabanda.jpg" alt="Portrait of Patrick Kabanda"></div></div>
             <div class="wrap">
             <div class="hero-grid">
                 <div>
-                    <div class="avail-pill afu"><span class="dot-green"></span><span class="avail-pill-text">Available for new opportunities</span></div>
-                    <h1 class="hero-name afu d1">Patrick<br><em style="color:var(--accent)">Kabanda</em></h1>
+                    <h1 class="hero-name afu d1">Patrick<br><em>Kabanda</em></h1>
                     <p class="hero-sub1 afu d2">Software Engineer<span class="dot">•</span>Systems Builder<span
                             class="dot">•</span>Solutions Architect</p>
                     <p class="hero-sub2 afu d3">
@@ -102,16 +108,9 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h7" />
                             </svg><span class="hero-projects-label">View Projects</span></a><a href="#contact" class="btn-s hero-contact-btn">Contact Me</a><a href="/assets/documents/patrick-kabanda-cv.pdf" class="btn-s hero-cv-btn" target="_blank" rel="noopener">View CV</a></div>
                 </div>
-                <div class="profile-card afu d5">
-                    <div class="pc-photo">
-                        <div class="pc-photo-inner">
-                            <img src="/assets/images/patrick_kabanda.jpg" alt="Portrait of Patrick Kabanda">
-                        </div>
-                        <div class="pc-avail-badge">
-                            <span class="dot-green">
-                            </span><span class="pc-avail-badge-text">Available</span>
-                        </div>
-                    </div>
+            </div>
+        </div>
+        <div class="profile-card afu d4">
                     <div class="pc-body">
                         <div class="pc-name">Patrick Kabanda</div>
                         <div class="pc-role">Software Engineer & Systems Builder</div>
@@ -123,8 +122,7 @@
                                 Systems</span></div>
                         <div class="pc-row"><span class="pc-l">Specialisation</span><span class="pc-v">Systems &
                                 Integration</span></div>
-                        <div class="pc-row"><span class="pc-l">Availability</span><span class="pc-v"
-                                style="color:var(--accent)">Open to Remote</span></div>
+                        <div class="pc-row"><span class="pc-l">Availability</span><span class="pc-v">Open to Remote</span></div>
                         <div class="pc-foot">
                             <span class="pc-foot-icon" aria-hidden="true">
                                 <svg viewBox="0 0 24 24" fill="none">
@@ -138,17 +136,14 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
     </section>
     <hr class="hr">
 
     <!-- ABOUT -->
-    <section id="about">
+    <section id="about" data-label="About">
         <div class="wrap">
             <div class="about-grid">
                 <div>
-                    <div class="slabel sr">About Me</div>
                     <h2 class="stitle sr">Engineering systems<br><em>that endure.</em></h2>
                     <div class="about-body sr">
                         <p>I'm a software engineer with a systems-level mindset — someone who thinks carefully about
@@ -228,10 +223,9 @@
     <hr class="hr">
 
     <!-- SERVICES -->
-    <section id="services">
+    <section id="services" data-label="Services">
         <div class="wrap">
             <div class="sr">
-                <div class="slabel">Services</div>
                 <h2 class="stitle">Backend systems that keep<br><em>operations moving.</em>
                 </h2>
                 <p class="ssub">I build and improve the backend systems that keep payments, operations, and internal
@@ -361,10 +355,9 @@
     </section>
     <hr class="hr">
 
-    <section id="ideal-clients" aria-labelledby="ideal-clients-title">
+    <section id="ideal-clients" data-label="Clients" aria-labelledby="ideal-clients-title">
         <div class="wrap">
             <div class="sr ideal-head">
-                <div class="slabel">Ideal Clients</div>
                 <h2 class="stitle" id="ideal-clients-title">Dependable backend systems,<br><em>for the teams that need them.</em></h2>
                 <p class="ssub">I work best with businesses that need dependable backend systems, not just attractive
                     frontends.</p>
@@ -478,10 +471,9 @@
     <hr class="hr">
 
     <!-- PROJECTS (clickable cards) -->
-    <section id="projects">
+    <section id="projects" data-label="Projects">
         <div class="wrap">
             <div class="sr">
-                <div class="slabel">Projects</div>
                 <h2 class="stitle">Work that <em>ships.</em></h2>
                 <p class="ssub">Click any project to view full case study — architecture, challenges, and outcomes.</p>
             </div>
@@ -493,17 +485,16 @@
     <hr class="hr">
 
     <!-- EXPERIENCE -->
-    <section id="experience">
+    <section id="experience" data-label="Experience">
         <div class="wrap">
             <div id="experience-root"></div>
         </div>
     </section>
     <hr class="hr">
 
-    <section id="education">
+    <section id="education" data-label="Education">
         <div class="wrap">
             <div class="sr">
-                <div class="slabel">Education</div>
                 <h2 class="stitle">Learning that<br><em>supports the build.</em></h2>
                 <p class="ssub">Formal study and focused programs that shaped my backend, frontend, and systems thinking.</p>
             </div>
@@ -541,10 +532,9 @@
     <hr class="hr">
 
     <!-- SKILLS -->
-    <section id="skills">
+    <section id="skills" data-label="Stack">
         <div class="wrap">
             <div class="sr">
-                <div class="slabel">Tech Stack</div>
                 <h2 class="stitle">Tools of <em>the craft.</em></h2>
                 <p class="ssub">A pragmatic, production-tested toolkit — selected for reliability and depth over
                     breadth.</p>
@@ -595,11 +585,10 @@
     </section>
     <hr class="hr">
     <!-- LEAD MAGNET -->
-    <section id="lead-magnet">
+    <section id="lead-magnet" data-label="Resources">
         <div class="wrap">
             <div class="lead-grid">
                 <div class="sr">
-                    <div class="slabel">Free Resources</div>
                     <h2 class="stitle">Download Practical <em>Engineering Guides.</em></h2>
                     <p class="lead-lede">
                         Choose any guide below, submit your email once, and get instant access.
@@ -628,11 +617,10 @@
     </section>
     <hr class="hr">
     <!-- CONTACT -->
-    <section id="contact">
+    <section id="contact" data-label="Contact">
         <div class="wrap">
             <div class="ct-grid">
                 <div>
-                    <div class="slabel sr">Contact</div>
                     <h2 class="stitle sr">Let's build <em>something great.</em></h2>
                     <p class="ct-lede sr">Open to remote opportunities and impactful projects worldwide. Whether you're
                         looking to hire or collaborate, I'd love to hear from you.</p>
@@ -810,6 +798,7 @@
     <script src="/assets/js/script.js"></script>
     <script src="/assets/js/experience.js"></script>
     <script src="/assets/js/projects.js"></script>
+    <script src="/assets/js/nav.js"></script>
 
 </body>
 

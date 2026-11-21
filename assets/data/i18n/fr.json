@@ -1,6 +1,6 @@
 {
   "meta": {
-    "title": "Patrick Kabanda - portfolio + etudes de cas"
+    "title": "Patrick Kabanda — Ingénieur logiciel, backend & intégrations"
   },
   "nav": {
     "links": ["Accueil", "A propos", "Services", "Projets", "Experience", "Formation", "Contact"],
@@ -12,7 +12,7 @@
   },
   "hero": {
     "availability": "Disponible pour de nouvelles opportunites",
-    "nameHtml": "Patrick<br><em style=\"font-style:italic; color:var(--accent)\">Kabanda</em>",
+    "nameHtml": "Patrick<br><em>Kabanda</em>",
     "rolesHtml": "Ingenieur logiciel<span class=\"dot\">•</span>Concepteur de systemes<span class=\"dot\">•</span>Architecte de solutions",
     "summary": "J'aide les entreprises fintech, SaaS et a forte intensite operationnelle a construire des systemes backend fiables qui integrent les paiements, la comptabilite et les flux internes afin de reduire le travail manuel, eviter les erreurs couteuses et monter en charge avec confiance.",
     "tags": [
@@ -46,7 +46,7 @@
   },
   "about": {
     "label": "A propos",
-    "titleHtml": "Concevoir des systemes<br><em style=\"font-style:italic\">faits pour durer.</em>",
+    "titleHtml": "Concevoir des systemes<br><em>faits pour durer.</em>",
     "body": [
       "Je suis un ingenieur logiciel avec une vision systemique, quelqu'un qui reflechit soigneusement a l'architecture avant d'ecrire une seule ligne de code. Mon travail se situe a l'intersection du backend, de l'infrastructure et des operations metier.",
       "Ayant servi comme CTO chez Netpipo Ltd, je comprends ce que signifie prendre des decisions techniques a fort enjeu qui impactent de vrais utilisateurs. J'ai construit des systemes de production de bout en bout, du schema de base de donnees aux pipelines de deploiement, et je tiens a livrer des logiciels fiables, maintenables et securises.",
@@ -77,7 +77,7 @@
   },
   "services": {
     "label": "Services",
-    "titleHtml": "Des systemes backend qui gardent<br><em style=\"font-style:italic\">les operations en mouvement.</em>",
+    "titleHtml": "Des systemes backend qui gardent<br><em>les operations en mouvement.</em>",
     "subtitle": "Je construis et j'ameliore les systemes backend qui font tourner les paiements, les operations et les flux internes de maniere fiable.",
     "intro": "Je travaille avec des entreprises fintech, edtech, SaaS et a forte intensite operationnelle qui ont besoin de plus que de belles interfaces. Mes services sont concus pour les equipes qui ont besoin de systemes fiables, d'integrations plus propres, de moins de travail manuel et de bases operationnelles plus solides.",
     "cards": [
@@ -161,7 +161,7 @@
   },
   "idealClients": {
     "label": "Clients ideaux",
-    "titleHtml": "Des systemes backend fiables,<br><em style=\"font-style:italic\">pour les equipes qui en ont besoin.</em>",
+    "titleHtml": "Des systemes backend fiables,<br><em>pour les equipes qui en ont besoin.</em>",
     "subtitle": "Je travaille le mieux avec des entreprises qui ont besoin de systemes backend fiables, pas seulement de belles interfaces.",
     "intro": "Mes clients ideaux sont des entreprises fintech, edtech, SaaS et a forte intensite operationnelle avec des workflows complexes, surtout celles qui gerent des paiements, de la comptabilite, des systemes internes, du rapprochement ou des processus manuels qui doivent etre automatises de maniere fiable.",
     "cards": [
@@ -217,7 +217,7 @@
   },
   "projects": {
     "label": "Projets",
-    "titleHtml": "Du travail qui <em style=\"font-style:italic\">est livre.</em>",
+    "titleHtml": "Du travail qui <em>est livre.</em>",
     "subtitle": "Cliquez sur un projet pour voir l'etude de cas complete - architecture, defis et resultats.",
     "cardAriaPrefix": "Ouvrir l'etude de cas :",
     "timelineFallback": "Calendrier non renseigne",
@@ -228,7 +228,7 @@
   },
   "education": {
     "label": "Formation",
-    "titleHtml": "Un parcours d'apprentissage<br><em style=\"font-style:italic\">au service de la construction.</em>",
+    "titleHtml": "Un parcours d'apprentissage<br><em>au service de la construction.</em>",
     "subtitle": "Des etudes et programmes cibles qui ont renforce ma vision du backend, du frontend et des systemes.",
     "items": [
       {
@@ -256,7 +256,7 @@
   },
   "skills": {
     "label": "Stack technique",
-    "titleHtml": "Les outils <em style=\"font-style:italic\">du metier.</em>",
+    "titleHtml": "Les outils <em>du metier.</em>",
     "subtitle": "Une boite a outils pragmatique, eprouvee en production - choisie pour sa fiabilite et sa profondeur plutot que pour sa largeur.",
     "categories": [
       { "label": "Langages", "name": "Programmation coeur" },
@@ -269,7 +269,7 @@
   },
   "lead": {
     "label": "Ressources gratuites",
-    "titleHtml": "Telechargez des <em style=\"font-style:italic\">guides d'ingenierie pratiques.</em>",
+    "titleHtml": "Telechargez des <em>guides d'ingenierie pratiques.</em>",
     "lede": "Choisissez un guide ci-dessous, soumettez votre email une seule fois et obtenez un acces instantane.",
     "emailLabel": "Email",
     "emailPlaceholder": "vous@entreprise.com",
@@ -291,7 +291,7 @@
   },
   "contact": {
     "label": "Contact",
-    "titleHtml": "Construisons <em style=\"font-style:italic\">quelque chose de grand.</em>",
+    "titleHtml": "Construisons <em>quelque chose de grand.</em>",
     "lede": "Ouvert aux opportunites remote et aux projets a fort impact dans le monde entier. Que vous cherchiez a recruter ou a collaborer, je serais ravi d'echanger avec vous.",
     "rows": [
       { "label": "Localisation", "value": "Kigali, Rwanda - Remote mondial" },

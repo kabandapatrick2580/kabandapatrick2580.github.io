@@ -170,7 +170,7 @@
     "client": "Self-initiated product",
     "challenge": "Rwandan cooperatives and savings groups (Ibimina) keep their money in notebooks, spreadsheets and screenshots. Payments are hard to verify, members cannot check their own balances, and year-end share-outs and RCA reports take weeks by hand.",
     "solution": "Built a multilingual (English and Kinyarwanda) platform that keeps savings, shares, loans and books in one place. Every payment is recorded with proof attached and approved by a second person, members check their own balance with a phone number and PIN, and the books and reports build themselves from the verified records.",
-    "outcome": "Live in pilot phase. [Pilot groups, results or feedback so far]",
+    "outcome": "Live in pilot phase.",
     "tech": [
       "Next.js",
       "FastAPI",
@@ -186,7 +186,7 @@
     "client": "Tech & us Ltd (own product)",
     "challenge": "Apps that send email directly over SMTP make users wait, lose messages on timeouts, and keep mailing dead addresses, which damages sender reputation. Businesses needed a reliable delivery layer without running their own mail infrastructure.",
     "solution": "Built a multi-tenant email API on Flask and PostgreSQL. Sends return immediately with a task ID and are delivered asynchronously by Celery workers over Redis, with scheduled sends, automatic retries with backoff for only the recipients still owed a message, and suppression of bounced and complaining addresses. Each client authenticates with hashed API keys and can only send from verified domains, SMTP credentials are encrypted at rest, and marketing mail carries one-click unsubscribe. Accounts are reviewed by a person before access is granted.",
-    "outcome": "Live in production at mailpot.techandus.com with a public site, documentation, an application flow for new businesses, and a dashboard for managing keys, domains and send logs. [Add usage so far, e.g. accounts onboarded or emails delivered]",
+    "outcome": "Live in production at mailpot.techandus.com with a public site, documentation, an application flow for new businesses, and a dashboard for managing keys, domains and send logs.",
     "tech": [
       "Flask",
       "PostgreSQL",

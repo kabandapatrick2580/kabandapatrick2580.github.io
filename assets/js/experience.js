@@ -24,7 +24,6 @@ async function loadExperience() {
 
     const headerHTML = `
       <div class="sr">
-        <div class="slabel">${data.section.label}</div>
         <h2 class="stitle">${data.section.title_html || data.section.title}</h2>
         <p class="ssub">${data.section.subtitle}</p>
       </div>

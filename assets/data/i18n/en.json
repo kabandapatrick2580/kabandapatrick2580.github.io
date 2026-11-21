@@ -1,6 +1,6 @@
 {
   "meta": {
-    "title": "Patrick Kabanda - portfolio + case study modals"
+    "title": "Patrick Kabanda — Software Engineer, Backend & Integrations"
   },
   "nav": {
     "links": ["Home", "About", "Services", "Projects", "Experience", "Education", "Contact"],
@@ -12,7 +12,7 @@
   },
   "hero": {
     "availability": "Available for new opportunities",
-    "nameHtml": "Patrick<br><em style=\"font-style:italic; color:var(--accent)\">Kabanda</em>",
+    "nameHtml": "Patrick<br><em>Kabanda</em>",
     "rolesHtml": "Software Engineer<span class=\"dot\">•</span>Systems Builder<span class=\"dot\">•</span>Solutions Architect",
     "summary": "I help fintech, SaaS, and operations-heavy businesses build reliable backend systems that integrate payments, accounting, and internal workflows so they can reduce manual work, avoid costly errors, and scale with confidence.",
     "tags": [
@@ -46,7 +46,7 @@
   },
   "about": {
     "label": "About Me",
-    "titleHtml": "Engineering systems<br><em style=\"font-style:italic\">that endure.</em>",
+    "titleHtml": "Engineering systems<br><em>that endure.</em>",
     "body": [
       "I'm a software engineer with a systems-level mindset, someone who thinks carefully about architecture before writing a single line of code. My work sits at the intersection of backend engineering, infrastructure, and business operations.",
       "Having served as CTO at Netpipo Ltd, I understand what it means to make high-stakes technical decisions that affect real users. I've built production systems end-to-end, from database schema to deployment pipelines, and I take pride in shipping software that is reliable, maintainable, and secure.",
@@ -77,7 +77,7 @@
   },
   "services": {
     "label": "Services",
-    "titleHtml": "Backend systems that keep<br><em style=\"font-style:italic\">operations moving.</em>",
+    "titleHtml": "Backend systems that keep<br><em>operations moving.</em>",
     "subtitle": "I build and improve the backend systems that keep payments, operations, and internal workflows running reliably.",
     "intro": "I work with fintech, edtech, SaaS, and operations-heavy businesses that need more than just attractive interfaces. My services are designed for teams that need reliable systems, cleaner integrations, reduced manual work, and stronger operational foundations.",
     "cards": [
@@ -161,7 +161,7 @@
   },
   "idealClients": {
     "label": "Ideal Clients",
-    "titleHtml": "Dependable backend systems,<br><em style=\"font-style:italic\">for the teams that need them.</em>",
+    "titleHtml": "Dependable backend systems,<br><em>for the teams that need them.</em>",
     "subtitle": "I work best with businesses that need dependable backend systems, not just attractive frontends.",
     "intro": "My ideal clients are fintech, edtech, SaaS, and operations-heavy businesses with complex workflows, especially those dealing with payments, accounting, internal systems, reconciliation, or manual processes that need automation and reliability.",
     "cards": [
@@ -217,7 +217,7 @@
   },
   "projects": {
     "label": "Projects",
-    "titleHtml": "Work that <em style=\"font-style:italic\">ships.</em>",
+    "titleHtml": "Work that <em>ships.</em>",
     "subtitle": "Click any project to view full case study - architecture, challenges, and outcomes.",
     "cardAriaPrefix": "Open case study:",
     "timelineFallback": "Timeline not listed",
@@ -228,7 +228,7 @@
   },
   "education": {
     "label": "Education",
-    "titleHtml": "Learning that<br><em style=\"font-style:italic\">supports the build.</em>",
+    "titleHtml": "Learning that<br><em>supports the build.</em>",
     "subtitle": "Formal study and focused programs that shaped my backend, frontend, and systems thinking.",
     "items": [
       {
@@ -256,7 +256,7 @@
   },
   "skills": {
     "label": "Tech Stack",
-    "titleHtml": "Tools of <em style=\"font-style:italic\">the craft.</em>",
+    "titleHtml": "Tools of <em>the craft.</em>",
     "subtitle": "A pragmatic, production-tested toolkit - selected for reliability and depth over breadth.",
     "categories": [
       { "label": "Languages", "name": "Core Programming" },
@@ -269,7 +269,7 @@
   },
   "lead": {
     "label": "Free Resources",
-    "titleHtml": "Download Practical <em style=\"font-style:italic\">Engineering Guides.</em>",
+    "titleHtml": "Download Practical <em>Engineering Guides.</em>",
     "lede": "Choose any guide below, submit your email once, and get instant access.",
     "emailLabel": "Email",
     "emailPlaceholder": "you@company.com",
@@ -291,7 +291,7 @@
   },
   "contact": {
     "label": "Contact",
-    "titleHtml": "Let's build <em style=\"font-style:italic\">something great.</em>",
+    "titleHtml": "Let's build <em>something great.</em>",
     "lede": "Open to remote opportunities and impactful projects worldwide. Whether you're looking to hire or collaborate, I'd love to hear from you.",
     "rows": [
       { "label": "Location", "value": "Kigali, Rwanda - Global Remote" },

@@ -170,7 +170,7 @@
     "client": "Produit auto-initié",
     "challenge": "Les coopératives et groupes d'épargne (Ibimina) rwandais gardent leur argent dans des cahiers, des tableurs et des captures d'écran. Les paiements sont difficiles à vérifier, les membres ne peuvent pas consulter leur solde, et le partage de fin d'année et les rapports RCA prennent des semaines à la main.",
     "solution": "Conception d'une plateforme multilingue (anglais et kinyarwanda) qui réunit épargne, parts, prêts et comptabilité au même endroit. Chaque paiement est enregistré avec sa preuve et approuvé par une seconde personne, les membres consultent leur solde avec leur numéro de téléphone et un code PIN, et les livres et rapports se construisent à partir des enregistrements vérifiés.",
-    "outcome": "En phase pilote. [Groupes pilotes, résultats ou retours à ce jour]",
+    "outcome": "En phase pilote.",
     "tech": [
       "Next.js",
       "FastAPI",
@@ -186,7 +186,7 @@
     "client": "Tech & us Ltd (produit propre)",
     "challenge": "Les applications qui envoient des emails directement en SMTP font attendre les utilisateurs, perdent des messages en cas de délai dépassé et continuent d'écrire à des adresses mortes, ce qui nuit à la réputation d'expéditeur. Les entreprises avaient besoin d'une couche d'envoi fiable sans gérer leur propre infrastructure de messagerie.",
     "solution": "Conception d'une API d'envoi d'emails multi-clients avec Flask et PostgreSQL. Les envois répondent immédiatement avec un identifiant de tâche et sont livrés de façon asynchrone par des workers Celery via Redis, avec envois programmés, nouvelles tentatives automatiques avec délai croissant uniquement pour les destinataires restants, et suppression des adresses en erreur ou signalées. Chaque client s'authentifie avec des clés d'API hachées et ne peut envoyer que depuis des domaines vérifiés, les identifiants SMTP sont chiffrés au repos et les emails marketing incluent un désabonnement en un clic. Chaque compte est examiné par une personne avant l'accès.",
-    "outcome": "En production sur mailpot.techandus.com avec un site public, une documentation, un parcours de demande d'accès pour les entreprises et un tableau de bord pour gérer clés, domaines et journaux d'envoi. [Ajouter l'usage à ce jour, ex. comptes intégrés ou emails livrés]",
+    "outcome": "En production sur mailpot.techandus.com avec un site public, une documentation, un parcours de demande d'accès pour les entreprises et un tableau de bord pour gérer clés, domaines et journaux d'envoi.",
     "tech": [
       "Flask",
       "PostgreSQL",

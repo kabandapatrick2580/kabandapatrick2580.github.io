@@ -400,7 +400,7 @@ document.addEventListener("DOMContentLoaded", function () {
     return browserLanguage || DEFAULT_LANGUAGE;
   }
 
-  setTheme(localStorage.getItem("pk-theme") || "light");
+  setTheme(localStorage.getItem("pk-theme") || "dark");
 
   tBtn?.addEventListener("click", () => {
     setTheme(H.getAttribute("data-theme") === "dark" ? "light" : "dark");
@@ -409,7 +409,7 @@ document.addEventListener("DOMContentLoaded", function () {
   window.matchMedia("(prefers-color-scheme:dark)")
     .addEventListener("change", event => {
       if (!localStorage.getItem("pk-theme")) {
-        setTheme(event.matches ? "dark" : "light");
+        setTheme("dark");
       }
     });
 
@@ -644,24 +644,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }, { threshold: 0.07 });
 
     srEls.forEach(el => observer.observe(el));
-  }
-
-  const navAs = Array.from(document.querySelectorAll(".nav-links a"));
-  const sections = Array.from(document.querySelectorAll("section[id]"));
-
-  if ("IntersectionObserver" in window && sections.length) {
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const id = entry.target.id;
-          navAs.forEach(anchor => {
-            anchor.classList.toggle("act", anchor.getAttribute("href") === `#${id}`);
-          });
-        }
-      });
-    }, { threshold: 0.35 });
-
-    sections.forEach(section => observer.observe(section));
   }
 
   setLanguage(getInitialLanguage(), { persist: false }).catch(error => {
