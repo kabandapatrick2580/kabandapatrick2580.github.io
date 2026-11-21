@@ -14,6 +14,7 @@
       "description": "Création de produits SaaS et réalisation de projets backend, d'intégration et web pour des clients, via Tech & us Ltd.",
       "achievements": [
         "Conception de deux produits SaaS, Goalifai et E-Mali, actuellement en phase pilote",
+        "Conception et exploitation de Mail Pot, une API d'envoi d'emails multi-clients avec envois programmés, nouvelles tentatives et suppression des rebonds",
         "Audit et refonte de sites web clients pour améliorer le SEO et la visibilité, avec des scores Lighthouse de 99 en Performance, 99 en Accessibilité, 100 en Bonnes pratiques et 92 en SEO sur un projet récent",
         "Récupération de données financières pour plus de 5 clients, leur évitant des amendes et pénalités des autorités fiscales",
         "Installation et configuration de QuickBooks Desktop et QuickBooks Online pour plusieurs clients",
@@ -26,7 +27,11 @@
         },
         {
           "label": "E-Mali",
-          "url": "https://e-mali.app"
+          "url": "https://www.e-mali.app/"
+        },
+        {
+          "label": "Mail Pot",
+          "url": "https://mailpot.techandus.com/"
         }
       ]
     },
