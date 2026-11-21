@@ -16,10 +16,10 @@
     } else {
       var count = pre.querySelector("[data-count]");
       var start = performance.now();
-      var dur = 900;
+      var dur = 2800;
       (function tick(now) {
         var p = Math.min(1, (now - start) / dur);
-        var eased = 1 - Math.pow(1 - p, 3);
+        var eased = 1 - Math.pow(1 - p, 1.6);
         if (count) count.textContent = String(Math.round(eased * 100));
         if (p < 1) return requestAnimationFrame(tick);
         pre.classList.add("is-done");
@@ -27,6 +27,33 @@
         setTimeout(function () { pre.remove(); }, 700);
       })(start);
     }
+  }
+
+
+  /* ---- hero figures count up, slowly, once the page is visible ---- */
+  if (!reduce) {
+    var wait = document.querySelector(".preloader") ? 3700 : 900;
+    setTimeout(function () {
+      var figs = Array.prototype.slice.call(document.querySelectorAll(".proof-item strong"));
+      figs.forEach(function (el, i) {
+        var final = el.textContent.trim();
+        var m = final.match(/^([\d.]+)(.*)$/);
+        if (!m) return;
+        var target = parseFloat(m[1]), suffix = m[2];
+        var dec = (m[1].split(".")[1] || "").length;
+        el.style.fontVariantNumeric = "tabular-nums";
+        el.textContent = (0).toFixed(dec) + suffix;
+        setTimeout(function () {
+          var t0 = performance.now(), dur = 5000;
+          (function step(now) {
+            var p = Math.min(1, (now - t0) / dur);
+            var e = 1 - Math.pow(1 - p, 2.2);
+            el.textContent = p < 1 ? (target * e).toFixed(dec) + suffix : final;
+            if (p < 1) requestAnimationFrame(step);
+          })(t0);
+        }, i * 450);
+      });
+    }, wait);
   }
 
   var sections = Array.prototype.slice.call(document.querySelectorAll("section[id]"));
