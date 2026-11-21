@@ -30,6 +30,18 @@
   }
 
 
+  /* ---- years of experience: 3 in 2026, +1 every new year ---- */
+  function updateYears() {
+    var yrs = 3 + Math.max(0, new Date().getFullYear() - 2026);
+    var targets = [document.querySelector(".pc-row .pc-v"), document.querySelector(".stat-n")];
+    targets.forEach(function (el) {
+      if (el && /^\d+\+/.test(el.textContent.trim())) el.textContent = el.textContent.trim().replace(/^\d+/, String(yrs));
+    });
+  }
+  updateYears();
+  setTimeout(updateYears, 300);
+  document.addEventListener("pk:languagechange", function () { setTimeout(updateYears, 0); });
+
   /* ---- hero figures count up, slowly, once the page is visible ---- */
   if (!reduce) {
     var wait = document.querySelector(".preloader") ? 3700 : 900;

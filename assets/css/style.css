@@ -230,7 +230,7 @@ nav {
   .profile-card { order: 2; }
   .hero-photo { width: calc(100% - 48px); margin: 8px 24px 0; }
   .hero-photo .pc-photo-inner { width: 100%; }
-  [data-theme="dark"] .hero-photo { top: auto; right: auto; bottom: auto; padding: 10px; }
+  [data-theme="dark"] .hero-photo { top: auto; right: auto; bottom: auto; width: calc(100% - 48px); height: min(112vw, 520px); margin: 8px 24px 0; padding: 10px; }
   [data-theme="dark"] .hero-photo img { -webkit-mask-image: none; mask-image: none; }
 }
 #home { flex-direction: column; align-items: stretch; justify-content: flex-start; }
