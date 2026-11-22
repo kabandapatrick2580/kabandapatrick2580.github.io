@@ -374,7 +374,7 @@ nav {
 #education { background: var(--bg2); }
 .edu-grid { margin-top: 56px; border-top: 1px solid var(--border2); }
 .edu-card { display: grid; gap: 8px 40px; padding: 30px 0; border-bottom: 1px solid var(--border); }
-@media (min-width: 900px) { .edu-card { grid-template-columns: 240px minmax(0, 1fr); grid-template-rows: auto auto auto; } .edu-top { grid-row: 1 / span 3; } }
+@media (min-width: 900px) { .edu-card { grid-template-columns: 240px minmax(0, 1fr); grid-template-rows: auto auto auto auto; } .edu-top { grid-row: 1 / span 4; } .edu-link { grid-column: 2; } }
 .edu-top { display: flex; flex-direction: column; gap: 6px; font-family: var(--f-mono); font-size: 0.75rem; letter-spacing: 0.04em; text-transform: uppercase; }
 .edu-badge { color: var(--ink2); }
 .edu-period { color: var(--ink3); }
@@ -386,6 +386,8 @@ nav {
 .sk-grid { margin-top: 56px; border-top: 1px solid var(--border2); }
 .sk-cat { display: grid; gap: 12px 40px; padding: 26px 0; border-bottom: 1px solid var(--border); }
 @media (min-width: 900px) { .sk-cat { grid-template-columns: 240px minmax(0, 1fr); align-items: baseline; } }
+.edu-link { display: inline-block; justify-self: start; margin-top: 8px; font-family: var(--f-mono); font-size: 0.75rem; letter-spacing: 0.04em; text-transform: uppercase; color: var(--suit); text-decoration: none; border-bottom: 1px solid currentColor; padding-bottom: 2px; transition: color 0.25s, border-color 0.25s; }
+.edu-link:hover, .edu-link:focus-visible { color: var(--ink-strong); }
 .sk-cat-lbl { font-family: var(--f-mono); font-size: 0.75rem; letter-spacing: 0.05em; text-transform: uppercase; color: var(--ink3); }
 .sk-cat-name { font-family: var(--f-display); font-size: 1.15rem; letter-spacing: -0.02em; color: var(--ink); }
 @media (min-width: 900px) { .sk-cat .sk-pills { grid-column: 2; grid-row: 1 / span 2; } }

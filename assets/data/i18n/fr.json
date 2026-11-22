@@ -231,6 +231,7 @@
     "label": "Formation",
     "titleHtml": "Un parcours d'apprentissage<br><em>au service de la construction.</em>",
     "subtitle": "Des etudes et programmes cibles qui ont renforce ma vision du backend, du frontend et des systemes.",
+    "credentialLabel": "Voir le certificat",
     "items": [
       {
         "award": "Certificat",

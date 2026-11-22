@@ -231,6 +231,7 @@
     "label": "Education",
     "titleHtml": "Learning that<br><em>supports the build.</em>",
     "subtitle": "Formal study and focused programs that shaped my backend, frontend, and systems thinking.",
+    "credentialLabel": "View credential",
     "items": [
       {
         "award": "Certificate",

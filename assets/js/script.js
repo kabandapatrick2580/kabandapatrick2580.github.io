@@ -259,6 +259,8 @@ document.addEventListener("DOMContentLoaded", function () {
       setText(".edu-title", item.title, card);
       setText(".edu-school", item.institution, card);
       setText(".edu-desc", item.description, card);
+      const lk = card.querySelector(".edu-link");
+      if (lk) lk.innerHTML = t("education.credentialLabel", "View credential") + ' <span aria-hidden="true">↗</span>';
     });
   }
 
