@@ -19,7 +19,8 @@
       "Backend-focused systems engineering",
       "API integrations & automation",
       "Production-ready full-stack apps",
-      "Remote collaboration ready"
+      "Remote collaboration ready",
+      "AI integration with modern systems"
     ],
     "proof": [
       "<strong>9+</strong> Production Systems",
@@ -264,7 +265,8 @@
       { "label": "Backend", "name": "Server & APIs" },
       { "label": "Databases", "name": "Data Storage" },
       { "label": "DevOps & Infrastructure", "name": "Deployment & Ops" },
-      { "label": "Integrations", "name": "Third-Party & APIs" }
+      { "label": "Integrations", "name": "Third-Party & APIs" },
+      { "label": "AI", "name": "AI Integration" }
     ]
   },
   "lead": {

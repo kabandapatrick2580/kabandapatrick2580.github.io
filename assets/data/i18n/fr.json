@@ -19,7 +19,8 @@
       "Ingenierie de systemes orientee backend",
       "Integrations d'API et automatisation",
       "Applications full-stack pretes pour la production",
-      "Pret pour la collaboration a distance"
+      "Pret pour la collaboration a distance",
+      "Integration de l'IA aux systemes modernes"
     ],
     "proof": [
       "<strong>9+</strong> Systemes en production",
@@ -264,7 +265,8 @@
       { "label": "Backend", "name": "Serveur & API" },
       { "label": "Bases de donnees", "name": "Stockage" },
       { "label": "DevOps & infrastructure", "name": "Deploiement & operations" },
-      { "label": "Integrations", "name": "Tiers & API" }
+      { "label": "Integrations", "name": "Tiers & API" },
+      { "label": "IA", "name": "Integration de l'IA" }
     ]
   },
   "lead": {
